@@ -1,0 +1,404 @@
+fileFormatVersion: 2
+guid: 7fc0bb561be23ca42add713f87451b72
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6802138866373286643
+    second: flotadorAtack_0
+  - first:
+      213: -6782753406067690088
+    second: flotadorAtack_1
+  - first:
+      213: -8585577646283989912
+    second: flotadorAtack_2
+  - first:
+      213: -2657307946758493359
+    second: flotadorAtack_3
+  - first:
+      213: 3442458001288289528
+    second: flotadorAtack_4
+  - first:
+      213: -3743953939030320498
+    second: flotadorAtack_5
+  - first:
+      213: 7141708949232748660
+    second: flotadorAtack_6
+  - first:
+      213: 6533095825751981228
+    second: flotadorAtack_7
+  - first:
+      213: 8606389763865634738
+    second: flotadorAtack_8
+  - first:
+      213: -4517156340405852470
+    second: flotadorAtack_9
+  - first:
+      213: 902113245979519697
+    second: flotadorAtack_10
+  - first:
+      213: 3226792866405019936
+    second: flotadorAtack_11
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: flotadorAtack_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 111
+        width: 14
+        height: 13
+      alignment: 9
+      pivot: {x: 0.38804498, y: 0.1188871}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0521f48db2f991a0800000000000000
+      internalID: -6802138866373286643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flotadorAtack_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 111
+        width: 16
+        height: 13
+      alignment: 9
+      pivot: {x: 0.33970296, y: 0.1188871}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 895b348b6b1ded1a0800000000000000
+      internalID: -6782753406067690088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flotadorAtack_2
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 110
+        width: 16
+        height: 13
+      alignment: 9
+      pivot: {x: 0.34739423, y: 0.19045962}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86c55b97e96e9d880800000000000000
+      internalID: -8585577646283989912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flotadorAtack_3
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 109
+        width: 16
+        height: 14
+      alignment: 9
+      pivot: {x: 0.34881043, y: 0.24780437}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15b23ae50885f1bd0800000000000000
+      internalID: -2657307946758493359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flotadorAtack_4
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 90
+        width: 12
+        height: 18
+      alignment: 9
+      pivot: {x: 0.7150629, y: 0.07903205}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fc5df0305116cf20800000000000000
+      internalID: 3442458001288289528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flotadorAtack_5
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 90
+        width: 12
+        height: 19
+      alignment: 9
+      pivot: {x: 0.7057077, y: 0.070510864}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a5ca09abdca0cc0800000000000000
+      internalID: -3743953939030320498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flotadorAtack_6
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 90
+        width: 10
+        height: 19
+      alignment: 9
+      pivot: {x: 0.5428425, y: 0.07818041}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4780f3073727c1360800000000000000
+      internalID: 7141708949232748660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flotadorAtack_7
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 90
+        width: 10
+        height: 19
+      alignment: 9
+      pivot: {x: 0.5507206, y: 0.079317994}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cacb8892a083aaa50800000000000000
+      internalID: 6533095825751981228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flotadorAtack_8
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 66
+        width: 9
+        height: 17
+      alignment: 9
+      pivot: {x: 0.60985017, y: 0.3799959}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b7e4c144e9007770800000000000000
+      internalID: 8606389763865634738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flotadorAtack_9
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 66
+        width: 11
+        height: 17
+      alignment: 9
+      pivot: {x: 0.6918285, y: 0.3799959}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac6a437cd36df41c0800000000000000
+      internalID: -4517156340405852470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flotadorAtack_10
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 65
+        width: 10
+        height: 18
+      alignment: 9
+      pivot: {x: 0.54845464, y: 0.40908983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1daa8c5b733f48c00800000000000000
+      internalID: 902113245979519697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flotadorAtack_11
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 65
+        width: 11
+        height: 18
+      alignment: 9
+      pivot: {x: 0.4961631, y: 0.4190449}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 021f5d5040fd7cc20800000000000000
+      internalID: 3226792866405019936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
