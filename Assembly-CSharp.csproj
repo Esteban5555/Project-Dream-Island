@@ -64,6 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Assets\BeachBegining\Script\CharacterManagerScript.cs" />
     <Compile Include="Assets\Assets\MainCharacter\Scripts\CharacterMovement.cs" />
     <Compile Include="Assets\Assets\MainCharacter\Scripts\CharacterSwordAttack.cs" />
     <Compile Include="Assets\Assets\MainCharacter\Scripts\MainCharacter.cs" />
