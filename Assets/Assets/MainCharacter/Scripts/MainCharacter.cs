@@ -98,7 +98,7 @@ public class MainCharacter : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision == null) return;
-        Debug.Log("Etrando trigger");
+
         if (collision.gameObject.tag == "WaterTrigger")
         {
             swimming = true;
@@ -110,7 +110,6 @@ public class MainCharacter : MonoBehaviour
     {
         if(collision == null) return;
 
-        Debug.Log("Saliendo trigger");
         if (collision.gameObject.tag == "WaterTrigger")
         {
             swimming = false;

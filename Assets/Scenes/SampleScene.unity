@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAIIezImZKkVQIAAPUEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE2P2jAQ/SvI57KCLBCltzawbA8saGm1l1xMMiEWjh3ZzvKx4r937DgfpSeseW9m3puZ8EWY0BWkRqq1YtlGZkC+j4h9k2+jHnyFCz1KsWc3aDkfLDOFJVHHeaeGSYxPbZqWJRjF0h/iyC15gsFasFyqcpUdIZbaaAznlGtASEljswWGvkbkgj/jyKZc8RWE9nXDVzQZ3fGZgjCgemrgiQtPa1i1SDktK8is5J4878oGjibQjGdY4anknGmvhJhr5ZzuqwIUWKsZo2jMdZ8+PWOgAHYsjFfRZW/zXIPxvhW9LpnCCTVlyU/ZjK2k+tQI+6S8to2C+cKJaopu/sPHUwfnSpavbd/pxPYwBUtP7/SaUm0Gcx2GlwPpbj5nyk/0wOGjAPEm10rWIkPQqNqm1hqC5aBU5y0uID31vEZrG2zZddWPvJ14u0br4u78X2LOyoOFnmZNYM+lG7nbPihczi+U7G5D+xIYtTL+aPhNj8Mj8sALU9og5H0Kq+8ga2WpZOWmZu3UJpZKgAt7KxUIys11h2XM4xIfsEHbB+SF2s/FN/dY+xU8pLhwz59MHqCdPHfr0oU8b0AX29pwJqAXbYE3nFMshWhubDiTNm1fq5ymg7RjzbJ/j4tAFMIsosE8ip4hoOF4MqdhGMwW0/kBwvk0IO76mECflO8aoX48uDXRFxd4ae2/yGitaOXuPVP0vGa3Ug5GzkQu96kCENumQiccFDbBDzNbZQwHtAdjmHD7Jl8J4TI9QZZ0hRLndHUxiiZ9lYRU7FMaG0lI7P42EnIn979QSwMEFAAACAgAAAgh7DxkDIRtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTVUVBKL0osyCgGihiCOKWZKSB2tFKqpXmqiWWikamlpXGqUaK5roFporm5kYmZoWlSqrmpoZFSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAAgh7MiZkqRVAgAA9QQAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAgh7DxkDIRtAAAAeAAAAAkAJAAAAAAAAAAAAAAAogIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABaAwAAAAA=
+    dataString: UEsDBBQAAAgIAAAIIexEE5ZgVgIAAPQEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMuS2jAQ/BVK55AyDo+QW2JYNgcWatnUXnwR9thWIUsuSV4eW/x7RrL8CDkhZnpmunskfxImdAWJkWqjWLqVKZAfI2LP5MuoTz7DheZSHNgNWsw7S01hQdRhXqlhEuMTW6ZlCUax5KfIuQUHGKwFy6Qq12kOkdRGYzijXAOmlDS2WmDoc0Qu+DNe2pIrnsKFPd3wtAxGdzwmIAyoHhp64NzDGlQtEk7LClJLuQfPurahgwkU4xGWeCI5Z9ozIeZaOaWHqgAFVmrKKApz04Ov3zFQAMsL41l01bss02C8bkWvK6bQoaYt+SUb20qqTw2xD8prOyiczR2ppun2v/x44tKZkuVzO3cS2BmmYMnplV4Tqs3A12F41VOfOH/OlJ/okcN7AeJFbpSsRYpJo2pbWmsIV/3fTlpUQHLq4w3VNtjOrave8dbwdotWxN3Jv0SclUdn5bQJHLh0jrvlg8Ld/EbG7mpo3wKjlsYfDW80H94hn3hiShtMeZnC8jvKWlkoWTvTrJzaRFIJcGEvpQJBubnusY153OFDbjD2IfNE7Wvxw32ufQQPJS7c44PgIbWX525bupDnLehiVxvOBPSkbeIFfYqkEM0VG3rSlh1qldFkUJbXLP33bhFYLmC6pOFsufwGIV2MgxldLMLpfDI7wmI2CYm7fEygTsr3DVFvD25N9M0FXrT2IzLaKFq5654qet6wWykHljORyUOiAMSu6dARB4VD8F2m65ShQQcwhgm3b/IZEy6TE6Rx1yh2StcXo2jcd4lJxT6ksZGYRO6rEZM7uf8FUEsDBBQAAAgIAAAIIew8ZAyEbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrRSqqV5qollopGppaVxqlGiua6BaaK5uZGJmaFpUqq5qaGRUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAIIexEE5ZgVgIAAPQEAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAIIew8ZAyEbQAAAHgAAAAJACQAAAAAAAAAAAAAAKMCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAWwMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -165,7 +165,7 @@ MonoBehaviour:
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
+  logPathResults: 0
   maxNearestNodeDistance: 100
   scanOnStartup: 1
   fullGetNearestSearch: 0
@@ -216,7 +216,7 @@ MonoBehaviour:
   heuristic: 2
   heuristicScale: 1
   threadCount: 1
-  maxFrameTime: 1
+  maxFrameTime: 10
   batchGraphUpdates: 0
   graphUpdateBatchingInterval: 0.2
   euclideanEmbedding:
@@ -11712,10 +11712,9 @@ GameObject:
   - component: {fileID: 1724700727}
   - component: {fileID: 1724700732}
   - component: {fileID: 1724700731}
-  - component: {fileID: 1724700733}
   m_Layer: 0
   m_Name: EnemyMouth
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11759,7 +11758,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -11780,7 +11779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  drawGizmos: 1
+  drawGizmos: 0
   detailedGizmos: 0
   startEndModifier:
     addPoints: 0
@@ -11819,33 +11818,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1724700726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6eb1402c17e84a9282a7f0f62eb584f, type: 3}
+  m_Script: {fileID: 11500000, guid: be38f788437b57a459c5bb671345caa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 2
-  radius: 0.5
-  height: 2
-  repathRate: 0.5
-  canSearch: 1
-  canMove: 1
-  maxSpeed: 1.5
-  gravity: {x: NaN, y: NaN, z: NaN}
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  centerOffsetCompatibility: NaN
-  orientation: 1
-  enableRotation: 0
-  targetCompatibility: {fileID: 0}
-  maxAcceleration: -2.5
-  rotationSpeed: 360
-  slowdownDistance: 0.6
-  pickNextWaypointDist: 1.2
-  endReachedDistance: 0.2
-  alwaysDrawGizmos: 1
-  slowWhenNotFacingTarget: 1
-  whenCloseToDestination: 1
-  constrainInsideGraph: 0
+  Health: 0
+  MaxHealth: 0
+  swordForce: 300
 --- !u!114 &1724700732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11858,20 +11836,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37773b69ebd0fd41ae4cd923c23f13f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1724700733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1724700726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
   target: {fileID: 1830563847}
+  RoamSpeed: 100
+  FollowSpeed: 200
+  speed: 100
+  nextWaypointDistance: 1
+  AwarnessRanfge: 5
 --- !u!1 &1738654334
 GameObject:
   m_ObjectHideFlags: 0
@@ -50836,7 +50806,6 @@ GameObject:
   - component: {fileID: 2114486378}
   - component: {fileID: 2114486377}
   - component: {fileID: 2114486374}
-  - component: {fileID: 2114486375}
   m_Layer: 0
   m_Name: EnemyMouthGraphics
   m_TagString: Untagged
@@ -50863,19 +50832,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2114486375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114486373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aaa4bea468bcce45a0dfe300a253427, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aipath: {fileID: 1724700731}
 --- !u!212 &2114486377
 SpriteRenderer:
   m_ObjectHideFlags: 0
