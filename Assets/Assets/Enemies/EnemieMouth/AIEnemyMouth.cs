@@ -14,9 +14,9 @@ public class AIEnemyMouth : MonoBehaviour
 
     public Transform target;
 
-    public float RoamSpeed = 100f;
-    public float FollowSpeed = 200f;
-    public float speed = 100f;
+    public float RoamSpeed = 5f;
+    public float FollowSpeed = 10f;
+    public float speed = 5f;
     public float nextWaypointDistance = 3f;
     public float AwarnessRanfge = 5f;
 

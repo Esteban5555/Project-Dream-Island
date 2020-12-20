@@ -16,11 +16,17 @@ public class MainCharacter : MonoBehaviour
     public bool Lamp = false;
     public bool swimming = false;
 
+    public float maxInmunityTime = 0.5f;
+    public float inmunityTime = 0f;
+
+    public float hitForce = 500f;
+
     float minChangeItemLapse = 0.5f;
     float changeItemLapse = 0f;
 
     GameObject player;
     public CharacterMovement characterMovementScript;
+    Rigidbody2D rb;
 
     public Animator anim;
 
@@ -31,6 +37,7 @@ public class MainCharacter : MonoBehaviour
         itemInUse = Trinckets.None;
         player = GameObject.Find("MainCharacter");
         characterMovementScript = player.GetComponent<CharacterMovement>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -87,6 +94,11 @@ public class MainCharacter : MonoBehaviour
 
         if (changeItemLapse < 100) { changeItemLapse += Time.deltaTime; }
 
+        if (inmunityTime < maxInmunityTime)
+        {
+            inmunityTime = inmunityTime + Time.deltaTime;
+        }
+
     }
 
     public void Flip() {
@@ -99,18 +111,26 @@ public class MainCharacter : MonoBehaviour
     {
         if (collision == null) return;
 
-        if (collision.gameObject.tag == "WaterTrigger")
+        if (collision.tag == "WaterTrigger")
         {
             swimming = true;
             anim.SetBool("Swimming", true);
 
+        }
+        
+        if (collision.tag == "Enemy" && inmunityTime >= maxInmunityTime) {
+            Debug.Log("Estoy herido");
+            Vector2 force = (rb.transform.position - collision.transform.position).normalized * hitForce;
+            rb.AddForce(force);
+            Debug.Log(force);
+            inmunityTime = 0f;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if(collision == null) return;
 
-        if (collision.gameObject.tag == "WaterTrigger")
+        if (collision.tag == "WaterTrigger")
         {
             swimming = false;
             anim.SetBool("Swimming", false);

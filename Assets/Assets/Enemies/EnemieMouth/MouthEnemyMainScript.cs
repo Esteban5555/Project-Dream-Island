@@ -7,34 +7,41 @@ public class MouthEnemyMainScript : MonoBehaviour
     public int Health;
     public int MaxHealth;
 
+
+    public float maxInmunityTime = 0.5f;
+    public float inmunityTime = 0f;
+
     bool facingRight = true;
 
     public float swordForce = 100f;
 
     Rigidbody2D rb;
+    AIEnemyMouth AIEnemyMouthScript;
 
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        AIEnemyMouthScript = GetComponent<AIEnemyMouth>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (inmunityTime < maxInmunityTime)
+        {
+            inmunityTime = inmunityTime + Time.deltaTime;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "SwordAtacks")
+        if (collision.tag == "SwordAtacks" && inmunityTime >= maxInmunityTime)
         {
-            if (facingRight) {
-                Vector2 force = new Vector2(-1f, 0) * swordForce;
-                rb.AddForce(force);
-            }
-            Debug.Log("SwordAttackSuccesfull");
+            Vector2 force = (rb.transform.position - AIEnemyMouthScript.target.position).normalized * swordForce;
+            rb.AddForce(force);
+            inmunityTime = 0f;
         }
     }
 }

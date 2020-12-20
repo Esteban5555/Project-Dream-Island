@@ -11712,6 +11712,7 @@ GameObject:
   - component: {fileID: 1724700727}
   - component: {fileID: 1724700732}
   - component: {fileID: 1724700731}
+  - component: {fileID: 1724700733}
   m_Layer: 0
   m_Name: EnemyMouth
   m_TagString: Enemy
@@ -11732,7 +11733,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.04}
+  m_Offset: {x: -0.03, y: -0.11}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -11743,7 +11744,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.73, y: 0.56}
+  m_Size: {x: 0.78, y: 0.7}
   m_EdgeRadius: 0
 --- !u!50 &1724700728
 Rigidbody2D:
@@ -11823,6 +11824,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 0
   MaxHealth: 0
+  maxInmunityTime: 0.5
+  inmunityTime: 0
   swordForce: 300
 --- !u!114 &1724700732
 MonoBehaviour:
@@ -11839,9 +11842,35 @@ MonoBehaviour:
   target: {fileID: 1830563847}
   RoamSpeed: 100
   FollowSpeed: 200
-  speed: 100
+  speed: 5
   nextWaypointDistance: 1
   AwarnessRanfge: 5
+--- !u!61 &1724700733
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724700726}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02, y: -0.09}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.62, y: 0.49}
+  m_EdgeRadius: 0
 --- !u!1 &1738654334
 GameObject:
   m_ObjectHideFlags: 0
@@ -45234,6 +45263,8 @@ GameObject:
   - component: {fileID: 1827561069}
   - component: {fileID: 1827561068}
   - component: {fileID: 1827561067}
+  - component: {fileID: 1827561070}
+  - component: {fileID: 1827561071}
   m_Layer: 0
   m_Name: AttackColliders
   m_TagString: SwordAtacks
@@ -45268,7 +45299,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.06, y: -0.6}
+  m_Offset: {x: -0.08, y: -0.19}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -45279,7 +45310,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.85, y: 0.48}
+  m_Size: {x: 0.62, y: 0.24}
   m_EdgeRadius: 0
 --- !u!61 &1827561068
 BoxCollider2D:
@@ -45294,7 +45325,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.96}
+  m_Offset: {x: -0.06, y: 0.8}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -45305,7 +45336,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.79, y: 0.55}
+  m_Size: {x: 0.65, y: 0.27}
   m_EdgeRadius: 0
 --- !u!61 &1827561069
 BoxCollider2D:
@@ -45320,7 +45351,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.63, y: 0.1}
+  m_Offset: {x: 0.4, y: 0.32}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -45331,8 +45362,41 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.47, y: 0.82}
+  m_Size: {x: 0.3, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &1827561070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827561065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c42edb48cdde6014a85ce0d861b72ef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &1827561071
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827561065}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1830563841
 GameObject:
   m_ObjectHideFlags: 0
@@ -45387,11 +45451,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   facingRight: 1
-  itemInUse: 0
+  itemInUse: 2
   RubberRing: 0
   noItem: 1
   Lamp: 0
   swimming: 0
+  maxInmunityTime: 0.5
+  inmunityTime: 0
+  hitForce: 100
   characterMovementScript: {fileID: 0}
   anim: {fileID: 1830563848}
 --- !u!61 &1830563844
@@ -45439,7 +45506,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: e1d20a42f6fc25f489b305a3796b1445, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &1830563846
 SpriteRenderer:

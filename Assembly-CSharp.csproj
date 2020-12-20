@@ -73,6 +73,7 @@
     <Compile Include="Assets\Assets\MainCharacter\Scripts\CharacterMovement.cs" />
     <Compile Include="Assets\Assets\MainCharacter\Scripts\CharacterSwordAttack.cs" />
     <Compile Include="Assets\Assets\MainCharacter\Scripts\MainCharacter.cs" />
+    <Compile Include="Assets\Assets\MainCharacter\Scripts\swordCollisions.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
