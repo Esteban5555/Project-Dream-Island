@@ -8,6 +8,8 @@ public class CharacterMovement : MonoBehaviour
     public Rigidbody2D myRigidbody;
     public Animator anim;
 
+    public ParticleSystem dust;
+
     public bool moving = false;
 
     Vector2 movement;
@@ -15,12 +17,14 @@ public class CharacterMovement : MonoBehaviour
 
     GameObject player;
     public CharacterSwordAttack characterSwordAttackScript;
+    public MainCharacter MainCharacterScript;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("MainCharacter");
         characterSwordAttackScript = player.GetComponent<CharacterSwordAttack>();
+        MainCharacterScript = player.GetComponent<MainCharacter>();
     }
 
     // Update is called once per frame
@@ -61,6 +65,11 @@ public class CharacterMovement : MonoBehaviour
             moving = false;
         }
 
+        if (moving && !dust.isPlaying && !MainCharacterScript.swimming)
+        {
+            createDust();
+        }
+
     }
 
     void FixedUpdate()
@@ -69,5 +78,13 @@ public class CharacterMovement : MonoBehaviour
         if (!characterSwordAttackScript.Attacking) {
             myRigidbody.MovePosition(myRigidbody.position + movement * speed * Time.fixedDeltaTime);
         }        
+    }
+
+    void createDust() {
+        dust.Play();
+    }
+
+    void stopDust() {
+        dust.Stop();
     }
 }

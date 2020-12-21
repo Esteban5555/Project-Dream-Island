@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class MainCharacter : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class MainCharacter : MonoBehaviour
     GameObject player;
     public CharacterMovement characterMovementScript;
     Rigidbody2D rb;
+
+    public Light2D candleLight;
 
     public Animator anim;
 
@@ -97,6 +100,14 @@ public class MainCharacter : MonoBehaviour
         if (inmunityTime < maxInmunityTime)
         {
             inmunityTime = inmunityTime + Time.deltaTime;
+        }
+
+        if (Lamp)
+        {
+            candleLight.enabled = true;
+        }
+        else {
+            candleLight.enabled = false;
         }
 
     }

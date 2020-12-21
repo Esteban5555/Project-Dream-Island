@@ -5,7 +5,7 @@ using UnityEngine;
 public class MouthEnemyMainScript : MonoBehaviour
 {
     public int Health;
-    public int MaxHealth;
+    public int MaxHealth = 2;
 
 
     public float maxInmunityTime = 0.5f;
@@ -24,11 +24,17 @@ public class MouthEnemyMainScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         AIEnemyMouthScript = GetComponent<AIEnemyMouth>();
+        Health = MaxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Health <= 0) {
+            Debug.Log("Enemy destroyed");
+            Destroy(this.gameObject); 
+        }
+
         if (inmunityTime < maxInmunityTime)
         {
             inmunityTime = inmunityTime + Time.deltaTime;
@@ -41,6 +47,7 @@ public class MouthEnemyMainScript : MonoBehaviour
         {
             Vector2 force = (rb.transform.position - AIEnemyMouthScript.target.position).normalized * swordForce;
             rb.AddForce(force);
+            Health--;
             inmunityTime = 0f;
         }
     }
