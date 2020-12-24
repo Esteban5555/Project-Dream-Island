@@ -20,16 +20,17 @@ public class MainCharacter : MonoBehaviour
     public float maxInmunityTime = 0.5f;
     public float inmunityTime = 0f;
 
-    public float hitForce = 500f;
+    public float hitForce = 100f;
 
     float minChangeItemLapse = 0.5f;
     float changeItemLapse = 0f;
 
     GameObject player;
+    public GameObject CandleLight;
     public CharacterMovement characterMovementScript;
     Rigidbody2D rb;
 
-    public Light2D candleLight;
+    //public Light2D candleLight;
 
     public Animator anim;
 
@@ -104,10 +105,10 @@ public class MainCharacter : MonoBehaviour
 
         if (Lamp)
         {
-            candleLight.enabled = true;
+            CandleLight.SetActive(true);
         }
         else {
-            candleLight.enabled = false;
+            CandleLight.SetActive(false);
         }
 
     }
@@ -126,14 +127,12 @@ public class MainCharacter : MonoBehaviour
         {
             swimming = true;
             anim.SetBool("Swimming", true);
-
         }
         
         if (collision.tag == "Enemy" && inmunityTime >= maxInmunityTime) {
             Debug.Log("Estoy herido");
             Vector2 force = (rb.transform.position - collision.transform.position).normalized * hitForce;
-            rb.AddForce(force);
-            Debug.Log(force);
+            rb.velocity = force;
             inmunityTime = 0f;
         }
     }

@@ -47,16 +47,6 @@ public class CharacterSwordAttack : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        if (colliders == null) { return; }
-        Gizmos.color = Color.red;
-        for (int i = 0; i < colliders.Length; i++) {
-            Gizmos.DrawWireCube(AttackColliders.transform.position, new Vector2(colliders[i].bounds.size.x, colliders[i].bounds.size.y));
-        }
-
-    }
-
     public void finishAttack() {
         Attacking = false;
         colliders[characterMovementScript.lastFacingDirection].enabled = false;

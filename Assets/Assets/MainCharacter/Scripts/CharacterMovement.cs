@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    float speed = 3f;
+    public float speed = 3f;
     public Rigidbody2D myRigidbody;
     public Animator anim;
 
@@ -74,10 +74,13 @@ public class CharacterMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        //myRigidbody.MovePosition(myRigidbody.position + movement * speed * Time.fixedDeltaTime);
         //Movement
-        if (!characterSwordAttackScript.Attacking) {
+        
+        if (!characterSwordAttackScript.Attacking && moving) {
+            myRigidbody.velocity = new Vector2(0,0);
             myRigidbody.MovePosition(myRigidbody.position + movement * speed * Time.fixedDeltaTime);
-        }        
+        } 
     }
 
     void createDust() {

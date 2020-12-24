@@ -70,10 +70,12 @@
     <Compile Include="Assets\Assets\Enemies\FlipScript.cs" />
     <Compile Include="Assets\Assets\GeneralScripts\Astar.cs" />
     <Compile Include="Assets\Assets\GeneralScripts\GridGenerator.cs" />
+    <Compile Include="Assets\Assets\MainCharacter\Scripts\CandleLightFluctuation.cs" />
     <Compile Include="Assets\Assets\MainCharacter\Scripts\CharacterMovement.cs" />
     <Compile Include="Assets\Assets\MainCharacter\Scripts\CharacterSwordAttack.cs" />
     <Compile Include="Assets\Assets\MainCharacter\Scripts\MainCharacter.cs" />
     <Compile Include="Assets\Assets\MainCharacter\Scripts\swordCollisions.cs" />
+    <Compile Include="Assets\DrawCollisders.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
