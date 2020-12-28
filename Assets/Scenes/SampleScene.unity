@@ -45577,9 +45577,9 @@ MonoBehaviour:
   health: 0
   facingRight: 1
   itemInUse: 2
-  RubberRing: 0
-  noItem: 1
-  Lamp: 0
+  RubberRing: 1
+  sword: 1
+  Lamp: 1
   swimming: 0
   maxInmunityTime: 0.5
   inmunityTime: 0

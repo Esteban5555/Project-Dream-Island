@@ -8,20 +8,24 @@ public class MainCharacter : MonoBehaviour
     public int health;
     public bool facingRight = true;
 
-    public enum Trinckets { Lamp, RubberRing, None, }
+    public enum Trinckets { Lamp, RubberRing, Sword, }
 
     public Trinckets itemInUse;
 
-    public bool RubberRing = false;
-    public bool noItem = true;
-    public bool Lamp = false;
+    //If Character has Items
+    public bool RubberRing = true;
+    public bool sword = true;
+    public bool Lamp = true;
+
     public bool swimming = false;
 
+    //Inmunity After Hit
     public float maxInmunityTime = 0.5f;
     public float inmunityTime = 0f;
 
     public float hitForce = 100f;
 
+    //Time to change Items
     float minChangeItemLapse = 0.5f;
     float changeItemLapse = 0f;
 
@@ -38,7 +42,7 @@ public class MainCharacter : MonoBehaviour
     void Start()
     {
         health = 3;
-        itemInUse = Trinckets.None;
+        itemInUse = Trinckets.Sword;
         player = GameObject.Find("MainCharacter");
         characterMovementScript = player.GetComponent<CharacterMovement>();
         rb = GetComponent<Rigidbody2D>();
@@ -58,43 +62,14 @@ public class MainCharacter : MonoBehaviour
         }
 
         if (changeItemLapse >= minChangeItemLapse) {
-
             if (Input.GetKeyDown(KeyCode.Space) && !characterMovementScript.moving && !swimming)
             {
-                Debug.Log("presing Space");
-                if (noItem)
-                {
-                    noItem = false;
-                    Lamp = false;
-                    RubberRing = true;
-                    anim.SetBool("NoItem", false);
-                    anim.SetBool("Lamp", false);
-                    anim.SetBool("RubberRing", true);
-                }
-                else
-                {
-                    if (Lamp)
-                    {
-                        noItem = true;
-                        Lamp = false;
-                        RubberRing = false;
-                        anim.SetBool("NoItem", true);
-                        anim.SetBool("Lamp", false);
-                        anim.SetBool("RubberRing", false);
-                    }
-                    else
-                    {
-                        noItem = false;
-                        Lamp = true;
-                        RubberRing = false;
-                        anim.SetBool("NoItem", false);
-                        anim.SetBool("Lamp", true);
-                        anim.SetBool("RubberRing", false);
-                    }
-                }
+                changeItem();
+                anim.SetInteger("ItemInUse", (int)itemInUse);
                 changeItemLapse = 0;
             }
         }
+
 
         if (changeItemLapse < 100) { changeItemLapse += Time.deltaTime; }
 
@@ -103,7 +78,8 @@ public class MainCharacter : MonoBehaviour
             inmunityTime = inmunityTime + Time.deltaTime;
         }
 
-        if (Lamp)
+        //Set the candle Light
+        if (itemInUse == Trinckets.Lamp)
         {
             CandleLight.SetActive(true);
         }
@@ -117,6 +93,47 @@ public class MainCharacter : MonoBehaviour
         facingRight = !facingRight;
 
         transform.Rotate(0f, 180f, 0);
+    }
+
+    void changeItem() {
+        switch (itemInUse) {
+            case Trinckets.Lamp:
+                if (RubberRing)
+                {
+                    itemInUse = Trinckets.RubberRing;
+                }
+                else { if (sword) {
+                        itemInUse = Trinckets.Sword;
+                    } 
+                }
+                break;
+            case Trinckets.Sword:
+                if (Lamp)
+                {
+                    itemInUse = Trinckets.Lamp;
+                }
+                else
+                {
+                    if (RubberRing)
+                    {
+                        itemInUse = Trinckets.RubberRing;
+                    }
+                }
+                break;
+            case Trinckets.RubberRing:
+                if (sword)
+                {
+                    itemInUse = Trinckets.Sword;
+                }
+                else
+                {
+                    if (Lamp)
+                    {
+                        itemInUse = Trinckets.Lamp;
+                    }
+                }
+                break;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
