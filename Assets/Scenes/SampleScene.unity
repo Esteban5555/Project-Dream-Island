@@ -251,6 +251,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -357,6 +358,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &527643594
 GameObject:
   m_ObjectHideFlags: 0
@@ -10471,6 +10503,28 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 571816088}
     m_ColliderPaths:
+    - - X: -230000000
+        Y: 80000000
+      - X: -210000000
+        Y: 80000000
+      - X: -210000000
+        Y: 120000000
+      - X: -200000000
+        Y: 120000000
+      - X: -200000000
+        Y: 160000000
+      - X: 0
+        Y: 160000000
+      - X: 0
+        Y: 219954736
+      - X: -10000000
+        Y: 220000000
+      - X: -350000000
+        Y: 220000000
+      - X: -350000000
+        Y: 74375000
+      - X: -230000000
+        Y: 74375000
     - - X: 281875008
         Y: 80000000
       - X: 290000000
@@ -10519,50 +10573,12 @@ CompositeCollider2D:
         Y: 4375000
       - X: 281875008
         Y: 4375000
-    - - X: -230000000
-        Y: 80000000
-      - X: -210000000
-        Y: 80000000
-      - X: -210000000
-        Y: 120000000
-      - X: -200000000
-        Y: 120000000
-      - X: -200000000
-        Y: 160000000
-      - X: 0
-        Y: 160000000
-      - X: 0
-        Y: 219954736
-      - X: -10000000
-        Y: 220000000
-      - X: -350000000
-        Y: 220000000
-      - X: -350000000
-        Y: 74375000
-      - X: -230000000
-        Y: 74375000
     - - X: -220000000
         Y: 170000000
       - X: -210000000
         Y: 170000000
       - X: -210000000
         Y: 169954736
-    - - X: 150000100
-        Y: 129999959
-      - X: 150000100
-        Y: 140000041
-      - X: 150000041
-        Y: 140000100
-      - X: 129999959
-        Y: 140000100
-      - X: 129999900
-        Y: 140000041
-      - X: 129999900
-        Y: 129999959
-      - X: 129999959
-        Y: 129999900
-      - X: 150000041
-        Y: 129999900
     - - X: 240000000
         Y: 130000000
       - X: 240000000
@@ -10570,6 +10586,14 @@ CompositeCollider2D:
       - X: 270000000
         Y: 140000000
       - X: 270000000
+        Y: 130000000
+    - - X: 150000000
+        Y: 140000000
+      - X: 130000000
+        Y: 140000000
+      - X: 130000000
+        Y: 130000000
+      - X: 150000000
         Y: 130000000
     - - X: 300000000
         Y: 120000000
@@ -10747,14 +10771,6 @@ CompositeCollider2D:
         Y: 110000000
       - X: 370000000
         Y: 100000000
-    - - X: -290000000
-        Y: 90000000
-      - X: -290000000
-        Y: 100000000
-      - X: -270000000
-        Y: 100000000
-      - X: -270000000
-        Y: 90000000
     - - X: -57500000
         Y: 25625000
       - X: -42500000
@@ -10775,6 +10791,14 @@ CompositeCollider2D:
         Y: 14375000
       - X: -57500000
         Y: 14375000
+    - - X: -290000000
+        Y: 90000000
+      - X: -290000000
+        Y: 100000000
+      - X: -270000000
+        Y: 100000000
+      - X: -270000000
+        Y: 90000000
     - - X: -120000000
         Y: 90000000
       - X: -140000000
@@ -10887,14 +10911,14 @@ CompositeCollider2D:
     - - {x: -21, y: 16.995502}
       - {x: -21.977957, y: 17}
       - {x: -21, y: 16.999971}
-    - - {x: 14.999974, y: 12.99999}
-      - {x: 14.999974, y: 14.00001}
-      - {x: 12.99999, y: 13.999974}
-      - {x: 13.000026, y: 12.99999}
     - - {x: 27, y: 13.00003}
       - {x: 24, y: 13.00003}
       - {x: 24.000029, y: 14}
       - {x: 27, y: 13.999971}
+    - - {x: 14.999971, y: 13}
+      - {x: 14.999971, y: 14}
+      - {x: 13, y: 13.999971}
+      - {x: 13.00003, y: 13}
     - - {x: 32, y: 12.00003}
       - {x: 30, y: 12.00003}
       - {x: 30.000029, y: 13}
@@ -11680,6 +11704,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 061a873e93052af41a19d89ffd35b411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1042345158
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1042345159}
+  m_Layer: 10
+  m_Name: SplatSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1042345159
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042345158}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1724700730}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1686397798
 GameObject:
   m_ObjectHideFlags: 0
@@ -11745,7 +11799,7 @@ Transform:
   m_Children:
   - {fileID: 1699685579}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1699685578
 GameObject:
@@ -11894,7 +11948,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 2
+  m_LinearDrag: 5
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -11942,6 +11996,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2114486378}
+  - {fileID: 1042345159}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11962,6 +12017,8 @@ MonoBehaviour:
   maxInmunityTime: 0.5
   inmunityTime: 0
   swordForce: 300
+  deathSplat: {fileID: 4503083373828787252, guid: 0607ab079ef655045861b3c2a461cddc,
+    type: 3}
 --- !u!114 &1724700732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11978,7 +12035,7 @@ MonoBehaviour:
   RoamSpeed: 100
   FollowSpeed: 200
   speed: 5
-  nextWaypointDistance: 1
+  nextWaypointDistance: 0.5
   AwarnessRanfge: 5
 --- !u!1 &1738654334
 GameObject:
@@ -45581,9 +45638,9 @@ MonoBehaviour:
   sword: 1
   Lamp: 1
   swimming: 0
-  maxInmunityTime: 0.5
-  inmunityTime: 0
-  hitForce: 2
+  maxInmunityTime: 1
+  inmunityTime: 1
+  hitForce: 8
   CandleLight: {fileID: 774864895}
   characterMovementScript: {fileID: 0}
   anim: {fileID: 1830563848}
@@ -45626,7 +45683,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 5
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: e1d20a42f6fc25f489b305a3796b1445, type: 2}
@@ -45700,7 +45757,7 @@ Transform:
   - {fileID: 2117547827}
   - {fileID: 774864896}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1830563848
 Animator:
@@ -48174,17 +48231,13 @@ CompositeCollider2D:
     m_ColliderPaths:
     - - X: 50000000
         Y: -130000000
-      - X: 69999900
+      - X: 70000000
         Y: -130000000
-      - X: 69999900
-        Y: -89999959
-      - X: 69999959
-        Y: -89999900
-      - X: 120000041
-        Y: -89999900
-      - X: 120000100
-        Y: -89999959
-      - X: 120000100
+      - X: 70000000
+        Y: -90000000
+      - X: 120000000
+        Y: -90000000
+      - X: 120000000
         Y: -130000000
       - X: 140000000
         Y: -130000000
@@ -48206,17 +48259,13 @@ CompositeCollider2D:
         Y: -70000000
       - X: 190000000
         Y: -50000000
-      - X: 110000100
+      - X: 110000000
         Y: -50000000
-      - X: 110000100
-        Y: -60000041
-      - X: 110000041
-        Y: -60000100
-      - X: -110000041
-        Y: -60000100
-      - X: -110000100
-        Y: -60000041
-      - X: -110000100
+      - X: 110000000
+        Y: -60000000
+      - X: -110000000
+        Y: -60000000
+      - X: -110000000
         Y: -50000000
       - X: -150000000
         Y: -50000000
@@ -48233,9 +48282,9 @@ CompositeCollider2D:
       - X: 50000000
         Y: -140000000
     - - X: 120000000
-        Y: -130000100
+        Y: -130000000
       - X: 70000000
-        Y: -130000100
+        Y: -130000000
       - X: 70000000
         Y: -140000000
       - X: 110000000
@@ -48248,10 +48297,10 @@ CompositeCollider2D:
     m_Paths:
     - - {x: 4.999971, y: -14}
       - {x: 5.0000296, y: -13}
-      - {x: 6.9999905, y: -12.99997}
-      - {x: 7.0000257, y: -8.99999}
-      - {x: 12.00001, y: -9.000026}
-      - {x: 12.000039, y: -13}
+      - {x: 7, y: -12.99997}
+      - {x: 7.0000296, y: -9}
+      - {x: 12, y: -9.00003}
+      - {x: 12.00003, y: -13}
       - {x: 14, y: -13.00003}
       - {x: 14.000029, y: -14}
       - {x: 18, y: -13.999971}
@@ -48262,10 +48311,10 @@ CompositeCollider2D:
       - {x: 18.000029, y: -7}
       - {x: 19, y: -6.9999704}
       - {x: 18.999971, y: -5}
-      - {x: 11.00001, y: -5.000029}
-      - {x: 10.999974, y: -6.00001}
-      - {x: -11.00001, y: -5.9999747}
-      - {x: -11.000039, y: -5}
+      - {x: 11, y: -5.000029}
+      - {x: 10.99997, y: -6}
+      - {x: -11, y: -5.9999704}
+      - {x: -11.00003, y: -5}
       - {x: -15, y: -5.000029}
       - {x: -14.999971, y: -13}
       - {x: -12, y: -12.99997}
@@ -48273,8 +48322,8 @@ CompositeCollider2D:
       - {x: -10, y: -12.00003}
       - {x: -9.99997, y: -14}
     - - {x: 11.99997, y: -15}
-      - {x: 11.99997, y: -13.00001}
-      - {x: 7, y: -13.000039}
+      - {x: 11.99997, y: -13}
+      - {x: 7, y: -13.00003}
       - {x: 7.0000296, y: -14}
       - {x: 11, y: -14.000029}
       - {x: 11.00003, y: -15}
@@ -50870,7 +50919,7 @@ Transform:
   - {fileID: 1899902583}
   - {fileID: 706632076}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2093281271
 GameObject:
@@ -51404,7 +51453,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0.05
       minScalar: 1
       maxCurve:
         serializedVersion: 2

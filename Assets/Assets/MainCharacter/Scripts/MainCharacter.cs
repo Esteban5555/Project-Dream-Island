@@ -33,6 +33,7 @@ public class MainCharacter : MonoBehaviour
     public GameObject CandleLight;
     public CharacterMovement characterMovementScript;
     Rigidbody2D rb;
+    SpriteRenderer sr;
 
     //public Light2D candleLight;
 
@@ -46,6 +47,7 @@ public class MainCharacter : MonoBehaviour
         player = GameObject.Find("MainCharacter");
         characterMovementScript = player.GetComponent<CharacterMovement>();
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -73,9 +75,16 @@ public class MainCharacter : MonoBehaviour
 
         if (changeItemLapse < 100) { changeItemLapse += Time.deltaTime; }
 
+        //setting inmunity time
         if (inmunityTime < maxInmunityTime)
         {
+            sr.enabled = !sr.enabled;
             inmunityTime = inmunityTime + Time.deltaTime;
+        }
+        else {
+            if (!sr.enabled) {
+                sr.enabled = true;
+            }
         }
 
         //Set the candle Light
@@ -149,7 +158,20 @@ public class MainCharacter : MonoBehaviour
         if (collision.tag == "Enemy" && inmunityTime >= maxInmunityTime) {
             Debug.Log("Estoy herido");
             Vector2 force = (rb.transform.position - collision.transform.position).normalized * hitForce;
-            rb.velocity = force;
+            rb.AddForce(force, ForceMode2D.Impulse);
+            //rb.velocity = force;
+            inmunityTime = 0f;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy" && inmunityTime >= maxInmunityTime)
+        {
+            Debug.Log("Estoy herido");
+            Vector2 force = (rb.transform.position - collision.transform.position).normalized * hitForce;
+            rb.AddForce(force, ForceMode2D.Impulse);
+            //rb.velocity = force;
             inmunityTime = 0f;
         }
     }

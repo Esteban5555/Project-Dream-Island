@@ -17,7 +17,8 @@ public class MouthEnemyMainScript : MonoBehaviour
 
     Rigidbody2D rb;
     AIEnemyMouth AIEnemyMouthScript;
-
+    Transform splatSpawn;
+    public GameObject deathSplat;
 
     // Start is called before the first frame update
     void Start()
@@ -25,14 +26,29 @@ public class MouthEnemyMainScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         AIEnemyMouthScript = GetComponent<AIEnemyMouth>();
         Health = MaxHealth;
+        splatSpawn = transform.Find("SplatSpawn");
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (Health <= 0) {
-            Debug.Log("Enemy destroyed");
-            Destroy(this.gameObject); 
+            GameObject splat = Instantiate(deathSplat, splatSpawn);
+            splat.transform.parent = this.gameObject.transform.parent;
+            Destroy(this.gameObject);
+        }
+
+        if (rb.velocity.x < 0 && facingRight)
+        {
+            Flip();
+            facingRight = false;
+        }
+        else {
+            if (!facingRight && rb.velocity.x >= 0) {
+                Flip();
+                facingRight = true;
+            }
         }
 
         if (inmunityTime < maxInmunityTime)
@@ -50,5 +66,12 @@ public class MouthEnemyMainScript : MonoBehaviour
             Health--;
             inmunityTime = 0f;
         }
+    }
+
+    public void Flip()
+    {
+        facingRight = !facingRight;
+
+        transform.Rotate(0f, 180f, 0);
     }
 }
