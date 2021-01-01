@@ -24,7 +24,7 @@ public class CharacterManagerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (mainCharacterScript.RubberRing == true)
+        if (mainCharacterScript.itemInUse == MainCharacter.Trinckets.RubberRing)
         {
             PlayerWithFlotador = true;
         }

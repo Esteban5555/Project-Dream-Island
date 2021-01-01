@@ -74,7 +74,6 @@ public class CharacterMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        //myRigidbody.MovePosition(myRigidbody.position + movement * speed * Time.fixedDeltaTime);
         //Movement
         
         if (!characterSwordAttackScript.Attacking && moving) {
