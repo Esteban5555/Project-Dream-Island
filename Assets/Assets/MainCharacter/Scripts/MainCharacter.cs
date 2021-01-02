@@ -2,10 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
+using UnityEngine.UI;
 
 public class MainCharacter : MonoBehaviour
 {
-    public int health;
+    private int health;
+    private int maxHealth;
+
+    private int minMaxHealth = 4;
+
+    public Image[] hearts;
+
+    public Sprite fullHeart;
+    public Sprite halfHeart;
+    public Sprite emptyHeart;
+
     public bool facingRight = true;
 
     public enum Trinckets { Lamp, RubberRing, Sword, }
@@ -42,12 +53,14 @@ public class MainCharacter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = 3;
         itemInUse = Trinckets.Sword;
         player = GameObject.Find("MainCharacter");
         characterMovementScript = player.GetComponent<CharacterMovement>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        health = 4;
+        maxHealth = 4;
+        if (maxHealth < minMaxHealth) { maxHealth = minMaxHealth; }
     }
 
     // Update is called once per frame
@@ -96,6 +109,32 @@ public class MainCharacter : MonoBehaviour
             CandleLight.SetActive(false);
         }
 
+        //Health System
+
+        for (int i = 0; i < hearts.Length; i++) {
+
+            if (i < health / 2)
+            {
+                hearts[i].sprite = fullHeart;
+            }
+            else {
+                if (((health % 2) != 0) && i < ((health + 1) / 2))
+                {
+                    hearts[i].sprite = halfHeart;
+                }
+                else {
+                    hearts[i].sprite = emptyHeart;
+                }
+            }
+
+            if (i < (maxHealth / 2))
+            {
+                hearts[i].enabled = true;
+            }
+            else {
+                hearts[i].enabled = false;
+            }
+        }
     }
 
     public void Flip() {
@@ -145,6 +184,18 @@ public class MainCharacter : MonoBehaviour
         }
     }
 
+    void AddHeartConteiner() {
+        maxHealth = maxHealth + 2;
+    }
+
+    void replenishOneHeart() {
+        if (health + 2 > maxHealth) {
+            health = maxHealth;
+            return;
+        }
+        health = health + 2;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision == null) return;
@@ -157,10 +208,15 @@ public class MainCharacter : MonoBehaviour
         
         if (collision.tag == "Enemy" && inmunityTime >= maxInmunityTime) {
             Debug.Log("Estoy herido");
+            health--;
             Vector2 force = (rb.transform.position - collision.transform.position).normalized * hitForce;
             rb.AddForce(force, ForceMode2D.Impulse);
             //rb.velocity = force;
             inmunityTime = 0f;
+        }
+
+        if (collision.tag == "heart") {
+            replenishOneHeart();
         }
     }
 
@@ -169,6 +225,7 @@ public class MainCharacter : MonoBehaviour
         if (collision.tag == "Enemy" && inmunityTime >= maxInmunityTime)
         {
             Debug.Log("Estoy herido");
+            health--;
             Vector2 force = (rb.transform.position - collision.transform.position).normalized * hitForce;
             rb.AddForce(force, ForceMode2D.Impulse);
             //rb.velocity = force;

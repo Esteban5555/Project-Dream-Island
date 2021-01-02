@@ -5199,7 +5199,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90fe63014e1dd94469a93dee19daf154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fullHeart: {fileID: -1662661250659437231, guid: eb1654c7da7243b46a6e4a0d92e39af5,
+    type: 3}
+  halfHeart: {fileID: -410287603636493372, guid: eb1654c7da7243b46a6e4a0d92e39af5,
+    type: 3}
+  emptyHeart: {fileID: 2522676444781368369, guid: eb1654c7da7243b46a6e4a0d92e39af5,
+    type: 3}
   facingRight: 1
   itemInUse: 2
   RubberRing: 1

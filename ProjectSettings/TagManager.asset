@@ -9,6 +9,7 @@ TagManager:
   - WaterTrigger
   - Enemy
   - Obstacles
+  - heart
   layers:
   - Default
   - TransparentFX
