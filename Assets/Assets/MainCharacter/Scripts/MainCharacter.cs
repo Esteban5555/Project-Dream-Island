@@ -17,6 +17,8 @@ public class MainCharacter : MonoBehaviour
     public Sprite halfHeart;
     public Sprite emptyHeart;
 
+    public Image[] ItemsAvailable;
+
     public bool facingRight = true;
 
     public enum Trinckets { Lamp, RubberRing, Sword, }
@@ -135,6 +137,25 @@ public class MainCharacter : MonoBehaviour
                 hearts[i].enabled = false;
             }
         }
+
+        //Item System
+        if (!(sword == Lamp == RubberRing == false))
+        {
+            for (int i = 0; i < ItemsAvailable.Length; i++)
+            {
+                ItemsAvailable[i].enabled = false;
+                if ((int)itemInUse == i)
+                {
+                    ItemsAvailable[i].enabled = true;
+                }
+            }
+        }
+        else {
+            for (int i = 0; i < ItemsAvailable.Length; i++)
+            {
+                ItemsAvailable[i].enabled = false;
+            }
+        }
     }
 
     public void Flip() {
@@ -142,6 +163,7 @@ public class MainCharacter : MonoBehaviour
 
         transform.Rotate(0f, 180f, 0);
     }
+
 
     void changeItem() {
         switch (itemInUse) {
