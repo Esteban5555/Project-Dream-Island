@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Obstacles
   - heart
+  - Chest
   layers:
   - Default
   - TransparentFX

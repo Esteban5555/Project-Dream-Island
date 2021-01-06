@@ -11,6 +11,8 @@ public class CharacterManagerScript : MonoBehaviour
     private GameObject Player;
     private MainCharacter mainCharacterScript;
     private TilemapCollider2D WaterCollider;
+
+    public bool actionButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,8 @@ public class CharacterManagerScript : MonoBehaviour
         Agua = Grid.transform.Find("Agua");
         WaterCollider = Agua.GetComponent<TilemapCollider2D>();
         Player = GameObject.Find("MainCharacter");
+
+        actionButton = false;
 
         mainCharacterScript = Player.GetComponent <MainCharacter>();
     }
@@ -29,6 +33,8 @@ public class CharacterManagerScript : MonoBehaviour
             PlayerWithFlotador = true;
         }
         else { PlayerWithFlotador = false; }
+
+        actionButton = mainCharacterScript.actionButton;
         
     }
 
@@ -40,5 +46,9 @@ public class CharacterManagerScript : MonoBehaviour
             WaterCollider.enabled = false;
         }
         else { WaterCollider.enabled = true; }
+    }
+
+    public bool actionButtonPressed() {
+        return actionButton;
     }
 }

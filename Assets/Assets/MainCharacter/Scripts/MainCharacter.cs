@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MainCharacter : MonoBehaviour
 {
+    //Health
     private int health;
     private int maxHealth;
 
@@ -17,20 +18,39 @@ public class MainCharacter : MonoBehaviour
     public Sprite halfHeart;
     public Sprite emptyHeart;
 
+    public Sprite coin;
+    public Sprite SwordSprite;
+    public Sprite LampSprite;
+    public Sprite RubberRingSprite;
+
+    public Transform itemRecivedLocation;
+
     public Image[] ItemsAvailable;
 
     public bool facingRight = true;
 
+    public bool recivedItem;
+
+    //Coins
+
+    public bool inChest;
+    public int coins;
+
+    //Items
     public enum Trinckets { Lamp, RubberRing, Sword, }
 
     public Trinckets itemInUse;
 
-    //If Character has Items
+       //If Character has Items
     public bool RubberRing = true;
     public bool sword = true;
     public bool Lamp = true;
 
     public bool swimming = false;
+
+    //Action Button pressed
+
+    public bool actionButton;
 
     //Inmunity After Hit
     public float maxInmunityTime = 0.5f;
@@ -63,20 +83,19 @@ public class MainCharacter : MonoBehaviour
         health = 4;
         maxHealth = 4;
         if (maxHealth < minMaxHealth) { maxHealth = minMaxHealth; }
+
+        coins = 0;
+        inChest = false;
+
+        recivedItem = false;
+
+        actionButton = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         //Input
-        if (facingRight && Input.GetAxisRaw("Horizontal") < 0)
-        {
-            Flip();
-        }
-        else { if (!facingRight && Input.GetAxisRaw("Horizontal") > 0) {
-                Flip();
-            } 
-        }
 
         if (changeItemLapse >= minChangeItemLapse) {
             if (Input.GetKeyDown(KeyCode.Space) && !characterMovementScript.moving && !swimming)
@@ -139,7 +158,7 @@ public class MainCharacter : MonoBehaviour
         }
 
         //Item System
-        if (!(sword == Lamp == RubberRing == false))
+        if (!(sword == false && Lamp == false && RubberRing == false))
         {
             for (int i = 0; i < ItemsAvailable.Length; i++)
             {
@@ -156,8 +175,60 @@ public class MainCharacter : MonoBehaviour
                 ItemsAvailable[i].enabled = false;
             }
         }
+
+        //action Button Pressed
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            actionButton = true;
+        }
+        else {
+            actionButton = false;
+        }
+
+        //Opening MiniChest
+
+        if (inChest && actionButton) {
+            recivedItem = true;
+            coins++;
+        }
+
+        //if item recived
+
+        if (recivedItem)
+        {
+            //show Sprite of item
+            anim.SetBool("RecivedItem", true);
+            characterMovementScript.enabled = false;
+            StartCoroutine(stopRecivedItem());
+            itemRecivedLocation.GetComponent<SpriteRenderer>().sprite = coin;
+        }
+        else {
+            //flipCharacter
+            if (facingRight && Input.GetAxisRaw("Horizontal") < 0)
+            {
+                Flip();
+            }
+            else
+            {
+                if (!facingRight && Input.GetAxisRaw("Horizontal") > 0)
+                {
+                    Flip();
+                }
+            }
+        }
     }
 
+    IEnumerator stopRecivedItem(){
+        //deactivate sprite of item
+        yield return new WaitForSeconds(1f);
+        Debug.Log("ItemRecived");
+        recivedItem = false;
+        anim.SetBool("RecivedItem", false);
+        characterMovementScript.enabled = true;
+        itemRecivedLocation.GetComponent<SpriteRenderer>().sprite = null;
+        yield return null;
+    }
     public void Flip() {
         facingRight = !facingRight;
 
@@ -240,13 +311,18 @@ public class MainCharacter : MonoBehaviour
         if (collision.tag == "heart") {
             replenishOneHeart();
         }
+
+
+        if (collision.tag == "Chest")
+        {
+            inChest = true;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "Enemy" && inmunityTime >= maxInmunityTime)
         {
-            Debug.Log("Estoy herido");
             health--;
             Vector2 force = (rb.transform.position - collision.transform.position).normalized * hitForce;
             rb.AddForce(force, ForceMode2D.Impulse);
@@ -262,6 +338,11 @@ public class MainCharacter : MonoBehaviour
         {
             swimming = false;
             anim.SetBool("Swimming", false);
+        }
+
+        if (collision.tag == "Chest")
+        {
+            inChest = false;
         }
     }
 }
