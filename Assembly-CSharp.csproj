@@ -71,6 +71,7 @@
     <Compile Include="Assets\Assets\Enemies\FlipScript.cs" />
     <Compile Include="Assets\Assets\GeneralScripts\Astar.cs" />
     <Compile Include="Assets\Assets\GeneralScripts\GridGenerator.cs" />
+    <Compile Include="Assets\Assets\GeneralScripts\TransitionBetweedScenes.cs" />
     <Compile Include="Assets\Assets\MainCharacter\Scripts\CandleLightFluctuation.cs" />
     <Compile Include="Assets\Assets\MainCharacter\Scripts\CharacterMovement.cs" />
     <Compile Include="Assets\Assets\MainCharacter\Scripts\CharacterSwordAttack.cs" />

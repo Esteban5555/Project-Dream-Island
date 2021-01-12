@@ -113,11 +113,14 @@ public class MainCharacter : MonoBehaviour
         if (inmunityTime < maxInmunityTime)
         {
             sr.enabled = !sr.enabled;
+            characterMovementScript.enabled = false;
+            anim.SetBool("Moving", false);
             inmunityTime = inmunityTime + Time.deltaTime;
         }
         else {
+            characterMovementScript.enabled = true;
             if (!sr.enabled) {
-                sr.enabled = true;
+                sr.enabled = true; 
             }
         }
 
@@ -344,5 +347,65 @@ public class MainCharacter : MonoBehaviour
         {
             inChest = false;
         }
+    }
+
+    //Getters and Setters
+
+    public int GetCurrentHealth() {
+        return health;
+    }
+
+    public void SetCurrentHealth(int health) {
+        this.health = health;
+    }
+
+    public int GetCurrentMaxHealth()
+    {
+        return maxHealth;
+    }
+
+    public void SetCurrentMaxHealth(int health)
+    {
+        this.maxHealth = health;
+    }
+
+    public bool GetSword()
+    {
+        return sword;
+    }
+
+    public void SetSword(bool item)
+    {
+        this.sword = item;
+    }
+
+    public bool GetLamp()
+    {
+        return Lamp;
+    }
+
+    public void SetLamp(bool item)
+    {
+        this.Lamp = item;
+    }
+
+    public bool GetRubberRing()
+    {
+        return RubberRing;
+    }
+
+    public void SetRubberRing(bool item)
+    {
+        this.RubberRing = item;
+    }
+
+    public int GetCurrentCoins()
+    {
+        return coins;
+    }
+
+    public void SetCurrentCoins(int coins)
+    {
+        this.coins = coins;
     }
 }

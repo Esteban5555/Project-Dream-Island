@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454758962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.716, z: 0}
+  m_LocalPosition: {x: 0, y: 1.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7796016273309378550}
@@ -49,7 +49,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -67,9 +67,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 91219545
+  m_SortingLayer: 4
+  m_SortingOrder: 2
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5303,6 +5303,7 @@ MonoBehaviour:
     type: 3}
   RubberRingSprite: {fileID: -7893648632331565138, guid: 72ada549881c85840aa6ab567c1a4c0b,
     type: 3}
+  itemRecivedLocation: {fileID: 454758963}
   ItemsAvailable:
   - {fileID: 0}
   - {fileID: 0}
@@ -5312,9 +5313,9 @@ MonoBehaviour:
   inChest: 0
   coins: 0
   itemInUse: 2
-  RubberRing: 0
-  sword: 0
-  Lamp: 0
+  RubberRing: 1
+  sword: 1
+  Lamp: 1
   swimming: 0
   actionButton: 0
   maxInmunityTime: 1
