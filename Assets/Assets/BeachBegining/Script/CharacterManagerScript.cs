@@ -90,14 +90,35 @@ public class CharacterManagerScript : MonoBehaviour
         }
         else {
             //Load Player DATA
+            PlayerData data = LoadPlayer();
+
+            if (data == null) {
+                Player.transform.position = CharaterSpawnPoins[0].position;
+                mainCharacterScript = Player.GetComponent<MainCharacter>();
+                mainCharacterScript.SetCurrentHealth(4);
+                mainCharacterScript.SetCurrentMaxHealth(4);
+                mainCharacterScript.SetCurrentCoins(0);
+                mainCharacterScript.SetSword(false);
+                mainCharacterScript.SetLamp(false);
+                mainCharacterScript.SetRubberRing(false);
+
+                return;
+            }
+
             Player.transform.position = CharaterSpawnPoins[currentSpawnPoint].position;
             mainCharacterScript = Player.GetComponent<MainCharacter>();
-            mainCharacterScript.SetCurrentHealth(4);
-            mainCharacterScript.SetCurrentMaxHealth(4);
-            mainCharacterScript.SetCurrentCoins(0);
-            mainCharacterScript.SetSword(true);
-            mainCharacterScript.SetLamp(true);
-            mainCharacterScript.SetRubberRing(true);
+
+            mainCharacterScript.SetCurrentHealth(data.currentHealth);
+            mainCharacterScript.SetCurrentMaxHealth(data.currentMaxHealth);
+            mainCharacterScript.SetCurrentCoins(data.coins);
+            mainCharacterScript.SetSword(data.Sword);
+            mainCharacterScript.SetLamp(data.Lamp);
+            mainCharacterScript.SetRubberRing(data.RubberRing);
         }
+    }
+
+    public PlayerData LoadPlayer() {
+
+        return SaveSystem.LoadPlayerSystem();
     }
 }
