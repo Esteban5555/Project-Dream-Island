@@ -30,10 +30,13 @@ public class MainCharacter : MonoBehaviour
     public bool facingRight = true;
 
     public bool recivedItem;
+    public bool recivedItemFromBigChest;
 
     //Coins
 
     public bool inChest;
+    public bool inBigChest;
+    int ItemInchest;
     public int coins;
 
     //Items
@@ -196,30 +199,87 @@ public class MainCharacter : MonoBehaviour
             coins++;
         }
 
-        //if item recived
-
-        if (recivedItem)
+        //Opening BigChest
+        if (inBigChest && actionButton)
         {
+            recivedItemFromBigChest = true;
+            //object in chest
+            if (ItemInchest == 0) {
+                AddHeartConteiner();
+            }
+            else {
+                if (ItemInchest == 1) {
+                    SetSword(true);
+                }
+                else {
+                    if (ItemInchest == 2) {
+                        SetLamp(true);
+                    }
+                    else {
+                        SetRubberRing(true);
+                    }
+                }
+            }
+        }
+
+        //if item recived
+        if (recivedItem) {
+            miniChestOpened();
+        }
+        else {
+
+            if (recivedItemFromBigChest)
+            {
+                BigChestOpened();
+            }
+            else {
+                //flipCharacter
+                if (facingRight && Input.GetAxisRaw("Horizontal") < 0)
+                {
+                    Flip();
+                }
+                else
+                {
+                    if (!facingRight && Input.GetAxisRaw("Horizontal") > 0)
+                    {
+                        Flip();
+                    }
+                }
+            }
+        }
+
+    }
+
+    public void miniChestOpened() {
+
             //show Sprite of item
             anim.SetBool("RecivedItem", true);
             characterMovementScript.enabled = false;
             StartCoroutine(stopRecivedItem());
             itemRecivedLocation.GetComponent<SpriteRenderer>().sprite = coin;
-        }
-        else {
-            //flipCharacter
-            if (facingRight && Input.GetAxisRaw("Horizontal") < 0)
-            {
-                Flip();
+        
+    }
+
+    public void BigChestOpened() {
+            //show Sprite of item
+            anim.SetBool("RecivedItem", true);
+            characterMovementScript.enabled = false;
+            StartCoroutine(stopRecivedItem());
+            switch (ItemInchest) {
+                case 0:
+                    itemRecivedLocation.GetComponent<SpriteRenderer>().sprite = coin;
+                    break;
+                case 1:
+                    itemRecivedLocation.GetComponent<SpriteRenderer>().sprite = SwordSprite;
+                    break;
+                case 2:
+                    itemRecivedLocation.GetComponent<SpriteRenderer>().sprite = LampSprite;
+                    break;
+                case 3:
+                    itemRecivedLocation.GetComponent<SpriteRenderer>().sprite = RubberRingSprite;
+                    break;
             }
-            else
-            {
-                if (!facingRight && Input.GetAxisRaw("Horizontal") > 0)
-                {
-                    Flip();
-                }
-            }
-        }
+
     }
 
     IEnumerator stopRecivedItem(){
@@ -227,6 +287,7 @@ public class MainCharacter : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Debug.Log("ItemRecived");
         recivedItem = false;
+        recivedItemFromBigChest = false;
         anim.SetBool("RecivedItem", false);
         characterMovementScript.enabled = true;
         itemRecivedLocation.GetComponent<SpriteRenderer>().sprite = null;
@@ -320,6 +381,12 @@ public class MainCharacter : MonoBehaviour
         {
             inChest = true;
         }
+
+        if (collision.tag == "BigChest")
+        {
+            ItemInchest = (int)collision.GetComponent<BigChest>().item;
+            inBigChest = true;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -346,6 +413,11 @@ public class MainCharacter : MonoBehaviour
         if (collision.tag == "Chest")
         {
             inChest = false;
+        }
+
+        if (collision.tag == "BigChest")
+        {
+            inBigChest = false;
         }
     }
 

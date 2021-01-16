@@ -67,6 +67,7 @@
     <Compile Include="Assets\Assets\BeachBegining\Script\BushScript.cs" />
     <Compile Include="Assets\Assets\BeachBegining\Script\CharacterManagerScript.cs" />
     <Compile Include="Assets\Assets\Enemies\BushCrab\BushCrabAI.cs" />
+    <Compile Include="Assets\Assets\Enemies\BushCrab\BushCrabMain.cs" />
     <Compile Include="Assets\Assets\Enemies\EnemieMouth\AIEnemyMouth.cs" />
     <Compile Include="Assets\Assets\Enemies\EnemieMouth\MouthEnemyMainScript.cs" />
     <Compile Include="Assets\Assets\Enemies\FlipScript.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Assets\Assets\MainCharacter\Scripts\SaveSystem.cs" />
     <Compile Include="Assets\Assets\MainCharacter\Scripts\miniHeart.cs" />
     <Compile Include="Assets\Assets\MainCharacter\Scripts\swordCollisions.cs" />
+    <Compile Include="Assets\Assets\Miscelanea\Scripts\BigChest.cs" />
     <Compile Include="Assets\Assets\Miscelanea\Scripts\MiniChest.cs" />
     <Compile Include="Assets\DrawCollisders.cs" />
     <Reference Include="UnityEngine">

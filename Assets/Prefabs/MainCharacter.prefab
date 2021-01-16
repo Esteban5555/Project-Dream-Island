@@ -5310,7 +5310,9 @@ MonoBehaviour:
   - {fileID: 0}
   facingRight: 1
   recivedItem: 0
+  recivedItemFromBigChest: 0
   inChest: 0
+  inBigChest: 0
   coins: 0
   itemInUse: 2
   RubberRing: 1
