@@ -12,6 +12,7 @@ TagManager:
   - heart
   - Chest
   - BigChest
+  - Sign
   layers:
   - Default
   - TransparentFX

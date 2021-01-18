@@ -36,7 +36,6 @@ public class CharacterManagerScript : MonoBehaviour
     {
         //Previous Scene
         currentSpawnPoint = PlayerPrefs.GetInt("SpawnPosition", defaultValue);
-        Debug.Log(currentSpawnPoint);
 
         Grid = GameObject.Find("Grid");
         Agua = Grid.transform.Find("Agua");
@@ -120,5 +119,9 @@ public class CharacterManagerScript : MonoBehaviour
     public PlayerData LoadPlayer() {
 
         return SaveSystem.LoadPlayerSystem();
+    }
+
+    public void setPlayerFrozen(bool frozen) {
+        mainCharacterScript.setFrozen(frozen);
     }
 }

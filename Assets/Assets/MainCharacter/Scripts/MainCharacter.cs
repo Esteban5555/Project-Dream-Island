@@ -32,12 +32,15 @@ public class MainCharacter : MonoBehaviour
     public bool recivedItem;
     public bool recivedItemFromBigChest;
 
-    //Coins
-
+    //Chests
     public bool inChest;
     public bool inBigChest;
     int ItemInchest;
     public int coins;
+
+    //Signs
+    bool inSign = false;
+    bool frozen = false;
 
     //Items
     public enum Trinckets { Lamp, RubberRing, Sword, }
@@ -222,6 +225,8 @@ public class MainCharacter : MonoBehaviour
             }
         }
 
+        PlayerFrozen(frozen);
+
         //if item recived
         if (recivedItem) {
             miniChestOpened();
@@ -233,51 +238,63 @@ public class MainCharacter : MonoBehaviour
                 BigChestOpened();
             }
             else {
-                //flipCharacter
-                if (facingRight && Input.GetAxisRaw("Horizontal") < 0)
-                {
-                    Flip();
-                }
-                else
-                {
-                    if (!facingRight && Input.GetAxisRaw("Horizontal") > 0)
-                    {
-                        Flip();
-                    }
-                }
+                PlayerFliping();
             }
         }
 
     }
 
+    private void PlayerFliping() {
+        //flipCharacter
+        if (facingRight && Input.GetAxisRaw("Horizontal") < 0)
+        {
+            Flip();
+        }
+        else
+        {
+            if (!facingRight && Input.GetAxisRaw("Horizontal") > 0)
+            {
+                Flip();
+            }
+        }
+    }
+    private void PlayerFrozen(bool frozen) {
+        Debug.Log("character frozen ==" + frozen);
+        characterMovementScript.enabled = !frozen;
+    }
+
+    public void setFrozen(bool frozen) {
+        this.frozen = frozen;
+    }
+
     public void miniChestOpened() {
 
-            //show Sprite of item
-            anim.SetBool("RecivedItem", true);
-            characterMovementScript.enabled = false;
-            StartCoroutine(stopRecivedItem());
-            itemRecivedLocation.GetComponent<SpriteRenderer>().sprite = coin;
+        //show Sprite of item
+        anim.SetBool("RecivedItem", true);
+        PlayerFrozen(true);
+        StartCoroutine(stopRecivedItem());
+        itemRecivedLocation.GetComponent<SpriteRenderer>().sprite = coin;
         
     }
 
     public void BigChestOpened() {
-            //show Sprite of item
-            anim.SetBool("RecivedItem", true);
-            characterMovementScript.enabled = false;
-            StartCoroutine(stopRecivedItem());
-            switch (ItemInchest) {
-                case 0:
-                    itemRecivedLocation.GetComponent<SpriteRenderer>().sprite = coin;
-                    break;
-                case 1:
-                    itemRecivedLocation.GetComponent<SpriteRenderer>().sprite = SwordSprite;
-                    break;
-                case 2:
-                    itemRecivedLocation.GetComponent<SpriteRenderer>().sprite = LampSprite;
-                    break;
-                case 3:
-                    itemRecivedLocation.GetComponent<SpriteRenderer>().sprite = RubberRingSprite;
-                    break;
+        //show Sprite of item
+        anim.SetBool("RecivedItem", true);
+        PlayerFrozen(true);
+        StartCoroutine(stopRecivedItem());
+        switch (ItemInchest) {
+            case 0:
+                itemRecivedLocation.GetComponent<SpriteRenderer>().sprite = coin;
+                break;
+            case 1:
+                itemRecivedLocation.GetComponent<SpriteRenderer>().sprite = SwordSprite;
+                break;
+            case 2:
+                itemRecivedLocation.GetComponent<SpriteRenderer>().sprite = LampSprite;
+                break;
+            case 3:
+                itemRecivedLocation.GetComponent<SpriteRenderer>().sprite = RubberRingSprite;
+                break;
             }
 
     }
@@ -289,7 +306,7 @@ public class MainCharacter : MonoBehaviour
         recivedItem = false;
         recivedItemFromBigChest = false;
         anim.SetBool("RecivedItem", false);
-        characterMovementScript.enabled = true;
+        PlayerFrozen(false);
         itemRecivedLocation.GetComponent<SpriteRenderer>().sprite = null;
         yield return null;
     }
@@ -387,6 +404,10 @@ public class MainCharacter : MonoBehaviour
             ItemInchest = (int)collision.GetComponent<BigChest>().item;
             inBigChest = true;
         }
+
+        if (collision.tag == "Sign") {
+            inSign = true;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -418,6 +439,11 @@ public class MainCharacter : MonoBehaviour
         if (collision.tag == "BigChest")
         {
             inBigChest = false;
+        }
+
+        if (collision.tag == "Sign")
+        {
+            inSign = false;
         }
     }
 
