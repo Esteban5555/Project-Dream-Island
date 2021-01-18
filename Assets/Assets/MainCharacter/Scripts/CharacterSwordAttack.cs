@@ -30,7 +30,7 @@ public class CharacterSwordAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && coolDownAttack >= minCoolDownAttack && !characterMovementScript.moving && MainCharacterScript.sword)
+        if (Input.GetKeyDown(KeyCode.E) && coolDownAttack >= minCoolDownAttack && !characterMovementScript.moving && MainCharacterScript.itemInUse == MainCharacter.Trinckets.Sword)
         {
             Attacking = true;
             coolDownAttack = 0;

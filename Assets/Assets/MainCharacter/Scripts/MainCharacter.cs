@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class MainCharacter : MonoBehaviour
 {
+    public enum States { Normal, Chest, Sign }
+
+    private States state = States.Normal;
+
     //Health
     private int health;
     private int maxHealth;
@@ -29,18 +33,16 @@ public class MainCharacter : MonoBehaviour
 
     public bool facingRight = true;
 
-    public bool recivedItem;
-    public bool recivedItemFromBigChest;
-
     //Chests
-    public bool inChest;
-    public bool inBigChest;
+    public bool MiniChestOpened = false;
+    public bool BigChestOpened = false;
     int ItemInchest;
-    public int coins;
+    bool recivedItem = false;
 
-    //Signs
-    bool inSign = false;
-    bool frozen = false;
+    //Sign
+    public bool SignOpened = false;
+
+    public int coins;
 
     //Items
     public enum Trinckets { Lamp, RubberRing, Sword, }
@@ -71,6 +73,7 @@ public class MainCharacter : MonoBehaviour
     GameObject player;
     public GameObject CandleLight;
     public CharacterMovement characterMovementScript;
+    public CharacterSwordAttack characterSwordScript;
     Rigidbody2D rb;
     SpriteRenderer sr;
 
@@ -84,6 +87,7 @@ public class MainCharacter : MonoBehaviour
         itemInUse = Trinckets.Sword;
         player = GameObject.Find("MainCharacter");
         characterMovementScript = player.GetComponent<CharacterMovement>();
+        characterSwordScript = player.GetComponent<CharacterSwordAttack>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         health = 4;
@@ -91,9 +95,6 @@ public class MainCharacter : MonoBehaviour
         if (maxHealth < minMaxHealth) { maxHealth = minMaxHealth; }
 
         coins = 0;
-        inChest = false;
-
-        recivedItem = false;
 
         actionButton = false;
     }
@@ -101,147 +102,158 @@ public class MainCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Input
+        switch (state) {
+            case States.Normal:
+                PlayerFrozen(false);
+                //Input
 
-        if (changeItemLapse >= minChangeItemLapse) {
-            if (Input.GetKeyDown(KeyCode.Space) && !characterMovementScript.moving && !swimming)
-            {
-                changeItem();
-                anim.SetInteger("ItemInUse", (int)itemInUse);
-                changeItemLapse = 0;
-            }
-        }
-
-
-        if (changeItemLapse < 100) { changeItemLapse += Time.deltaTime; }
-
-        //setting inmunity time
-        if (inmunityTime < maxInmunityTime)
-        {
-            sr.enabled = !sr.enabled;
-            characterMovementScript.enabled = false;
-            anim.SetBool("Moving", false);
-            inmunityTime = inmunityTime + Time.deltaTime;
-        }
-        else {
-            characterMovementScript.enabled = true;
-            if (!sr.enabled) {
-                sr.enabled = true; 
-            }
-        }
-
-        //Set the candle Light
-        if (itemInUse == Trinckets.Lamp)
-        {
-            CandleLight.SetActive(true);
-        }
-        else {
-            CandleLight.SetActive(false);
-        }
-
-        //Health System
-
-        for (int i = 0; i < hearts.Length; i++) {
-
-            if (i < health / 2)
-            {
-                hearts[i].sprite = fullHeart;
-            }
-            else {
-                if (((health % 2) != 0) && i < ((health + 1) / 2))
+                if (changeItemLapse >= minChangeItemLapse)
                 {
-                    hearts[i].sprite = halfHeart;
-                }
-                else {
-                    hearts[i].sprite = emptyHeart;
-                }
-            }
-
-            if (i < (maxHealth / 2))
-            {
-                hearts[i].enabled = true;
-            }
-            else {
-                hearts[i].enabled = false;
-            }
-        }
-
-        //Item System
-        if (!(sword == false && Lamp == false && RubberRing == false))
-        {
-            for (int i = 0; i < ItemsAvailable.Length; i++)
-            {
-                ItemsAvailable[i].enabled = false;
-                if ((int)itemInUse == i)
-                {
-                    ItemsAvailable[i].enabled = true;
-                }
-            }
-        }
-        else {
-            for (int i = 0; i < ItemsAvailable.Length; i++)
-            {
-                ItemsAvailable[i].enabled = false;
-            }
-        }
-
-        //action Button Pressed
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            actionButton = true;
-        }
-        else {
-            actionButton = false;
-        }
-
-        //Opening MiniChest
-
-        if (inChest && actionButton) {
-            recivedItem = true;
-            coins++;
-        }
-
-        //Opening BigChest
-        if (inBigChest && actionButton)
-        {
-            recivedItemFromBigChest = true;
-            //object in chest
-            if (ItemInchest == 0) {
-                AddHeartConteiner();
-            }
-            else {
-                if (ItemInchest == 1) {
-                    SetSword(true);
-                }
-                else {
-                    if (ItemInchest == 2) {
-                        SetLamp(true);
-                    }
-                    else {
-                        SetRubberRing(true);
+                    if (Input.GetKeyDown(KeyCode.Space) && !characterMovementScript.moving && !swimming)
+                    {
+                        changeItem();
+                        anim.SetInteger("ItemInUse", (int)itemInUse);
+                        changeItemLapse = 0;
                     }
                 }
-            }
-        }
 
-        PlayerFrozen(frozen);
 
-        //if item recived
-        if (recivedItem) {
-            miniChestOpened();
-        }
-        else {
+                if (changeItemLapse < 100) { changeItemLapse += Time.deltaTime; }
 
-            if (recivedItemFromBigChest)
-            {
-                BigChestOpened();
-            }
-            else {
+                //setting inmunity time
+                if (inmunityTime < maxInmunityTime)
+                {
+                    sr.enabled = !sr.enabled;
+                    PlayerFrozen(true);
+                    anim.SetBool("Moving", false);
+                    inmunityTime = inmunityTime + Time.deltaTime;
+                }
+                else
+                {
+                    PlayerFrozen(false);
+                    if (!sr.enabled)
+                    {
+                        sr.enabled = true;
+                    }
+                }
+
+                //Set the candle Light
+                if (itemInUse == Trinckets.Lamp)
+                {
+                    CandleLight.SetActive(true);
+                }
+                else
+                {
+                    CandleLight.SetActive(false);
+                }
+
+                //Health System
+
+                for (int i = 0; i < hearts.Length; i++)
+                {
+
+                    if (i < health / 2)
+                    {
+                        hearts[i].sprite = fullHeart;
+                    }
+                    else
+                    {
+                        if (((health % 2) != 0) && i < ((health + 1) / 2))
+                        {
+                            hearts[i].sprite = halfHeart;
+                        }
+                        else
+                        {
+                            hearts[i].sprite = emptyHeart;
+                        }
+                    }
+
+                    if (i < (maxHealth / 2))
+                    {
+                        hearts[i].enabled = true;
+                    }
+                    else
+                    {
+                        hearts[i].enabled = false;
+                    }
+                }
+
+                //Item System
+                if (!(sword == false && Lamp == false && RubberRing == false))
+                {
+                    for (int i = 0; i < ItemsAvailable.Length; i++)
+                    {
+                        ItemsAvailable[i].enabled = false;
+                        if ((int)itemInUse == i)
+                        {
+                            ItemsAvailable[i].enabled = true;
+                        }
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < ItemsAvailable.Length; i++)
+                    {
+                        ItemsAvailable[i].enabled = false;
+                    }
+                }
+
                 PlayerFliping();
-            }
-        }
 
+                break;
+
+            case States.Chest:
+
+                //object in chest
+                if (!recivedItem)
+                {
+                    if (BigChestOpened)
+                    {
+
+                        if (ItemInchest == 0)
+                        {
+                            AddHeartConteiner();
+                        }
+                        else
+                        {
+                            if (ItemInchest == 1)
+                            {
+                                SetSword(true);
+                            }
+                            else
+                            {
+                                if (ItemInchest == 2)
+                                {
+                                    SetLamp(true);
+                                }
+                                else
+                                {
+                                    SetRubberRing(true);
+                                }
+                            }
+                        }
+                        bigChestOpened();
+                    }
+                    else
+                    {
+                        if (MiniChestOpened)
+                        {
+                            coins++;
+                            miniChestOpened();
+                        }
+                    }
+                }
+                else {
+                    recivedItem = false;
+                    state = States.Normal;
+                }
+                break;
+
+            case States.Sign:
+                PlayerFrozen(true);
+                break;
+
+        }
     }
 
     private void PlayerFliping() {
@@ -259,14 +271,9 @@ public class MainCharacter : MonoBehaviour
         }
     }
     private void PlayerFrozen(bool frozen) {
-        Debug.Log("character frozen ==" + frozen);
         characterMovementScript.enabled = !frozen;
+        characterSwordScript.enabled = !frozen;
     }
-
-    public void setFrozen(bool frozen) {
-        this.frozen = frozen;
-    }
-
     public void miniChestOpened() {
 
         //show Sprite of item
@@ -277,7 +284,7 @@ public class MainCharacter : MonoBehaviour
         
     }
 
-    public void BigChestOpened() {
+    public void bigChestOpened() {
         //show Sprite of item
         anim.SetBool("RecivedItem", true);
         PlayerFrozen(true);
@@ -303,11 +310,10 @@ public class MainCharacter : MonoBehaviour
         //deactivate sprite of item
         yield return new WaitForSeconds(1f);
         Debug.Log("ItemRecived");
-        recivedItem = false;
-        recivedItemFromBigChest = false;
         anim.SetBool("RecivedItem", false);
         PlayerFrozen(false);
         itemRecivedLocation.GetComponent<SpriteRenderer>().sprite = null;
+        recivedItem = true;
         yield return null;
     }
     public void Flip() {
@@ -392,22 +398,6 @@ public class MainCharacter : MonoBehaviour
         if (collision.tag == "heart") {
             replenishOneHeart();
         }
-
-
-        if (collision.tag == "Chest")
-        {
-            inChest = true;
-        }
-
-        if (collision.tag == "BigChest")
-        {
-            ItemInchest = (int)collision.GetComponent<BigChest>().item;
-            inBigChest = true;
-        }
-
-        if (collision.tag == "Sign") {
-            inSign = true;
-        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -429,21 +419,6 @@ public class MainCharacter : MonoBehaviour
         {
             swimming = false;
             anim.SetBool("Swimming", false);
-        }
-
-        if (collision.tag == "Chest")
-        {
-            inChest = false;
-        }
-
-        if (collision.tag == "BigChest")
-        {
-            inBigChest = false;
-        }
-
-        if (collision.tag == "Sign")
-        {
-            inSign = false;
         }
     }
 
@@ -505,5 +480,17 @@ public class MainCharacter : MonoBehaviour
     public void SetCurrentCoins(int coins)
     {
         this.coins = coins;
+    }
+
+    public void SetMiniChestOpened(bool b) {
+        MiniChestOpened = b;
+    }
+
+    public void SetState(int s) {
+        state = (States)s;
+    }
+
+    public void SetItemInChest(int i) {
+        ItemInchest = i;
     }
 }

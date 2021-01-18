@@ -8,6 +8,7 @@ public class MiniChest : MonoBehaviour
     public bool PlayerInRange;
     public Sprite chestOpened;
     SpriteRenderer sr;
+    public GameObject Manager;
 
     CharacterManagerScript manager;
     // Start is called before the first frame update
@@ -15,7 +16,7 @@ public class MiniChest : MonoBehaviour
     {
         opened = false;
         PlayerInRange = false;
-        manager = GetComponent<CharacterManagerScript>();
+        Manager = GameObject.Find("SceneManager");
         sr = GetComponent<SpriteRenderer>();
     }
 
@@ -27,6 +28,8 @@ public class MiniChest : MonoBehaviour
         }
         if (PlayerInRange && Input.GetKeyDown(KeyCode.R) && !opened)
         {
+            Manager.GetComponent<CharacterManagerScript>().SetPlayerState(1);
+            Manager.GetComponent<CharacterManagerScript>().setMiniChest(true);
             opened = true;
         }
     }

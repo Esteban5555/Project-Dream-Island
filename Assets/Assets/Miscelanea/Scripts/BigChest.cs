@@ -8,6 +8,7 @@ public class BigChest : MonoBehaviour
     public bool PlayerInRange;
     public Sprite chestOpened;
     SpriteRenderer sr;
+    public GameObject Manager;
 
     public enum ItemInChest { 
         HeartContainer,
@@ -24,6 +25,7 @@ public class BigChest : MonoBehaviour
         opened = false;
         PlayerInRange = false;
         sr = GetComponent<SpriteRenderer>();
+        Manager = GameObject.Find("SceneManager");
     }
 
     // Update is called once per frame
@@ -35,7 +37,9 @@ public class BigChest : MonoBehaviour
         }
         if (PlayerInRange && Input.GetKeyDown(KeyCode.R) && !opened)
         {
-
+            Manager.GetComponent<CharacterManagerScript>().SetPlayerState(1);
+            Manager.GetComponent<CharacterManagerScript>().setBigChest(true);
+            Manager.GetComponent<CharacterManagerScript>().setItemInBigChest((int)item);
             opened = true;
         }
     }

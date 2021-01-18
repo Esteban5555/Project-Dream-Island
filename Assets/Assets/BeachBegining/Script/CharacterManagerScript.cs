@@ -121,7 +121,20 @@ public class CharacterManagerScript : MonoBehaviour
         return SaveSystem.LoadPlayerSystem();
     }
 
-    public void setPlayerFrozen(bool frozen) {
-        mainCharacterScript.setFrozen(frozen);
+    public void SetPlayerState(int state) {
+        mainCharacterScript.SetState(state);
+    }
+
+    public void setMiniChest(bool miniChest) {
+        mainCharacterScript.MiniChestOpened = miniChest;
+    }
+
+    public void setBigChest(bool miniChest)
+    {
+        mainCharacterScript.BigChestOpened = miniChest;
+    }
+
+    public void setItemInBigChest(int i) {
+        mainCharacterScript.SetItemInChest(i);
     }
 }

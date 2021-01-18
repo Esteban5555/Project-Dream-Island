@@ -27,14 +27,14 @@ public class SignScripts : MonoBehaviour
             {
                 dialogueBox.SetActive(true);
                 text.GetComponent<Text>().text = message;
-                Manager.GetComponent<CharacterManagerScript>().setPlayerFrozen(true);
+                Manager.GetComponent<CharacterManagerScript>().SetPlayerState(2);
                 dialogueBoxShowing = true;
             }
             else {
                 if (Input.GetKeyDown(KeyCode.R) && dialogueBoxShowing) {
                     dialogueBox.SetActive(false);
                     text.GetComponent<Text>().text = "";
-                    Manager.GetComponent<CharacterManagerScript>().setPlayerFrozen(false);
+                    Manager.GetComponent<CharacterManagerScript>().SetPlayerState(0);
                     dialogueBoxShowing = false;
                 }
             }
