@@ -50,9 +50,9 @@ public class MainCharacter : MonoBehaviour
     public Trinckets itemInUse;
 
        //If Character has Items
-    public bool RubberRing = true;
-    public bool sword = true;
-    public bool Lamp = true;
+    public bool RubberRing = false;
+    public bool sword = false;
+    public bool Lamp = false;
 
     public bool swimming = false;
 
@@ -112,7 +112,6 @@ public class MainCharacter : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.Space) && !characterMovementScript.moving && !swimming)
                     {
                         changeItem();
-                        anim.SetInteger("ItemInUse", (int)itemInUse);
                         changeItemLapse = 0;
                     }
                 }
@@ -219,6 +218,7 @@ public class MainCharacter : MonoBehaviour
                             if (ItemInchest == 1)
                             {
                                 SetSword(true);
+                                anim.SetBool("Sword", true);
                             }
                             else
                             {
@@ -329,9 +329,11 @@ public class MainCharacter : MonoBehaviour
                 if (RubberRing)
                 {
                     itemInUse = Trinckets.RubberRing;
+                    anim.SetInteger("ItemInUse", (int)itemInUse);
                 }
                 else { if (sword) {
                         itemInUse = Trinckets.Sword;
+                        anim.SetInteger("ItemInUse", (int)itemInUse);
                     } 
                 }
                 break;
@@ -339,12 +341,14 @@ public class MainCharacter : MonoBehaviour
                 if (Lamp)
                 {
                     itemInUse = Trinckets.Lamp;
+                    anim.SetInteger("ItemInUse", (int)itemInUse);
                 }
                 else
                 {
                     if (RubberRing)
                     {
                         itemInUse = Trinckets.RubberRing;
+                        anim.SetInteger("ItemInUse", (int)itemInUse);
                     }
                 }
                 break;
@@ -352,12 +356,14 @@ public class MainCharacter : MonoBehaviour
                 if (sword)
                 {
                     itemInUse = Trinckets.Sword;
+                    anim.SetInteger("ItemInUse", (int)itemInUse);
                 }
                 else
                 {
                     if (Lamp)
                     {
                         itemInUse = Trinckets.Lamp;
+                        anim.SetInteger("ItemInUse", (int)itemInUse);
                     }
                 }
                 break;

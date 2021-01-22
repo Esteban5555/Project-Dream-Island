@@ -30,25 +30,25 @@ public class CharacterSwordAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && coolDownAttack >= minCoolDownAttack && !characterMovementScript.moving && MainCharacterScript.itemInUse == MainCharacter.Trinckets.Sword)
+        if (Input.GetKeyDown(KeyCode.E) && coolDownAttack >= minCoolDownAttack && !characterMovementScript.moving && MainCharacterScript.itemInUse == MainCharacter.Trinckets.Sword && MainCharacterScript.GetSword() == true)
         {
             Attacking = true;
+            colliders[characterMovementScript.lastFacingDirection].enabled = true;
+            anim.SetBool("Attacking", Attacking);
             coolDownAttack = 0;
         }
-        anim.SetBool("Attacking", Attacking);
         coolDownAttack += Time.deltaTime;
     }
 
     private void FixedUpdate()
     {
-        if (Attacking)
-        {
-            colliders[characterMovementScript.lastFacingDirection].enabled = true;
-        }
     }
 
     public void finishAttack() {
         Attacking = false;
-        colliders[characterMovementScript.lastFacingDirection].enabled = false;
+        anim.SetBool("Attacking", Attacking);
+        colliders[0].enabled = false;
+        colliders[1].enabled = false;
+        colliders[2].enabled = false;
     }
 }

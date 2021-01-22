@@ -55,8 +55,6 @@ public class CharacterManagerScript : MonoBehaviour
             PlayerWithFlotador = true;
         }
         else { PlayerWithFlotador = false; }
-
-        actionButton = mainCharacterScript.actionButton;
         
     }
 
@@ -82,9 +80,9 @@ public class CharacterManagerScript : MonoBehaviour
             mainCharacterScript.SetCurrentHealth(4);
             mainCharacterScript.SetCurrentMaxHealth(4);
             mainCharacterScript.SetCurrentCoins(0);
-            mainCharacterScript.SetSword(true);
-            mainCharacterScript.SetLamp(true);
-            mainCharacterScript.SetRubberRing(true);
+            mainCharacterScript.SetSword(false);
+            mainCharacterScript.SetLamp(false);
+            mainCharacterScript.SetRubberRing(false);
 
         }
         else {
