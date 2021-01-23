@@ -105,6 +105,7 @@ public class MainCharacter : MonoBehaviour
         switch (state) {
             case States.Normal:
                 PlayerFrozen(false);
+                anim.SetBool("Sword", sword);
                 //Input
 
                 if (changeItemLapse >= minChangeItemLapse)
@@ -233,6 +234,7 @@ public class MainCharacter : MonoBehaviour
                             }
                         }
                         bigChestOpened();
+                        BigChestOpened = false;
                     }
                     else
                     {
@@ -240,6 +242,7 @@ public class MainCharacter : MonoBehaviour
                         {
                             coins++;
                             miniChestOpened();
+                            MiniChestOpened = false;
                         }
                     }
                 }

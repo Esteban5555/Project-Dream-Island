@@ -5,7 +5,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstarPathfindingProject", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{B3A4A628-15E9-68FD-7983-C84B16384FB7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.Tilemap.Extras", "Unity.2D.Tilemap.Extras.csproj", "{7AF4A23E-1E66-4EE0-4AED-1F46727263C2}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstarPathfindingProjectEditor", "AstarPathfindingProjectEditor.csproj", "{AF4D06AC-4E23-5DC9-2E16-C6750A933DB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.Tilemap.Extras.Editor", "Unity.2D.Tilemap.Extras.Editor.csproj", "{7D5F238C-4924-B389-A861-1E753B13BE30}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackageToolsEditor", "PackageToolsEditor.csproj", "{03FE4980-9870-7A74-252F-16D72BA78A23}"
 EndProject
@@ -23,10 +27,18 @@ Global
 		{B3A4A628-15E9-68FD-7983-C84B16384FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3A4A628-15E9-68FD-7983-C84B16384FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3A4A628-15E9-68FD-7983-C84B16384FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AF4A23E-1E66-4EE0-4AED-1F46727263C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AF4A23E-1E66-4EE0-4AED-1F46727263C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AF4A23E-1E66-4EE0-4AED-1F46727263C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AF4A23E-1E66-4EE0-4AED-1F46727263C2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AF4D06AC-4E23-5DC9-2E16-C6750A933DB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AF4D06AC-4E23-5DC9-2E16-C6750A933DB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF4D06AC-4E23-5DC9-2E16-C6750A933DB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF4D06AC-4E23-5DC9-2E16-C6750A933DB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D5F238C-4924-B389-A861-1E753B13BE30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D5F238C-4924-B389-A861-1E753B13BE30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D5F238C-4924-B389-A861-1E753B13BE30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D5F238C-4924-B389-A861-1E753B13BE30}.Release|Any CPU.Build.0 = Release|Any CPU
 		{03FE4980-9870-7A74-252F-16D72BA78A23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{03FE4980-9870-7A74-252F-16D72BA78A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03FE4980-9870-7A74-252F-16D72BA78A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
