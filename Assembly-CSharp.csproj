@@ -747,13 +747,13 @@
       <Project>{03FE4980-9870-7A74-252F-16D72BA78A23}</Project>
       <Name>PackageToolsEditor</Name>
     </ProjectReference>
-    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
-      <Project>{AF4D06AC-4E23-5DC9-2E16-C6750A933DB4}</Project>
-      <Name>AstarPathfindingProjectEditor</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.2D.Tilemap.Extras.Editor.csproj">
       <Project>{7D5F238C-4924-B389-A861-1E753B13BE30}</Project>
       <Name>Unity.2D.Tilemap.Extras.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
+      <Project>{AF4D06AC-4E23-5DC9-2E16-C6750A933DB4}</Project>
+      <Name>AstarPathfindingProjectEditor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
       <Project>{7AF4A23E-1E66-4EE0-4AED-1F46727263C2}</Project>
