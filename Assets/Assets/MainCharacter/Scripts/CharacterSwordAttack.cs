@@ -34,8 +34,9 @@ public class CharacterSwordAttack : MonoBehaviour
         {
             Attacking = true;
             colliders[characterMovementScript.lastFacingDirection].enabled = true;
-            anim.SetBool("Attacking", Attacking);
+            anim.SetBool("Attacking", true);
             coolDownAttack = 0;
+            StartCoroutine(stopAttacking());
         }
         coolDownAttack += Time.deltaTime;
     }
@@ -44,9 +45,21 @@ public class CharacterSwordAttack : MonoBehaviour
     {
     }
 
+    IEnumerator stopAttacking()
+    {
+        //deactivate sprite of item
+        yield return new WaitForSeconds(0.16f);
+        Attacking = false;
+        anim.SetBool("Attacking", false);
+        colliders[0].enabled = false;
+        colliders[1].enabled = false;
+        colliders[2].enabled = false;
+        yield return null;
+    }
+
     public void finishAttack() {
         Attacking = false;
-        anim.SetBool("Attacking", Attacking);
+        anim.SetBool("Attacking", false);
         colliders[0].enabled = false;
         colliders[1].enabled = false;
         colliders[2].enabled = false;
