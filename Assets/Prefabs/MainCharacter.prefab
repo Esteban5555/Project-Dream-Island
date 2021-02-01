@@ -5296,7 +5296,7 @@ MonoBehaviour:
     type: 3}
   emptyHeart: {fileID: 2522676444781368369, guid: eb1654c7da7243b46a6e4a0d92e39af5,
     type: 3}
-  coin: {fileID: 4129110418909011256, guid: 72ada549881c85840aa6ab567c1a4c0b, type: 3}
+  coin: {fileID: -3016093784141690031, guid: 5cf675aced4924844b513b1b4718a018, type: 3}
   SwordSprite: {fileID: 4129110418909011256, guid: 72ada549881c85840aa6ab567c1a4c0b,
     type: 3}
   LampSprite: {fileID: -1730468252083737322, guid: 72ada549881c85840aa6ab567c1a4c0b,

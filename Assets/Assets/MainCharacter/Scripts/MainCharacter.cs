@@ -43,6 +43,7 @@ public class MainCharacter : MonoBehaviour
     public bool SignOpened = false;
 
     public int coins;
+    private GameObject CoinText;
 
     //Items
     public enum Trinckets { Lamp, RubberRing, Sword, }
@@ -86,6 +87,7 @@ public class MainCharacter : MonoBehaviour
     {
         itemInUse = Trinckets.Sword;
         player = GameObject.Find("MainCharacter");
+        CoinText = GameObject.Find("CoinText");
         characterMovementScript = player.GetComponent<CharacterMovement>();
         characterSwordScript = player.GetComponent<CharacterSwordAttack>();
         rb = GetComponent<Rigidbody2D>();
@@ -242,6 +244,7 @@ public class MainCharacter : MonoBehaviour
                         {
                             coins++;
                             miniChestOpened();
+                            setCoinsInCanvas();
                             MiniChestOpened = false;
                         }
                     }
@@ -501,5 +504,10 @@ public class MainCharacter : MonoBehaviour
 
     public void SetItemInChest(int i) {
         ItemInchest = i;
+    }
+
+    public void setCoinsInCanvas()
+    {
+        CoinText.GetComponent<Text>().text = "X " + GetCurrentCoins();
     }
 }

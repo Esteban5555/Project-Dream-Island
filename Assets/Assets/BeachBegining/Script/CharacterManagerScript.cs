@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CharacterManagerScript : MonoBehaviour
 {
@@ -135,4 +136,6 @@ public class CharacterManagerScript : MonoBehaviour
     public void setItemInBigChest(int i) {
         mainCharacterScript.SetItemInChest(i);
     }
+
+
 }

@@ -15547,7 +15547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994829233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5709639, y: 1.1575222, z: -10}
+  m_LocalPosition: {x: 1.5849936, y: 1.1574724, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -17771,7 +17771,7 @@ Tilemap:
       - {fileID: 8576096582794683467, guid: e34dc6039c6fa2f48b54b8e749600dc8, type: 3}
       - {fileID: 4016422371268958577, guid: e34dc6039c6fa2f48b54b8e749600dc8, type: 3}
       - {fileID: -5813931586146964065, guid: e34dc6039c6fa2f48b54b8e749600dc8, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -8, y: 31, z: 0}
@@ -18706,6 +18706,11 @@ PrefabInstance:
       propertyPath: Manager
       value: 
       objectReference: {fileID: 1747465434}
+    - target: {fileID: 9178039629743714799, guid: 62e8ad16432b8954b83bf3832aef86ec,
+        type: 3}
+      propertyPath: item
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62e8ad16432b8954b83bf3832aef86ec, type: 3}
 --- !u!1 &2096140260
