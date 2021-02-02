@@ -84,6 +84,7 @@
     <Compile Include="Assets\Assets\MainCharacter\Scripts\swordCollisions.cs" />
     <Compile Include="Assets\Assets\Miscelanea\Scripts\BigChest.cs" />
     <Compile Include="Assets\Assets\Miscelanea\Scripts\MiniChest.cs" />
+    <Compile Include="Assets\Assets\Miscelanea\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Assets\Miscelanea\Scripts\SignScripts.cs" />
     <Compile Include="Assets\DrawCollisders.cs" />
     <Reference Include="UnityEngine">
