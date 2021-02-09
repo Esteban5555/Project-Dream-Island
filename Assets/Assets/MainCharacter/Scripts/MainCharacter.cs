@@ -79,6 +79,7 @@ public class MainCharacter : MonoBehaviour
     SpriteRenderer sr;
 
     private GameObject EndScreen;
+    private bool dying = false;
 
     //public Light2D candleLight;
 
@@ -111,8 +112,8 @@ public class MainCharacter : MonoBehaviour
         switch (state) {
             case States.Normal:
                 PlayerFrozen(false);
+                EndScreen.SetActive(false);
                 anim.SetBool("Sword", sword);
-                anim.SetBool("Dead", false);
                 //Input
 
                 if (changeItemLapse >= minChangeItemLapse)
@@ -212,7 +213,7 @@ public class MainCharacter : MonoBehaviour
                 break;
 
             case States.Chest:
-
+                sr.enabled = true;
                 //object in chest
                 if (!recivedItem)
                 {
@@ -263,13 +264,18 @@ public class MainCharacter : MonoBehaviour
                 break;
 
             case States.Sign:
+                sr.enabled = true;
                 PlayerFrozen(true);
                 break;
 
             case States.Dead:
+                sr.enabled = true;
                 PlayerFrozen(true);
-                anim.SetBool("Dead", true);
-                StartCoroutine(DyingAnimation());
+
+                if (!dying) {
+                    Debug.Log("Dying");
+                    StartCoroutine(DyingAnimation());
+                } 
                 break;
 
         }
@@ -337,7 +343,10 @@ public class MainCharacter : MonoBehaviour
     }
 
     IEnumerator DyingAnimation() {
+        dying = true;
+        anim.SetBool("Dead", true);
         yield return new WaitForSeconds(1.5f);
+        anim.SetBool("Dead", false);
         EndScreen.SetActive(true);
         Time.timeScale = 0f;
         //Show end screen
