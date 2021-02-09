@@ -44,6 +44,8 @@ public class CharacterManagerScript : MonoBehaviour
 
         actionButton = false;
 
+        Time.timeScale = 1f;
+
         spawnPlayer();
 
 

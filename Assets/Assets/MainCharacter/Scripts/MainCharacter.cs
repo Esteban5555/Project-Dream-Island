@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MainCharacter : MonoBehaviour
 {
-    public enum States { Normal, Chest, Sign }
+    public enum States { Normal, Chest, Sign, Dead }
 
     private States state = States.Normal;
 
@@ -78,6 +78,8 @@ public class MainCharacter : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer sr;
 
+    private GameObject EndScreen;
+
     //public Light2D candleLight;
 
     public Animator anim;
@@ -88,6 +90,8 @@ public class MainCharacter : MonoBehaviour
         itemInUse = Trinckets.Sword;
         player = GameObject.Find("MainCharacter");
         CoinText = GameObject.Find("CoinText");
+        EndScreen = GameObject.Find("EndSceen");
+        EndScreen.SetActive(false);
         characterMovementScript = player.GetComponent<CharacterMovement>();
         characterSwordScript = player.GetComponent<CharacterSwordAttack>();
         rb = GetComponent<Rigidbody2D>();
@@ -108,6 +112,7 @@ public class MainCharacter : MonoBehaviour
             case States.Normal:
                 PlayerFrozen(false);
                 anim.SetBool("Sword", sword);
+                anim.SetBool("Dead", false);
                 //Input
 
                 if (changeItemLapse >= minChangeItemLapse)
@@ -202,6 +207,8 @@ public class MainCharacter : MonoBehaviour
 
                 PlayerFliping();
 
+                IsDead();
+
                 break;
 
             case States.Chest:
@@ -257,6 +264,12 @@ public class MainCharacter : MonoBehaviour
 
             case States.Sign:
                 PlayerFrozen(true);
+                break;
+
+            case States.Dead:
+                PlayerFrozen(true);
+                anim.SetBool("Dead", true);
+                StartCoroutine(DyingAnimation());
                 break;
 
         }
@@ -320,6 +333,15 @@ public class MainCharacter : MonoBehaviour
         PlayerFrozen(false);
         itemRecivedLocation.GetComponent<SpriteRenderer>().sprite = null;
         recivedItem = true;
+        yield return null;
+    }
+
+    IEnumerator DyingAnimation() {
+        yield return new WaitForSeconds(1.5f);
+        EndScreen.SetActive(true);
+        Time.timeScale = 0f;
+        //Show end screen
+
         yield return null;
     }
     public void Flip() {
@@ -509,5 +531,11 @@ public class MainCharacter : MonoBehaviour
     public void setCoinsInCanvas()
     {
         CoinText.GetComponent<Text>().text = "X " + GetCurrentCoins();
+    }
+
+    public void IsDead() {
+        if (health <= 0) {
+            state = States.Dead;
+        }
     }
 }

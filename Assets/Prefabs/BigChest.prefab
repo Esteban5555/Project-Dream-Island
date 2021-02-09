@@ -103,7 +103,7 @@ MonoBehaviour:
   chestOpened: {fileID: 6633961850995323251, guid: a1687d36d82e73c49abcac339d96145c,
     type: 3}
   Manager: {fileID: 0}
-  item: 2
+  item: 3
 --- !u!50 &9178039629743714794
 Rigidbody2D:
   serializedVersion: 4
