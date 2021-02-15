@@ -308,7 +308,7 @@ MonoBehaviour:
   target: {fileID: 0}
   HidingSpot: {fileID: 1804862123846086347}
   FollowSpeed: 400
-  speed: 5
+  speed: 4
   nextWaypointDistance: 0.5
   AwarnessRanfge: 6
 --- !u!114 &1804862124692123055

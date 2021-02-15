@@ -5321,7 +5321,7 @@ MonoBehaviour:
   actionButton: 0
   maxInmunityTime: 1
   inmunityTime: 1
-  hitForce: 8
+  hitForce: 30
   CandleLight: {fileID: 7796016272255641614}
   characterMovementScript: {fileID: 0}
   characterSwordScript: {fileID: 0}
