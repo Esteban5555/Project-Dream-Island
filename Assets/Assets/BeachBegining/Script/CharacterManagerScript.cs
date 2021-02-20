@@ -14,6 +14,8 @@ public class CharacterManagerScript : MonoBehaviour
     private MainCharacter mainCharacterScript;
     private TilemapCollider2D WaterCollider;
 
+    public bool WaterInScene = true;
+
     private int defaultValue = -1;
 
     int currentSpawnPoint;
@@ -37,10 +39,13 @@ public class CharacterManagerScript : MonoBehaviour
     {
         //Previous Scene
         currentSpawnPoint = PlayerPrefs.GetInt("SpawnPosition", defaultValue);
+        if (WaterInScene)
+        {
+            Grid = GameObject.Find("Grid");
+            Agua = Grid.transform.Find("Agua");
+            WaterCollider = Agua.GetComponent<TilemapCollider2D>();
+        }
 
-        Grid = GameObject.Find("Grid");
-        Agua = Grid.transform.Find("Agua");
-        WaterCollider = Agua.GetComponent<TilemapCollider2D>();
 
         actionButton = false;
 
@@ -64,11 +69,14 @@ public class CharacterManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerWithFlotador && WaterCollider != null)
-        {
-            WaterCollider.enabled = false;
+        if (WaterInScene) {
+            if (PlayerWithFlotador && WaterCollider != null)
+            {
+                WaterCollider.enabled = false;
+            }
+            else { WaterCollider.enabled = true; }
         }
-        else { WaterCollider.enabled = true; }
+
     }
 
     public bool actionButtonPressed() {
