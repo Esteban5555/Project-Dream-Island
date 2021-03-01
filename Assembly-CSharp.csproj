@@ -87,6 +87,7 @@
     <Compile Include="Assets\Assets\Miscelanea\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Assets\Miscelanea\Scripts\SignScripts.cs" />
     <Compile Include="Assets\Assets\NPCs\Scripts\OwlDialogues.cs" />
+    <Compile Include="Assets\Assets\NPCs\Scripts\OzzyShop.cs" />
     <Compile Include="Assets\DrawCollisders.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
