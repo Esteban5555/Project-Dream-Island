@@ -20,9 +20,12 @@ public class MouthEnemyMainScript : MonoBehaviour
     Transform splatSpawn;
     public GameObject deathSplat;
 
+    GameObject Manager;
+
     // Start is called before the first frame update
     void Start()
     {
+        Manager = GameObject.Find("SceneManager");
         rb = GetComponent<Rigidbody2D>();
         AIEnemyMouthScript = GetComponent<AIEnemyMouth>();
         Health = MaxHealth;
@@ -63,7 +66,7 @@ public class MouthEnemyMainScript : MonoBehaviour
         {
             Vector2 force = (rb.transform.position - AIEnemyMouthScript.target.position).normalized * swordForce;
             rb.AddForce(force);
-            Health--;
+            Health = Health - Manager.GetComponent<CharacterManagerScript>().GetSwordAttackDamage();
             inmunityTime = 0f;
         }
     }

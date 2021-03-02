@@ -18,10 +18,13 @@ public class BushCrabMain : MonoBehaviour
     Transform splatSpawn;
     public GameObject deathSplat;
 
+    GameObject Manager;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Manager = GameObject.Find("SceneManager");
         BushCrabAIscript = GetComponent<BushCrabAI>();
         Health = MaxHealth;
         splatSpawn = transform.Find("SplatSpawn");
@@ -30,7 +33,6 @@ public class BushCrabMain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (Health <= 0)
         {
             GameObject splat = Instantiate(deathSplat, splatSpawn);
@@ -50,7 +52,7 @@ public class BushCrabMain : MonoBehaviour
         {
             Vector2 force = (rb.transform.position - BushCrabAIscript.target.position).normalized * swordForce;
             rb.AddForce(force);
-            Health--;
+            Health = Health - Manager.GetComponent<CharacterManagerScript>().GetSwordAttackDamage();
             inmunityTime = 0f;
         }
     }

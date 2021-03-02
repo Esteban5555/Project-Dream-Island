@@ -91,6 +91,7 @@ public class CharacterManagerScript : MonoBehaviour
             mainCharacterScript.SetCurrentHealth(4);
             mainCharacterScript.SetCurrentMaxHealth(4);
             mainCharacterScript.SetCurrentCoins(0);
+            mainCharacterScript.SetAttackDamage(1);
             mainCharacterScript.SetSword(false);
             mainCharacterScript.SetLamp(false);
             mainCharacterScript.SetRubberRing(false);
@@ -106,6 +107,7 @@ public class CharacterManagerScript : MonoBehaviour
                 mainCharacterScript.SetCurrentHealth(4);
                 mainCharacterScript.SetCurrentMaxHealth(4);
                 mainCharacterScript.SetCurrentCoins(0);
+                mainCharacterScript.SetAttackDamage(1);
                 mainCharacterScript.SetSword(false);
                 mainCharacterScript.SetLamp(false);
                 mainCharacterScript.SetRubberRing(false);
@@ -119,6 +121,7 @@ public class CharacterManagerScript : MonoBehaviour
             mainCharacterScript.SetCurrentHealth(data.currentHealth);
             mainCharacterScript.SetCurrentMaxHealth(data.currentMaxHealth);
             mainCharacterScript.SetCurrentCoins(data.coins);
+            mainCharacterScript.SetAttackDamage(data.swordAttack);
             mainCharacterScript.SetSword(data.Sword);
             mainCharacterScript.SetLamp(data.Lamp);
             mainCharacterScript.SetRubberRing(data.RubberRing);
@@ -130,6 +133,9 @@ public class CharacterManagerScript : MonoBehaviour
         return SaveSystem.LoadPlayerSystem();
     }
 
+    public int GetPlayerCoins() {
+        return mainCharacterScript.GetCurrentCoins();
+    }
     public void SetPlayerState(int state) {
         mainCharacterScript.SetState(state);
     }
@@ -147,5 +153,17 @@ public class CharacterManagerScript : MonoBehaviour
         mainCharacterScript.SetItemInChest(i);
     }
 
+    public void BuyingHealthPotion() {
+        mainCharacterScript.SetCurrentCoins(mainCharacterScript.GetCurrentCoins() - 3);
+        mainCharacterScript.AddHeartConteiner();
+    }
 
+    public void BuyingSwordUpgrade() {
+        mainCharacterScript.SetCurrentCoins(mainCharacterScript.GetCurrentCoins() - 3);
+        mainCharacterScript.SetAttackDamage(mainCharacterScript.GetAttackDamage()+ 1);
+    }
+
+    public int GetSwordAttackDamage() {
+        return mainCharacterScript.GetAttackDamage();
+    }
 }

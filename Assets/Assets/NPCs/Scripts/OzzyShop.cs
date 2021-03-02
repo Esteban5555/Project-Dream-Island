@@ -17,12 +17,16 @@ public class OzzyShop : MonoBehaviour
     public GameObject ShopBox;
     public GameObject shopText;
 
+    CharacterManagerScript ManagerScript;
+
     bool playerInRange;
     bool dialogueBoxShowing = false;
+    bool ShopBoxShowing = false;
     // Start is called before the first frame update
     void Start()
     {
         Manager = GameObject.Find("SceneManager");
+        ManagerScript = Manager.GetComponent<CharacterManagerScript>();
 
         StartSentences(
             "Hello Traveler, have you come for my famous potions capables of givin youth even to the oldeest of folks?",
@@ -49,13 +53,22 @@ public class OzzyShop : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
-                if (!dialogueBoxShowing)
+                if (!ShopBoxShowing && !dialogueBoxShowing)
                 {
                     ShopBox.SetActive(true);
+                    shopText.GetComponent<Text>().text = "Do you want to extend your health permanently for only 3 COINS?";
                     //text.GetComponent<Text>().text = Sentences[sentenceIndex];
-                    Manager.GetComponent<CharacterManagerScript>().SetPlayerState(2);
-                    dialogueBoxShowing = true;
+                    ManagerScript.SetPlayerState(2);
+                    ShopBoxShowing = true;
 
+                }
+                else {
+                    if (dialogueBoxShowing) {
+                        dialogueBox.SetActive(false);
+                        text.GetComponent<Text>().text = "";
+                        ManagerScript.SetPlayerState(0);
+                        dialogueBoxShowing = false;
+                    }
                 }
             }
         }
@@ -81,16 +94,36 @@ public class OzzyShop : MonoBehaviour
 
     public void affirmativeButtonPressed() {
         ShopBox.SetActive(false);
-        Manager.GetComponent<CharacterManagerScript>().SetPlayerState(0);
+
+        ManagerScript.SetPlayerState(0);
         Debug.Log("Comprada una pocion");
-        dialogueBoxShowing = false;
+        ShopBoxShowing = false;
+        if (ManagerScript.GetPlayerCoins() < 3)
+        {
+            //No Buy Message
+            dialogueBox.SetActive(true);
+            text.GetComponent<Text>().text = "Do you think I run a charity? Go get some coins.";
+            dialogueBoxShowing = true;
+        }
+        else {
+            //No Buy Message
+            dialogueBox.SetActive(true);
+            text.GetComponent<Text>().text = "Oh.. thank you good sir, you won't get disappointed";
+            dialogueBoxShowing = true;
+            ManagerScript.BuyingHealthPotion();
+        }
     }
 
     public void negativeButtonPressed()
     {
         ShopBox.SetActive(false);
-        Manager.GetComponent<CharacterManagerScript>().SetPlayerState(0);
+        ManagerScript.SetPlayerState(0);
         Debug.Log("No comprada una pocion");
-        dialogueBoxShowing = false;
+        ShopBoxShowing = false;
+
+        //No Buy Message
+        dialogueBox.SetActive(true);
+        text.GetComponent<Text>().text = "Do not waste my time boy, I am a busy person.";
+        dialogueBoxShowing = true;
     }
 }

@@ -20,9 +20,9 @@ public class BushCrabAI : MonoBehaviour
     public float FollowSpeed = 200f;
     public float speed = 5f;
     public float nextWaypointDistance = 3f;
-    public float AwarnessRanfge = 5f;
+    public float AwarnessRange = 5f;
 
-    bool inHidingSpot = true;
+    public bool inHidingSpot = true;
 
     Seeker seeker;
     Rigidbody2D rb;
@@ -82,7 +82,7 @@ public class BushCrabAI : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(transform.position, target.position) < AwarnessRanfge)
+        if (Vector3.Distance(transform.position, target.position) < AwarnessRange)
         {
             anim.SetBool("persuing", true);
             state = enemyBushCrabStates.Follow;
@@ -146,6 +146,7 @@ public class BushCrabAI : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        Debug.Log("exiting collider");
         if (collision.name == "HidingSpot") {
             inHidingSpot = false;
         }

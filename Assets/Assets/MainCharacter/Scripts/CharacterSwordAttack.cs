@@ -9,6 +9,8 @@ public class CharacterSwordAttack : MonoBehaviour
     float minCoolDownAttack = 0.5f;
     float coolDownAttack = 0f;
 
+    public int AtackDamage;
+
     GameObject player;
     GameObject AttackColliders;
     public CharacterMovement characterMovementScript;
@@ -25,11 +27,13 @@ public class CharacterSwordAttack : MonoBehaviour
         characterMovementScript = player.GetComponent<CharacterMovement>();
         MainCharacterScript = player.GetComponent<MainCharacter>();
         colliders = AttackColliders.GetComponents<BoxCollider2D>();
+        AtackDamage = MainCharacterScript.GetAttackDamage();
     }
 
     // Update is called once per frame
     void Update()
     {
+        AtackDamage = MainCharacterScript.GetAttackDamage();
         if (Input.GetKeyDown(KeyCode.E) && coolDownAttack >= minCoolDownAttack && !characterMovementScript.moving && MainCharacterScript.itemInUse == MainCharacter.Trinckets.Sword && MainCharacterScript.GetSword() == true)
         {
             Attacking = true;

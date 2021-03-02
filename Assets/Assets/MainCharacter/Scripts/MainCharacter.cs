@@ -11,8 +11,8 @@ public class MainCharacter : MonoBehaviour
     private States state = States.Normal;
 
     //Health
-    private int health;
-    private int maxHealth;
+    public int health;
+    public int maxHealth;
 
     private int minMaxHealth = 4;
 
@@ -44,6 +44,8 @@ public class MainCharacter : MonoBehaviour
 
     public int coins;
     private GameObject CoinText;
+
+    public int swordAttackDamage = 1;
 
     //Items
     public enum Trinckets { Lamp, RubberRing, Sword, }
@@ -100,7 +102,7 @@ public class MainCharacter : MonoBehaviour
         health = 4;
         maxHealth = 4;
         if (maxHealth < minMaxHealth) { maxHealth = minMaxHealth; }
-
+        if (swordAttackDamage < 1) swordAttackDamage = 1;
         coins = 0;
 
         actionButton = false;
@@ -112,6 +114,8 @@ public class MainCharacter : MonoBehaviour
         switch (state) {
             case States.Normal:
                 PlayerFrozen(false);
+                setCoinsInCanvas();
+                if (swordAttackDamage < 1) swordAttackDamage = 1;
                 EndScreen.SetActive(false);
                 anim.SetBool("Sword", sword);
                 //Input
@@ -407,8 +411,12 @@ public class MainCharacter : MonoBehaviour
         }
     }
 
-    void AddHeartConteiner() {
+    public void AddHeartConteiner() {
         maxHealth = maxHealth + 2;
+    }
+
+    public void AddSwordPoweUP() {
+        //powerUp system
     }
 
     void replenishOneHeart() {
@@ -546,5 +554,13 @@ public class MainCharacter : MonoBehaviour
         if (health <= 0) {
             state = States.Dead;
         }
+    }
+
+    public void SetAttackDamage(int a) {
+        swordAttackDamage = a; 
+    }
+
+    public int GetAttackDamage() {
+        return swordAttackDamage;
     }
 }

@@ -13,8 +13,9 @@ public class PlayerData
     public bool Lamp;
 
     public int coins;
+    public int swordAttack;
 
-    public PlayerData(int health, int maxHealth, bool sword, bool RubberRing, bool Lamp, int coins) {
+    public PlayerData(int health, int maxHealth, bool sword, bool RubberRing, bool Lamp, int coins, int swordAttack) {
         currentHealth = health;
         currentMaxHealth = maxHealth;
 
@@ -23,6 +24,7 @@ public class PlayerData
         this.Lamp = Lamp;
 
         this.coins = coins;
+        this.swordAttack = swordAttack;
 
     }
 }

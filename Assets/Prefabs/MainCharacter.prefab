@@ -5281,6 +5281,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90fe63014e1dd94469a93dee19daf154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 0
   hearts:
   - {fileID: 0}
   - {fileID: 0}
@@ -5313,6 +5315,7 @@ MonoBehaviour:
   BigChestOpened: 0
   SignOpened: 0
   coins: 0
+  swordAttackDamage: 1
   itemInUse: 2
   RubberRing: 0
   sword: 0
@@ -5378,6 +5381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Attacking: 0
+  AtackDamage: 0
   characterMovementScript: {fileID: 0}
   MainCharacterScript: {fileID: 0}
   anim: {fileID: 7796016273309378553}
