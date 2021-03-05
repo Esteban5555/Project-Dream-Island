@@ -278,6 +278,6 @@ MonoBehaviour:
   MaxHealth: 2
   maxInmunityTime: 0.5
   inmunityTime: 0
-  swordForce: 300
+  swordForce: 1000
   deathSplat: {fileID: 4503083373828787252, guid: 0607ab079ef655045861b3c2a461cddc,
     type: 3}

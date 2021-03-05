@@ -22,7 +22,7 @@ public class BushCrabAI : MonoBehaviour
     public float nextWaypointDistance = 3f;
     public float AwarnessRange = 5f;
 
-    public bool inHidingSpot = true;
+    public bool inHidingSpot = false;
 
     Seeker seeker;
     Rigidbody2D rb;
@@ -31,6 +31,8 @@ public class BushCrabAI : MonoBehaviour
     Path path;
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
+
+    bool returning = false;
 
     Vector3 roamPosition;
 
@@ -56,14 +58,18 @@ public class BushCrabAI : MonoBehaviour
                 default:
                 case enemyBushCrabStates.Hiding:
                     //seeker.StartPath(rb.position, roamPosition, OnPathComplete);
+                    anim.SetBool("persuing", false);
                     //speed = RoamSpeed;
                     break;
                 case enemyBushCrabStates.BackToHide:
                     seeker.StartPath(rb.position, HidingSpot.position, OnPathComplete);
+                    returning = true;
                     speed = FollowSpeed;
                     break;
                 case enemyBushCrabStates.Follow:
+                    
                     seeker.StartPath(rb.position, target.position, OnPathComplete);
+                    returning = false;
                     speed = FollowSpeed;
                     break;
             }
@@ -71,6 +77,7 @@ public class BushCrabAI : MonoBehaviour
         }
     }
 
+    
     void OnPathComplete(Path p)
     {
         if (!p.error)
@@ -82,6 +89,7 @@ public class BushCrabAI : MonoBehaviour
 
     private void Update()
     {
+        
         if (Vector3.Distance(transform.position, target.position) < AwarnessRange)
         {
             anim.SetBool("persuing", true);
@@ -89,14 +97,18 @@ public class BushCrabAI : MonoBehaviour
         }
         else
         {
-            state = enemyBushCrabStates.BackToHide;
-            
-            if (inHidingSpot) {
-                anim.SetBool("persuing", false);
+            if (reachedEndOfPath && returning) {
                 state = enemyBushCrabStates.Hiding;
             }
-            
+            else {
+                state = enemyBushCrabStates.BackToHide;
+            }        
         }
+    }
+
+    public bool InHiddenPosition() {
+        return HidingSpot.transform.position.x + 5 > this.transform.position.x && HidingSpot.transform.position.x - 5 < this.transform.position.x
+            && HidingSpot.transform.position.y + 5 > this.transform.position.y && HidingSpot.transform.position.y - 5 < this.transform.position.y;
     }
 
     // Update is called once per frame
@@ -134,21 +146,6 @@ public class BushCrabAI : MonoBehaviour
         if (distance < nextWaypointDistance)
         {
             currentWaypoint++;
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.name == "HidingSpot") {
-            inHidingSpot = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        Debug.Log("exiting collider");
-        if (collision.name == "HidingSpot") {
-            inHidingSpot = false;
         }
     }
 }

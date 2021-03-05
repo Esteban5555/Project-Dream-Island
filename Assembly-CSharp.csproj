@@ -68,6 +68,7 @@
     <Compile Include="Assets\Assets\BeachBegining\Script\CharacterManagerScript.cs" />
     <Compile Include="Assets\Assets\Enemies\BushCrab\BushCrabAI.cs" />
     <Compile Include="Assets\Assets\Enemies\BushCrab\BushCrabMain.cs" />
+    <Compile Include="Assets\Assets\Enemies\BushCrab\HidingSpotCollider.cs" />
     <Compile Include="Assets\Assets\Enemies\EnemieMouth\AIEnemyMouth.cs" />
     <Compile Include="Assets\Assets\Enemies\EnemieMouth\MouthEnemyMainScript.cs" />
     <Compile Include="Assets\Assets\Enemies\FlipScript.cs" />
