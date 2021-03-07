@@ -83,6 +83,8 @@
     <Compile Include="Assets\Assets\MainCharacter\Scripts\SaveSystem.cs" />
     <Compile Include="Assets\Assets\MainCharacter\Scripts\miniHeart.cs" />
     <Compile Include="Assets\Assets\MainCharacter\Scripts\swordCollisions.cs" />
+    <Compile Include="Assets\Assets\MainMenu\CamarMovementMainMenu.cs" />
+    <Compile Include="Assets\Assets\MainMenu\StartMenu.cs" />
     <Compile Include="Assets\Assets\Miscelanea\Scripts\BigChest.cs" />
     <Compile Include="Assets\Assets\Miscelanea\Scripts\MiniChest.cs" />
     <Compile Include="Assets\Assets\Miscelanea\Scripts\PauseMenu.cs" />

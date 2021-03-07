@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a060077694367b94ba64f83651720869, type: 3}
+  m_Name: StarPatern01
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -7242157145034826929, guid: fa7996f1fbc81c442af2ffafbdb96616, type: 3}
+  - {fileID: 4545516509441967475, guid: fa7996f1fbc81c442af2ffafbdb96616, type: 3}
+  - {fileID: 4475981716016701284, guid: fa7996f1fbc81c442af2ffafbdb96616, type: 3}
+  - {fileID: -7329281026948625487, guid: fa7996f1fbc81c442af2ffafbdb96616, type: 3}
+  - {fileID: -7329281026948625487, guid: fa7996f1fbc81c442af2ffafbdb96616, type: 3}
+  - {fileID: 4475981716016701284, guid: fa7996f1fbc81c442af2ffafbdb96616, type: 3}
+  - {fileID: 4545516509441967475, guid: fa7996f1fbc81c442af2ffafbdb96616, type: 3}
+  - {fileID: -7242157145034826929, guid: fa7996f1fbc81c442af2ffafbdb96616, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_MinSpeed: 2
+  m_MaxSpeed: 2
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0

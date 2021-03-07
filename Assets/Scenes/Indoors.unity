@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -121,12 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &112079579 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 112079579, guid: 0aee4a78afa2b204fa49063f896958c1,
-    type: 3}
-  m_PrefabInstance: {fileID: 2033612756}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &267239062
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,6 +619,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2033612756}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1000079595 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1021006363106709855, guid: 0aee4a78afa2b204fa49063f896958c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2033612756}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1214181801
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,8 +693,8 @@ MonoBehaviour:
   dialogueBox: {fileID: 2137188047}
   text: {fileID: 957741158}
   Manager: {fileID: 810534643}
-  ShopBox: {fileID: 112079579}
-  shopText: {fileID: 1496413048}
+  ShopBox: {fileID: 1000079595}
+  shopText: {fileID: 1952183694}
 --- !u!61 &1242107888
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4037,12 +4037,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2033612756}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1496413048 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1496413048, guid: 0aee4a78afa2b204fa49063f896958c1,
-    type: 3}
-  m_PrefabInstance: {fileID: 2033612756}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1539447701
 GameObject:
   m_ObjectHideFlags: 0
@@ -4770,6 +4764,12 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1952183694 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8719959384323106856, guid: 0aee4a78afa2b204fa49063f896958c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2033612756}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2033612756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4777,18 +4777,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 420929118, guid: 0aee4a78afa2b204fa49063f896958c1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1242107887}
     - target: {fileID: 1699623254, guid: 0aee4a78afa2b204fa49063f896958c1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1604318043}
-    - target: {fileID: 1814336978, guid: 0aee4a78afa2b204fa49063f896958c1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1242107887}
     - target: {fileID: 2030578307, guid: 0aee4a78afa2b204fa49063f896958c1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4903,6 +4895,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4816931274985589431, guid: 0aee4a78afa2b204fa49063f896958c1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1242107887}
+    - target: {fileID: 5854984693441149328, guid: 0aee4a78afa2b204fa49063f896958c1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1242107887}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0aee4a78afa2b204fa49063f896958c1, type: 3}
 --- !u!114 &2033612757 stripped

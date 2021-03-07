@@ -50,7 +50,6 @@ public class CharacterManagerScript : MonoBehaviour
         actionButton = false;
 
         Time.timeScale = 1f;
-
         spawnPlayer();
 
 
@@ -84,6 +83,9 @@ public class CharacterManagerScript : MonoBehaviour
     }
 
     void spawnPlayer() {
+
+        PlayerData data = LoadPlayer();
+
         if (currentSpawnPoint == defaultValue)
         {
             Player.transform.position = CharaterSpawnPoins[0].position;
@@ -99,7 +101,6 @@ public class CharacterManagerScript : MonoBehaviour
         }
         else {
             //Load Player DATA
-            PlayerData data = LoadPlayer();
 
             if (data == null) {
                 Player.transform.position = CharaterSpawnPoins[0].position;
@@ -126,6 +127,8 @@ public class CharacterManagerScript : MonoBehaviour
             mainCharacterScript.SetLamp(data.Lamp);
             mainCharacterScript.SetRubberRing(data.RubberRing);
         }
+
+        SaveSystem.SavePlayerSystem(data.currentMaxHealth, data.currentMaxHealth, data.Sword, data.Lamp, data.RubberRing, data.coins, data.swordAttack, SceneManager.GetActiveScene().name);
     }
 
     public PlayerData LoadPlayer() {
@@ -165,5 +168,11 @@ public class CharacterManagerScript : MonoBehaviour
 
     public int GetSwordAttackDamage() {
         return mainCharacterScript.GetAttackDamage();
+    }
+
+    public void QuitButtonPressed() {
+
+        SaveSystem.SavePlayerSystem(mainCharacterScript.GetCurrentHealth(), mainCharacterScript.GetCurrentMaxHealth(), mainCharacterScript.GetSword(), mainCharacterScript.GetRubberRing(), mainCharacterScript.GetLamp(), mainCharacterScript.GetCurrentCoins(), mainCharacterScript.GetAttackDamage(), SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("MainMenu");
     }
 }

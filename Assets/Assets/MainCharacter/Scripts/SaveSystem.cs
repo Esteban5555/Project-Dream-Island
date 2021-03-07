@@ -4,13 +4,13 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveSystem
 {
-    public static void SavePlayerSystem(int health, int maxHealth, bool sword, bool RubberRing, bool Lamp, int coins, int swordAttack) {
+    public static void SavePlayerSystem(int health, int maxHealth, bool sword, bool RubberRing, bool Lamp, int coins, int swordAttack, string scene) {
 
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/playerdata.pro";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        PlayerData data = new PlayerData(health, maxHealth, sword, RubberRing, Lamp, coins, swordAttack);
+        PlayerData data = new PlayerData(health, maxHealth, sword, RubberRing, Lamp, coins, swordAttack, scene);
 
         formatter.Serialize(stream, data);
         stream.Close();
@@ -33,5 +33,16 @@ public static class SaveSystem
             Debug.Log("Save File not found");
             return null;
         }
+    }
+
+    public static void ResetPlayerSystem() {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/playerdata.pro";
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        PlayerData data = new PlayerData(4, 4, false, false, false, 0, 1, "BeachBeginning");
+
+        formatter.Serialize(stream, data);
+        stream.Close();
     }
 }

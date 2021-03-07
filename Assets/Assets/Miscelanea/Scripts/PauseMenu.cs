@@ -8,11 +8,14 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenu;
+    private CharacterManagerScript managerScript;
     // Start is called before the first frame update
     void Start()
     {
         pauseMenu = GameObject.Find("Menu");
         pauseMenu.SetActive(false);
+        managerScript = GameObject.Find("SceneManager").GetComponent<CharacterManagerScript>();
+
     }
 
     // Update is called once per frame
@@ -36,8 +39,8 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = true;
     }
 
-    public void Quit() { 
-    
+    public void Quit() {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void Resume()
@@ -49,5 +52,8 @@ public class PauseMenu : MonoBehaviour
 
     public void RestartLevel() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void QuitButton() {
+        managerScript.QuitButtonPressed();
     }
 }
