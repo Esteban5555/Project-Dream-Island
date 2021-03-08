@@ -40,6 +40,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Quit() {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 
@@ -51,9 +52,11 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void RestartLevel() {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void QuitButton() {
+        Time.timeScale = 1f;
         managerScript.QuitButtonPressed();
     }
 }
