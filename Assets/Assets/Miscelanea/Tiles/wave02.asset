@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a060077694367b94ba64f83651720869, type: 3}
+  m_Name: wave02
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: -7868286163881196472, guid: e34dc6039c6fa2f48b54b8e749600dc8, type: 3}
+  - {fileID: -8680092926588584175, guid: e34dc6039c6fa2f48b54b8e749600dc8, type: 3}
+  - {fileID: -1495434225440113553, guid: e34dc6039c6fa2f48b54b8e749600dc8, type: 3}
+  - {fileID: -1899698835605953984, guid: e34dc6039c6fa2f48b54b8e749600dc8, type: 3}
+  - {fileID: 8576096582794683467, guid: e34dc6039c6fa2f48b54b8e749600dc8, type: 3}
+  - {fileID: 4016422371268958577, guid: e34dc6039c6fa2f48b54b8e749600dc8, type: 3}
+  - {fileID: -5813931586146964065, guid: e34dc6039c6fa2f48b54b8e749600dc8, type: 3}
+  m_MinSpeed: 3
+  m_MaxSpeed: 3
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
