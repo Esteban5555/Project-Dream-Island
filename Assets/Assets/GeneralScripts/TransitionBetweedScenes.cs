@@ -13,7 +13,7 @@ public class TransitionBetweedScenes : MonoBehaviour
         if (collision.tag == "MainCharacter") {
             PlayerPrefs.SetInt("SpawnPosition", nextSpawnPointIndicator);
             MainCharacter script = collision.transform.GetComponent<MainCharacter>();
-            SaveSystem.SavePlayerSystem(script.GetCurrentHealth(), script.GetCurrentMaxHealth(), script.GetSword(), script.GetRubberRing(), script.GetLamp(), script.GetCurrentCoins(), script.GetAttackDamage(), SceneManager.GetActiveScene().name) ;
+            SaveSystem.SavePlayerSystem(script.GetCurrentHealth(), script.GetCurrentMaxHealth(), script.GetSword(), script.GetRubberRing(), script.GetLamp(), script.GetCurrentCoins(), script.GetAttackDamage(), script.GetPirateKey(), SceneManager.GetActiveScene().name) ;
             SceneManager.LoadScene(nextScene);
         }
     }

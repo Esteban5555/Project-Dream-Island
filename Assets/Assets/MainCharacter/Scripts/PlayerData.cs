@@ -15,9 +15,11 @@ public class PlayerData
     public int coins;
     public int swordAttack;
 
+    public bool pirateHouseKey;
+
     public string scene;
 
-    public PlayerData(int health, int maxHealth, bool sword, bool RubberRing, bool Lamp, int coins, int swordAttack, string scene) {
+    public PlayerData(int health, int maxHealth, bool sword, bool RubberRing, bool Lamp, int coins, int swordAttack, bool pirateHouseKey, string scene) {
         currentHealth = health;
         currentMaxHealth = maxHealth;
 
@@ -27,6 +29,8 @@ public class PlayerData
 
         this.coins = coins;
         this.swordAttack = swordAttack;
+
+        this.pirateHouseKey = pirateHouseKey;
 
         this.scene = scene;
 

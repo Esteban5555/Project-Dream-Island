@@ -16,6 +16,9 @@ public class CharacterManagerScript : MonoBehaviour
 
     public bool WaterInScene = true;
 
+    public bool PirateHouseInScene = false;
+    public GameObject Door;
+
     private int defaultValue = -1;
 
     int currentSpawnPoint;
@@ -46,7 +49,6 @@ public class CharacterManagerScript : MonoBehaviour
             WaterCollider = Agua.GetComponent<TilemapCollider2D>();
         }
 
-
         actionButton = false;
 
         Time.timeScale = 1f;
@@ -62,6 +64,12 @@ public class CharacterManagerScript : MonoBehaviour
             PlayerWithFlotador = true;
         }
         else { PlayerWithFlotador = false; }
+
+        if (mainCharacterScript.GetPirateKey())
+        {
+            GameObject.Destroy(Door);
+        }
+
         
     }
 
@@ -97,6 +105,7 @@ public class CharacterManagerScript : MonoBehaviour
             mainCharacterScript.SetSword(false);
             mainCharacterScript.SetLamp(false);
             mainCharacterScript.SetRubberRing(false);
+            mainCharacterScript.SetPirateKey(false);
 
         }
         else {
@@ -112,6 +121,7 @@ public class CharacterManagerScript : MonoBehaviour
                 mainCharacterScript.SetSword(false);
                 mainCharacterScript.SetLamp(false);
                 mainCharacterScript.SetRubberRing(false);
+                mainCharacterScript.SetPirateKey(false);
 
                 return;
             }
@@ -126,9 +136,10 @@ public class CharacterManagerScript : MonoBehaviour
             mainCharacterScript.SetSword(data.Sword);
             mainCharacterScript.SetLamp(data.Lamp);
             mainCharacterScript.SetRubberRing(data.RubberRing);
+            mainCharacterScript.SetPirateKey(data.pirateHouseKey);
         }
 
-        SaveSystem.SavePlayerSystem(data.currentMaxHealth, data.currentMaxHealth, data.Sword, data.Lamp, data.RubberRing, data.coins, data.swordAttack, SceneManager.GetActiveScene().name);
+        SaveSystem.SavePlayerSystem(data.currentMaxHealth, data.currentMaxHealth, data.Sword, data.Lamp, data.RubberRing, data.coins, data.swordAttack, data.pirateHouseKey, SceneManager.GetActiveScene().name);
     }
 
     public PlayerData LoadPlayer() {
@@ -172,7 +183,7 @@ public class CharacterManagerScript : MonoBehaviour
 
     public void QuitButtonPressed() {
 
-        SaveSystem.SavePlayerSystem(mainCharacterScript.GetCurrentHealth(), mainCharacterScript.GetCurrentMaxHealth(), mainCharacterScript.GetSword(), mainCharacterScript.GetRubberRing(), mainCharacterScript.GetLamp(), mainCharacterScript.GetCurrentCoins(), mainCharacterScript.GetAttackDamage(), SceneManager.GetActiveScene().name);
+        SaveSystem.SavePlayerSystem(mainCharacterScript.GetCurrentHealth(), mainCharacterScript.GetCurrentMaxHealth(), mainCharacterScript.GetSword(), mainCharacterScript.GetRubberRing(), mainCharacterScript.GetLamp(), mainCharacterScript.GetCurrentCoins(), mainCharacterScript.GetAttackDamage(), mainCharacterScript.GetPirateKey(), SceneManager.GetActiveScene().name);
         SceneManager.LoadScene("MainMenu");
     }
 }

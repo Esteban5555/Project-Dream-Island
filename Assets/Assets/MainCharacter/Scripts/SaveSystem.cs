@@ -4,13 +4,13 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveSystem
 {
-    public static void SavePlayerSystem(int health, int maxHealth, bool sword, bool RubberRing, bool Lamp, int coins, int swordAttack, string scene) {
+    public static void SavePlayerSystem(int health, int maxHealth, bool sword, bool RubberRing, bool Lamp, int coins, int swordAttack, bool pirateHouseKey, string scene) {
 
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/playerdata.pro";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        PlayerData data = new PlayerData(health, maxHealth, sword, RubberRing, Lamp, coins, swordAttack, scene);
+        PlayerData data = new PlayerData(health, maxHealth, sword, RubberRing, Lamp, coins, swordAttack, pirateHouseKey, scene);
 
         formatter.Serialize(stream, data);
         stream.Close();
@@ -40,7 +40,7 @@ public static class SaveSystem
         string path = Application.persistentDataPath + "/playerdata.pro";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        PlayerData data = new PlayerData(4, 4, false, false, false, 0, 1, "BeachBeginning");
+        PlayerData data = new PlayerData(4, 4, false, false, false, 0, 1, false, "BeachBeginning");
 
         formatter.Serialize(stream, data);
         stream.Close();

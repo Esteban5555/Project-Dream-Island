@@ -57,6 +57,8 @@ public class MainCharacter : MonoBehaviour
     public bool sword = false;
     public bool Lamp = false;
 
+    public bool pirateHouseKey = false;
+
     public bool swimming = false;
 
     //Action Button pressed
@@ -449,6 +451,10 @@ public class MainCharacter : MonoBehaviour
         if (collision.tag == "heart") {
             replenishOneHeart();
         }
+
+        if (collision.name == "Key") {
+            pirateHouseKey = true;
+           }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -562,5 +568,13 @@ public class MainCharacter : MonoBehaviour
 
     public int GetAttackDamage() {
         return swordAttackDamage;
+    }
+
+    public bool GetPirateKey() {
+        return pirateHouseKey;
+    }
+
+    public void SetPirateKey(bool key) {
+        pirateHouseKey = key;
     }
 }
