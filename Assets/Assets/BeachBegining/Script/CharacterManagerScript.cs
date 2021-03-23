@@ -11,7 +11,8 @@ public class CharacterManagerScript : MonoBehaviour
     private GameObject Grid;
     private Transform Agua;
     public GameObject Player;
-    private MainCharacter mainCharacterScript;
+    [HideInInspector]
+    public MainCharacter mainCharacterScript;
     private TilemapCollider2D WaterCollider;
 
     public bool WaterInScene = true;
@@ -67,7 +68,7 @@ public class CharacterManagerScript : MonoBehaviour
 
         if (mainCharacterScript.GetPirateKey())
         {
-            GameObject.Destroy(Door);
+            if(Door != null) GameObject.Destroy(Door);
         }
 
         

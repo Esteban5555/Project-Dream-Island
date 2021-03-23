@@ -31,6 +31,7 @@ public class BigChest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (sameItemInUse()) opened = true;
         if (opened)
         {
             sr.sprite = chestOpened;
@@ -42,6 +43,11 @@ public class BigChest : MonoBehaviour
             Manager.GetComponent<CharacterManagerScript>().setItemInBigChest((int)item);
             opened = true;
         }
+    }
+
+    public bool sameItemInUse() {
+        CharacterManagerScript managerScript = Manager.GetComponent<CharacterManagerScript>();
+        return (ItemInChest.sword == item && managerScript.mainCharacterScript.GetSword()) || (ItemInChest.Lamp == item && managerScript.mainCharacterScript.GetLamp()) || (ItemInChest.RubberRing == item && managerScript.mainCharacterScript.GetRubberRing());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
