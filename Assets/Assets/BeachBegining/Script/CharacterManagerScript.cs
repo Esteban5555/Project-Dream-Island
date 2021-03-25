@@ -140,7 +140,7 @@ public class CharacterManagerScript : MonoBehaviour
             mainCharacterScript.SetPirateKey(data.pirateHouseKey);
         }
 
-        SaveSystem.SavePlayerSystem(data.currentMaxHealth, data.currentMaxHealth, data.Sword, data.Lamp, data.RubberRing, data.coins, data.swordAttack, data.pirateHouseKey, SceneManager.GetActiveScene().name);
+        SaveSystem.SavePlayerSystem(data.currentMaxHealth, data.currentMaxHealth, data.Sword, data.RubberRing, data.Lamp, data.coins, data.swordAttack, data.pirateHouseKey, SceneManager.GetActiveScene().name);
     }
 
     public PlayerData LoadPlayer() {
