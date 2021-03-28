@@ -90,6 +90,7 @@
     <Compile Include="Assets\Assets\Miscelanea\Scripts\MiniChest.cs" />
     <Compile Include="Assets\Assets\Miscelanea\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Assets\Miscelanea\Scripts\SignScripts.cs" />
+    <Compile Include="Assets\Assets\NPCs\Scripts\CaptainDialogueScript.cs" />
     <Compile Include="Assets\Assets\NPCs\Scripts\LizzardShop.cs" />
     <Compile Include="Assets\Assets\NPCs\Scripts\OwlDialogues.cs" />
     <Compile Include="Assets\Assets\NPCs\Scripts\OzzyShop.cs" />
