@@ -73,6 +73,8 @@
     <Compile Include="Assets\Assets\Enemies\EnemieMouth\MouthEnemyMainScript.cs" />
     <Compile Include="Assets\Assets\Enemies\FlipScript.cs" />
     <Compile Include="Assets\Assets\GeneralScripts\Astar.cs" />
+    <Compile Include="Assets\Assets\GeneralScripts\Audio.cs" />
+    <Compile Include="Assets\Assets\GeneralScripts\AudioManager.cs" />
     <Compile Include="Assets\Assets\GeneralScripts\GridGenerator.cs" />
     <Compile Include="Assets\Assets\GeneralScripts\KeyScript.cs" />
     <Compile Include="Assets\Assets\GeneralScripts\TransitionBetweedScenes.cs" />

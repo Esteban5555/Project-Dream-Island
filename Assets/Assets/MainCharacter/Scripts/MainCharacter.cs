@@ -131,7 +131,6 @@ public class MainCharacter : MonoBehaviour
                     }
                 }
 
-
                 if (changeItemLapse < 100) { changeItemLapse += Time.deltaTime; }
 
                 //setting inmunity time
@@ -427,6 +426,7 @@ public class MainCharacter : MonoBehaviour
             return;
         }
         health = health + 2;
+        FindObjectOfType<AudioManager>().Play("Item_Pick_Up");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
