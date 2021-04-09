@@ -44,13 +44,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: Footsteps
-    clip: {fileID: 8300000, guid: 2169c1e14bcb2ed47b51ba0023d3de14, type: 3}
+  - name: Slash
+    clip: {fileID: 8300000, guid: 8a3ec3d18897fb849b5e4ea2f9caad72, type: 3}
     volume: 0.5
     pitch: 1
+    loop: 0
     source: {fileID: 0}
   - name: Item_Pick_Up
     clip: {fileID: 8300000, guid: 95d222e32c2e76b41830883a843d7a60, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BuyItem
+    clip: {fileID: 8300000, guid: fbb1b622f837a914f9007fdc3035f9e6, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
     source: {fileID: 0}

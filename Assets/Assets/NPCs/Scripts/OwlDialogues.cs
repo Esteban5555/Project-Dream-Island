@@ -43,7 +43,7 @@ public class OwlDialogues : MonoBehaviour
     {
         if (playerInRange)
         {
-            if (Input.GetKeyDown(KeyCode.R)) {
+            if (Input.GetButtonDown("Submit")) {
                 if (!dialogueBoxShowing)
                 {
                     dialogueBox.SetActive(true);

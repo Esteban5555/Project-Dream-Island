@@ -124,7 +124,7 @@ public class MainCharacter : MonoBehaviour
 
                 if (changeItemLapse >= minChangeItemLapse)
                 {
-                    if (Input.GetKeyDown(KeyCode.Space) && !characterMovementScript.moving && !swimming)
+                    if (Input.GetButtonDown("ItemSelect") && !characterMovementScript.moving && !swimming)
                     {
                         changeItem();
                         changeItemLapse = 0;
@@ -421,12 +421,12 @@ public class MainCharacter : MonoBehaviour
     }
 
     void replenishOneHeart() {
+        FindObjectOfType<AudioManager>().Play("Item_Pick_Up");
         if (health + 2 > maxHealth) {
             health = maxHealth;
             return;
         }
         health = health + 2;
-        FindObjectOfType<AudioManager>().Play("Item_Pick_Up");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

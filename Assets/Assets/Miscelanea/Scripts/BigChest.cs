@@ -36,7 +36,7 @@ public class BigChest : MonoBehaviour
         {
             sr.sprite = chestOpened;
         }
-        if (PlayerInRange && Input.GetKeyDown(KeyCode.R) && !opened)
+        if (PlayerInRange && Input.GetButtonDown("Submit") && !opened)
         {
             Manager.GetComponent<CharacterManagerScript>().SetPlayerState(1);
             Manager.GetComponent<CharacterManagerScript>().setBigChest(true);

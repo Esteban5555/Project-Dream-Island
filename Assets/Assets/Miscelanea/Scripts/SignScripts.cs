@@ -23,7 +23,7 @@ public class SignScripts : MonoBehaviour
     {
         if (playerInRange)
         {
-            if (Input.GetKeyDown(KeyCode.R) && !dialogueBoxShowing)
+            if (Input.GetButtonDown("Submit") && !dialogueBoxShowing)
             {
                 dialogueBox.SetActive(true);
                 text.GetComponent<Text>().text = message;
@@ -31,7 +31,7 @@ public class SignScripts : MonoBehaviour
                 dialogueBoxShowing = true;
             }
             else {
-                if (Input.GetKeyDown(KeyCode.R) && dialogueBoxShowing) {
+                if (Input.GetButtonDown("Submit") && dialogueBoxShowing) {
                     dialogueBox.SetActive(false);
                     text.GetComponent<Text>().text = "";
                     Manager.GetComponent<CharacterManagerScript>().SetPlayerState(0);

@@ -51,7 +51,7 @@ public class LizzardShop : MonoBehaviour
     {
         if (playerInRange)
         {
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetButtonDown("Submit"))
             {
                 if (!ShopBoxShowing && !dialogueBoxShowing)
                 {
@@ -115,6 +115,7 @@ public class LizzardShop : MonoBehaviour
             text.GetComponent<Text>().text = "Nice decision brave adventurer";
             dialogueBoxShowing = true;
             ManagerScript.BuyingSwordUpgrade();
+            FindObjectOfType<AudioManager>().Play("BuyItem");
         }
     }
 

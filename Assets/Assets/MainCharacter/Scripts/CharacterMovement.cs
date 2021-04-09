@@ -67,15 +67,9 @@ public class CharacterMovement : MonoBehaviour
 
         if (moving && !dust.isPlaying && !MainCharacterScript.swimming)
         {
-            //FootsepsSound
-            if (!FindObjectOfType<AudioManager>().IsPlayingAudio("Footsteps"))
-            {
-                FindObjectOfType<AudioManager>().Play("Footsteps");
-            }
+
             createDust();
         }
-
-        if (!moving) { FindObjectOfType<AudioManager>().Pause("Footsteps"); }
 
     }
 

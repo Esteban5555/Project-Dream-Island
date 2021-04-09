@@ -58,7 +58,7 @@ public class CaptainDialogueScript : MonoBehaviour
         if (playerInRange)
         {
 
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetButtonDown("Submit"))
             {
                 if (Manager.GetComponent<CharacterManagerScript>().mainCharacterScript.GetPirateKey())
                 {

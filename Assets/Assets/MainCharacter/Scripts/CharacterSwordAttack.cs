@@ -34,8 +34,9 @@ public class CharacterSwordAttack : MonoBehaviour
     void Update()
     {
         AtackDamage = MainCharacterScript.GetAttackDamage();
-        if (Input.GetKeyDown(KeyCode.E) && coolDownAttack >= minCoolDownAttack && !characterMovementScript.moving && MainCharacterScript.itemInUse == MainCharacter.Trinckets.Sword && MainCharacterScript.GetSword() == true)
+        if (Input.GetButtonDown("Sword") && coolDownAttack >= minCoolDownAttack && !characterMovementScript.moving && MainCharacterScript.itemInUse == MainCharacter.Trinckets.Sword && MainCharacterScript.GetSword() == true)
         {
+            FindObjectOfType<AudioManager>().Play("Slash");
             Attacking = true;
             colliders[characterMovementScript.lastFacingDirection].enabled = true;
             anim.SetBool("Attacking", true);

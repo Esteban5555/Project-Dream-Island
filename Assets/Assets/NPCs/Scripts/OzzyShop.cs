@@ -51,7 +51,7 @@ public class OzzyShop : MonoBehaviour
     {
         if (playerInRange)
         {
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetButtonDown("Submit"))
             {
                 if (!ShopBoxShowing && !dialogueBoxShowing)
                 {
@@ -111,6 +111,7 @@ public class OzzyShop : MonoBehaviour
             text.GetComponent<Text>().text = "Oh.. thank you good sir, you won't get disappointed";
             dialogueBoxShowing = true;
             ManagerScript.BuyingHealthPotion();
+            FindObjectOfType<AudioManager>().Play("BuyItem");
         }
     }
 
