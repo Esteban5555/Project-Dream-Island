@@ -37,6 +37,8 @@ public class CharacterManagerScript : MonoBehaviour
 
     public Transform[] CharaterSpawnPoins;
 
+    private GameObject canvas;
+
     public bool actionButton;
     // Start is called before the first frame update
     void Start()
@@ -51,6 +53,7 @@ public class CharacterManagerScript : MonoBehaviour
         }
 
         actionButton = false;
+        canvas = GameObject.Find("Canvas");
 
         Time.timeScale = 1f;
         spawnPlayer();
@@ -186,5 +189,9 @@ public class CharacterManagerScript : MonoBehaviour
 
         SaveSystem.SavePlayerSystem(mainCharacterScript.GetCurrentHealth(), mainCharacterScript.GetCurrentMaxHealth(), mainCharacterScript.GetSword(), mainCharacterScript.GetRubberRing(), mainCharacterScript.GetLamp(), mainCharacterScript.GetCurrentCoins(), mainCharacterScript.GetAttackDamage(), mainCharacterScript.GetPirateKey(), SceneManager.GetActiveScene().name);
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void PlayerDead() {
+        canvas.GetComponent<PauseMenu>().GameOverMenu();
     }
 }

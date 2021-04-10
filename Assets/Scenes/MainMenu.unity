@@ -4516,7 +4516,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startMenu: {fileID: 1736887129}
+  startButton: {fileID: 817494114}
   MainMenu: {fileID: 2039201222}
+  firstMainButton: {fileID: 1409670259}
   OptionsMenu: {fileID: 1257150041}
   Credits: {fileID: 1899152459}
 --- !u!4 &931195973
@@ -5641,7 +5643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 817494114}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1841182959

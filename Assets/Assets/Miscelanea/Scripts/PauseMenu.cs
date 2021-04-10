@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenu;
+    public GameObject EndScreen;
     private CharacterManagerScript managerScript;
 
     private GameObject MenuFirstSelected;
@@ -16,18 +17,26 @@ public class PauseMenu : MonoBehaviour
     private GameObject LizzyFirstSelected;
     private GameObject OzzyFirstSelected;
 
+    EventSystem es;
+
     // Start is called before the first frame update
     void Start()
     {
+        managerScript = GameObject.Find("SceneManager").GetComponent<CharacterManagerScript>();
+
         MenuFirstSelected = GameObject.Find("Resume");
         EndFirstSelected = GameObject.Find("Restart from CheckPoint");
         LizzyFirstSelected = GameObject.Find("Negative");
         OzzyFirstSelected = GameObject.Find("Negative");
 
-        pauseMenu = GameObject.Find("Menu");
-        pauseMenu.SetActive(false);
-        managerScript = GameObject.Find("SceneManager").GetComponent<CharacterManagerScript>();
+        es = GameObject.Find("EventSystem").GetComponent<EventSystem>();
 
+        pauseMenu = GameObject.Find("Menu");
+
+        EndScreen = GameObject.Find("EndSceen");
+        EndScreen.SetActive(false);
+
+        pauseMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -42,9 +51,17 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    public void GameOverMenu()
+    {
+        es.SetSelectedGameObject(EndFirstSelected);
+        EndScreen.SetActive(true);
+        Time.timeScale = 0f;
+
+    }
+
     private void Pause()
     {
-        EventSystem.current.firstSelectedGameObject = MenuFirstSelected;
+        es.SetSelectedGameObject(MenuFirstSelected);
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;

@@ -1,26 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
     public GameObject startMenu;
+    public GameObject startButton;
     public GameObject MainMenu;
+    public GameObject firstMainButton;
     public GameObject OptionsMenu;
     public GameObject Credits;
+
+    EventSystem es;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        es = GameObject.Find("EventSystem").GetComponent<EventSystem>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetButtonDown("Cancel")) {
             EscapeButtonPressed();
         }
 
@@ -29,6 +34,7 @@ public class StartMenu : MonoBehaviour
     public void StartButtonPressed() {
         startMenu.SetActive(false);
         MainMenu.SetActive(true);
+        es.SetSelectedGameObject(firstMainButton);
     }
 
     public void EscapeButtonPressed() {
@@ -41,16 +47,19 @@ public class StartMenu : MonoBehaviour
         if (MainMenu.active) {
             startMenu.SetActive(true);
             MainMenu.SetActive(false);
+            es.SetSelectedGameObject(startButton);
             return;
         }
         if (OptionsMenu.active) {
             MainMenu.SetActive(true);
             OptionsMenu.SetActive(false);
+            es.SetSelectedGameObject(firstMainButton);
             return;
         }
         if (Credits.active) {
             MainMenu.SetActive(true);
             Credits.SetActive(false);
+            es.SetSelectedGameObject(firstMainButton);
         }
 
     }

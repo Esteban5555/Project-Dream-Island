@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.UI;
 
@@ -82,8 +83,10 @@ public class MainCharacter : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer sr;
 
-    private GameObject EndScreen;
-    private bool dying = false;
+    CharacterManagerScript manager;
+
+    public bool dying = false;
+    public bool dead = false;
 
     //public Light2D candleLight;
 
@@ -95,8 +98,6 @@ public class MainCharacter : MonoBehaviour
         itemInUse = Trinckets.Sword;
         player = GameObject.Find("MainCharacter");
         CoinText = GameObject.Find("CoinText");
-        EndScreen = GameObject.Find("EndSceen");
-        EndScreen.SetActive(false);
         characterMovementScript = player.GetComponent<CharacterMovement>();
         characterSwordScript = player.GetComponent<CharacterSwordAttack>();
         rb = GetComponent<Rigidbody2D>();
@@ -107,6 +108,8 @@ public class MainCharacter : MonoBehaviour
         if (swordAttackDamage < 1) swordAttackDamage = 1;
         coins = 0;
 
+        manager = GameObject.Find("SceneManager").GetComponent<CharacterManagerScript>();
+
         actionButton = false;
     }
 
@@ -116,9 +119,9 @@ public class MainCharacter : MonoBehaviour
         switch (state) {
             case States.Normal:
                 PlayerFrozen(false);
+                dead = false;
                 setCoinsInCanvas();
                 if (swordAttackDamage < 1) swordAttackDamage = 1;
-                EndScreen.SetActive(false);
                 anim.SetBool("Sword", sword);
                 //Input
 
@@ -352,8 +355,7 @@ public class MainCharacter : MonoBehaviour
         anim.SetBool("Dead", true);
         yield return new WaitForSeconds(1.5f);
         anim.SetBool("Dead", false);
-        EndScreen.SetActive(true);
-        Time.timeScale = 0f;
+        manager.PlayerDead();
         //Show end screen
 
         yield return null;

@@ -1777,7 +1777,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Last Checpint
+  m_Text: Last Checkpoint
 --- !u!1 &1808886412
 GameObject:
   m_ObjectHideFlags: 0
@@ -3303,6 +3303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
+  EndScreen: {fileID: 0}
 --- !u!1 &407771876126136905
 GameObject:
   m_ObjectHideFlags: 0
