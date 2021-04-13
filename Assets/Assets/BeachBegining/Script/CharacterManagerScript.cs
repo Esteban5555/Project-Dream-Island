@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
 
 public class CharacterManagerScript : MonoBehaviour
 {
@@ -37,12 +38,15 @@ public class CharacterManagerScript : MonoBehaviour
 
     public Transform[] CharaterSpawnPoins;
 
+    private Transform[] MiniChests;
+
     private GameObject canvas;
 
     public bool actionButton;
     // Start is called before the first frame update
     void Start()
     {
+        mainCharacterScript = Player.GetComponent<MainCharacter>();
         //Previous Scene
         currentSpawnPoint = PlayerPrefs.GetInt("SpawnPosition", defaultValue);
         if (WaterInScene)
@@ -52,13 +56,59 @@ public class CharacterManagerScript : MonoBehaviour
             WaterCollider = Agua.GetComponent<TilemapCollider2D>();
         }
 
+        MiniChests = GameObject.Find("MiniChests").GetComponentsInChildren<Transform>();
+
         actionButton = false;
         canvas = GameObject.Find("Canvas");
+
+        UpdateMiniChests();
 
         Time.timeScale = 1f;
         spawnPlayer();
 
 
+    }
+
+    public void SaveChestStates() {
+        //Create new list of chests
+        List<bool> openes = new List<bool>();
+
+        for (int i = 1; i < MiniChests.Length; i++)
+        {
+            openes.Add(MiniChests[i].GetComponent<MiniChest>().opened);
+            //child is your child transform
+        }
+        Debug.Log("CHEST STATUS SAVED " + openes.Count);
+        Debug.Log("//////////////////////////////////");
+        SaveSystem.SaveChestsInScene(SceneManager.GetActiveScene().buildIndex, openes);
+    }
+    public void UpdateMiniChests()
+    {
+        MinichestStatus chestData = SaveSystem.LoadChestsInScene();
+
+        Debug.Log(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log(chestData.ChestStatusInGame.Count);
+
+        if (SceneManager.GetActiveScene().buildIndex > chestData.ChestStatusInGame.Count - 1 || chestData.ChestStatusInGame[SceneManager.GetActiveScene().buildIndex] == null)
+        {
+            Debug.Log("Creating ChestSave");
+            //Create new list of chests
+            List<bool> openes = new List<bool>();
+            for (int i = 1; i < MiniChests.Length; i++) {
+                openes.Add(MiniChests[i].GetComponent<MiniChest>().opened);
+            }
+
+            SaveSystem.SaveChestsInScene(SceneManager.GetActiveScene().buildIndex, openes);
+        }
+        else {
+            Debug.Log("Loading Chest save");
+            List<bool> openes = chestData.ChestStatusInGame[SceneManager.GetActiveScene().buildIndex].OpenedStatus;
+            for(int i = 1; i < MiniChests.Length; i++)
+            {
+                MiniChests[i].GetComponent<MiniChest>().opened = openes[i-1];
+                //child is your child transform
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -188,10 +238,23 @@ public class CharacterManagerScript : MonoBehaviour
     public void QuitButtonPressed() {
 
         SaveSystem.SavePlayerSystem(mainCharacterScript.GetCurrentHealth(), mainCharacterScript.GetCurrentMaxHealth(), mainCharacterScript.GetSword(), mainCharacterScript.GetRubberRing(), mainCharacterScript.GetLamp(), mainCharacterScript.GetCurrentCoins(), mainCharacterScript.GetAttackDamage(), mainCharacterScript.GetPirateKey(), SceneManager.GetActiveScene().name);
+        SaveChestStates();
         SceneManager.LoadScene("MainMenu");
     }
 
     public void PlayerDead() {
         canvas.GetComponent<PauseMenu>().GameOverMenu();
+    }
+
+    public void SavingChests() {
+        //Create new list of chests
+        List<bool> openes = new List<bool>();
+        foreach (Transform child in transform)
+        {
+            openes.Add(child.GetComponent<MiniChest>().opened);
+            //child is your child transform
+        }
+
+        SaveSystem.SaveChestsInScene(SceneManager.GetActiveScene().buildIndex, openes);
     }
 }

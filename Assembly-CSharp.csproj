@@ -77,6 +77,7 @@
     <Compile Include="Assets\Assets\GeneralScripts\AudioManager.cs" />
     <Compile Include="Assets\Assets\GeneralScripts\GridGenerator.cs" />
     <Compile Include="Assets\Assets\GeneralScripts\KeyScript.cs" />
+    <Compile Include="Assets\Assets\GeneralScripts\ListMinichest.cs" />
     <Compile Include="Assets\Assets\GeneralScripts\TransitionBetweedScenes.cs" />
     <Compile Include="Assets\Assets\MainCharacter\Scripts\CandleLightFluctuation.cs" />
     <Compile Include="Assets\Assets\MainCharacter\Scripts\CharacterMovement.cs" />

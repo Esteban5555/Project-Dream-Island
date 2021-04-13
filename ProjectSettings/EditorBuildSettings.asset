@@ -18,9 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Indoors.unity
     guid: f62388ad783708b45927c204e2f1d633
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: e0d7b8fc0902f12479b3eca68e0b1b11
-  - enabled: 1
     path: Assets/Scenes/MainBeach.unity
     guid: a7c682bbf13dfb645907ef6a49fccf00
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: e0d7b8fc0902f12479b3eca68e0b1b11
   m_configObjects: {}

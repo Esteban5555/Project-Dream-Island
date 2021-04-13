@@ -66,7 +66,8 @@ public class StartMenu : MonoBehaviour
 
     public void ContinueButtonPressed() {
         PlayerData playerData = SaveSystem.LoadPlayerSystem();
-        if (playerData != null) {
+        MinichestStatus chestData = SaveSystem.LoadChestsInScene();
+        if (playerData != null || chestData != null) {
             SceneManager.LoadScene(playerData.scene);
         }
         Debug.Log("No Save Data");
@@ -74,8 +75,9 @@ public class StartMenu : MonoBehaviour
 
     public void NewGameButtonPressed() {
         SaveSystem.ResetPlayerSystem();
+        SaveSystem.ResetChestsInGame();
         PlayerData playerData = SaveSystem.LoadPlayerSystem();
         PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene(playerData.scene);
+        SceneManager.LoadScene("BeachBeginning");
     }
 }

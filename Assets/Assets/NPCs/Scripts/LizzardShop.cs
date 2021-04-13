@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class LizzardShop : MonoBehaviour
@@ -19,14 +20,19 @@ public class LizzardShop : MonoBehaviour
 
     CharacterManagerScript ManagerScript;
 
+    EventSystem es;
+
     bool playerInRange;
     bool dialogueBoxShowing = false;
     bool ShopBoxShowing = false;
+    public GameObject firsOptionMenu;
     // Start is called before the first frame update
     void Start()
     {
         Manager = GameObject.Find("SceneManager");
         ManagerScript = Manager.GetComponent<CharacterManagerScript>();
+
+        es = es = GameObject.Find("EventSystem").GetComponent<EventSystem>();
 
         StartSentences(
             "Hello Traveler, have you come for my famous potions capables of givin youth even to the oldeest of folks?",
@@ -55,6 +61,7 @@ public class LizzardShop : MonoBehaviour
             {
                 if (!ShopBoxShowing && !dialogueBoxShowing)
                 {
+                    es.SetSelectedGameObject(firsOptionMenu);
                     ShopBox.SetActive(true);
                     shopText.GetComponent<Text>().text = "Do you want to upgrade the damage of your sword for only 3 COINS?";
                     //text.GetComponent<Text>().text = Sentences[sentenceIndex];
@@ -70,6 +77,7 @@ public class LizzardShop : MonoBehaviour
                         text.GetComponent<Text>().text = "";
                         ManagerScript.SetPlayerState(0);
                         dialogueBoxShowing = false;
+                        ManagerScript.SetPlayerState(0);
                     }
                 }
             }
@@ -97,9 +105,7 @@ public class LizzardShop : MonoBehaviour
     public void affirmativeButtonPressed()
     {
         ShopBox.SetActive(false);
-
-        ManagerScript.SetPlayerState(0);
-        Debug.Log("Comprada una pocion");
+        Debug.Log("Comprada una Espada");
         ShopBoxShowing = false;
         if (ManagerScript.GetPlayerCoins() < 3)
         {
@@ -107,10 +113,11 @@ public class LizzardShop : MonoBehaviour
             dialogueBox.SetActive(true);
             text.GetComponent<Text>().text = "Are you trying to fool me?";
             dialogueBoxShowing = true;
+
         }
         else
         {
-            //No Buy Message
+            //Buy Message
             dialogueBox.SetActive(true);
             text.GetComponent<Text>().text = "Nice decision brave adventurer";
             dialogueBoxShowing = true;

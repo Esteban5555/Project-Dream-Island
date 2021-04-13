@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class OzzyShop : MonoBehaviour
@@ -19,6 +20,9 @@ public class OzzyShop : MonoBehaviour
 
     CharacterManagerScript ManagerScript;
 
+    EventSystem es;
+    public GameObject firsOptionMenu;
+
     bool playerInRange;
     bool dialogueBoxShowing = false;
     bool ShopBoxShowing = false;
@@ -27,6 +31,8 @@ public class OzzyShop : MonoBehaviour
     {
         Manager = GameObject.Find("SceneManager");
         ManagerScript = Manager.GetComponent<CharacterManagerScript>();
+
+        es = es = GameObject.Find("EventSystem").GetComponent<EventSystem>();
 
         StartSentences(
             "Hello Traveler, have you come for my famous potions capables of givin youth even to the oldeest of folks?",
@@ -55,6 +61,7 @@ public class OzzyShop : MonoBehaviour
             {
                 if (!ShopBoxShowing && !dialogueBoxShowing)
                 {
+                    es.SetSelectedGameObject(firsOptionMenu);
                     ShopBox.SetActive(true);
                     shopText.GetComponent<Text>().text = "Do you want to extend your health permanently for only 3 COINS?";
                     //text.GetComponent<Text>().text = Sentences[sentenceIndex];
@@ -95,7 +102,6 @@ public class OzzyShop : MonoBehaviour
     public void affirmativeButtonPressed() {
         ShopBox.SetActive(false);
 
-        ManagerScript.SetPlayerState(0);
         Debug.Log("Comprada una pocion");
         ShopBoxShowing = false;
         if (ManagerScript.GetPlayerCoins() < 3)
@@ -106,7 +112,7 @@ public class OzzyShop : MonoBehaviour
             dialogueBoxShowing = true;
         }
         else {
-            //No Buy Message
+            //Buy Message
             dialogueBox.SetActive(true);
             text.GetComponent<Text>().text = "Oh.. thank you good sir, you won't get disappointed";
             dialogueBoxShowing = true;
@@ -118,7 +124,6 @@ public class OzzyShop : MonoBehaviour
     public void negativeButtonPressed()
     {
         ShopBox.SetActive(false);
-        ManagerScript.SetPlayerState(0);
         Debug.Log("No comprada una pocion");
         ShopBoxShowing = false;
 
