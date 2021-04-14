@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 106074166}
   m_Layer: 0
-  m_Name: Chests
+  m_Name: MiniChests
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,12 +148,11 @@ Transform:
   m_LocalPosition: {x: 14.360649, y: 16.70099, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1192572262}
   - {fileID: 980228286}
   - {fileID: 134903073}
   - {fileID: 1220857045}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &134903072
 PrefabInstance:
@@ -200,7 +199,7 @@ PrefabInstance:
     - target: {fileID: 326710212872370465, guid: edc3867dd1ac4654facf031721f4e31e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 326710212872370465, guid: edc3867dd1ac4654facf031721f4e31e,
         type: 3}
@@ -1124,7 +1123,7 @@ PrefabInstance:
     - target: {fileID: 326710212872370465, guid: edc3867dd1ac4654facf031721f4e31e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 326710212872370465, guid: edc3867dd1ac4654facf031721f4e31e,
         type: 3}
@@ -1165,7 +1164,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 106074166}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 9178039629743714784, guid: 62e8ad16432b8954b83bf3832aef86ec,
         type: 3}
@@ -1175,12 +1174,12 @@ PrefabInstance:
     - target: {fileID: 9178039629743714797, guid: 62e8ad16432b8954b83bf3832aef86ec,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.1615505
+      value: 19.5222
       objectReference: {fileID: 0}
     - target: {fileID: 9178039629743714797, guid: 62e8ad16432b8954b83bf3832aef86ec,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.7385254
+      value: 19.439516
       objectReference: {fileID: 0}
     - target: {fileID: 9178039629743714797, guid: 62e8ad16432b8954b83bf3832aef86ec,
         type: 3}
@@ -1210,7 +1209,7 @@ PrefabInstance:
     - target: {fileID: 9178039629743714797, guid: 62e8ad16432b8954b83bf3832aef86ec,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 9178039629743714797, guid: 62e8ad16432b8954b83bf3832aef86ec,
         type: 3}
@@ -1229,12 +1228,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62e8ad16432b8954b83bf3832aef86ec, type: 3}
---- !u!4 &1192572262 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9178039629743714797, guid: 62e8ad16432b8954b83bf3832aef86ec,
-    type: 3}
-  m_PrefabInstance: {fileID: 1192572261}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1214181801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,7 +1308,7 @@ PrefabInstance:
     - target: {fileID: 326710212872370465, guid: edc3867dd1ac4654facf031721f4e31e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 326710212872370465, guid: edc3867dd1ac4654facf031721f4e31e,
         type: 3}
@@ -3544,7 +3537,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 8876669964532587744, guid: 383fab14b85f581469a0b9076cc6031a, type: 3}
       - {fileID: 6525668556061870656, guid: 383fab14b85f581469a0b9076cc6031a, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 20, y: 15, z: 0}

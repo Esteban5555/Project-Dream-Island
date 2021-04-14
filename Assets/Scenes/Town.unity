@@ -22188,7 +22188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1945170829}
   m_Layer: 0
-  m_Name: CoinChests
+  m_Name: MiniChests
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

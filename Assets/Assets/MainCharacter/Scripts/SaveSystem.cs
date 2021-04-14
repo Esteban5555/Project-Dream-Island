@@ -51,10 +51,6 @@ public static class SaveSystem
     {
         MinichestStatus AllChests = LoadChestsInScene();
         bool saved = false;
-        if (scene > AllChests.ChestStatusInGame.Count) {
-            Debug.Log("No hay datos para cargar");
-            return;    
-        }
         for (int i = 0; i < AllChests.ChestStatusInGame.Count; i++) {
             if (AllChests.ChestStatusInGame[i].id == scene) {
 

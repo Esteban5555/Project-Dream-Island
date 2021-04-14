@@ -82,6 +82,27 @@ public class CharacterManagerScript : MonoBehaviour
         Debug.Log("//////////////////////////////////");
         SaveSystem.SaveChestsInScene(SceneManager.GetActiveScene().buildIndex, openes);
     }
+
+    private bool isThereChestSave(MinichestStatus chestData) {
+        bool s = false;
+
+        for (int i = 0; i < chestData.ChestStatusInGame.Count; i++)
+        {
+            if (chestData.ChestStatusInGame[i].id == SceneManager.GetActiveScene().buildIndex) s = true;
+        }
+
+        return s;
+    }
+
+    private int FindChestListWithId(int id, MinichestStatus chestData) {
+        int count = 0;
+        for (int i = 0; i < chestData.ChestStatusInGame.Count; i++)
+        {
+            if (chestData.ChestStatusInGame[i].id == id) break;
+            count++;
+        }
+        return count;
+    }
     public void UpdateMiniChests()
     {
         MinichestStatus chestData = SaveSystem.LoadChestsInScene();
@@ -89,7 +110,9 @@ public class CharacterManagerScript : MonoBehaviour
         Debug.Log(SceneManager.GetActiveScene().buildIndex);
         Debug.Log(chestData.ChestStatusInGame.Count);
 
-        if (SceneManager.GetActiveScene().buildIndex > chestData.ChestStatusInGame.Count - 1 || chestData.ChestStatusInGame[SceneManager.GetActiveScene().buildIndex] == null)
+        //Look for the scene specific chest save
+
+        if (!isThereChestSave(chestData))
         {
             Debug.Log("Creating ChestSave");
             //Create new list of chests
@@ -102,7 +125,7 @@ public class CharacterManagerScript : MonoBehaviour
         }
         else {
             Debug.Log("Loading Chest save");
-            List<bool> openes = chestData.ChestStatusInGame[SceneManager.GetActiveScene().buildIndex].OpenedStatus;
+            List<bool> openes = chestData.ChestStatusInGame[FindChestListWithId(SceneManager.GetActiveScene().buildIndex, chestData)].OpenedStatus;
             for(int i = 1; i < MiniChests.Length; i++)
             {
                 MiniChests[i].GetComponent<MiniChest>().opened = openes[i-1];
