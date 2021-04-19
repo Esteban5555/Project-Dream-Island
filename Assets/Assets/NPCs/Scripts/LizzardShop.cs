@@ -61,6 +61,7 @@ public class LizzardShop : MonoBehaviour
             {
                 if (!ShopBoxShowing && !dialogueBoxShowing)
                 {
+                    es.SetSelectedGameObject(null);
                     es.SetSelectedGameObject(firsOptionMenu);
                     ShopBox.SetActive(true);
                     shopText.GetComponent<Text>().text = "Do you want to upgrade the damage of your sword for only 3 COINS?";

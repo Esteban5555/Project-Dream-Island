@@ -61,6 +61,7 @@ public class OzzyShop : MonoBehaviour
             {
                 if (!ShopBoxShowing && !dialogueBoxShowing)
                 {
+                    es.SetSelectedGameObject(null);
                     es.SetSelectedGameObject(firsOptionMenu);
                     ShopBox.SetActive(true);
                     shopText.GetComponent<Text>().text = "Do you want to extend your health permanently for only 3 COINS?";

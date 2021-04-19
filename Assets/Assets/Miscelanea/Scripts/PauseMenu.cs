@@ -53,6 +53,7 @@ public class PauseMenu : MonoBehaviour
 
     public void GameOverMenu()
     {
+        es.SetSelectedGameObject(null);
         es.SetSelectedGameObject(EndFirstSelected);
         EndScreen.SetActive(true);
         Time.timeScale = 0f;
@@ -61,6 +62,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Pause()
     {
+        es.SetSelectedGameObject(null);
         es.SetSelectedGameObject(MenuFirstSelected);
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;

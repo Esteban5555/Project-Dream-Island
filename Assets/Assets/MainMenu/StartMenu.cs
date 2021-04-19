@@ -34,6 +34,7 @@ public class StartMenu : MonoBehaviour
     public void StartButtonPressed() {
         startMenu.SetActive(false);
         MainMenu.SetActive(true);
+        es.SetSelectedGameObject(null);
         es.SetSelectedGameObject(firstMainButton);
     }
 
@@ -47,18 +48,21 @@ public class StartMenu : MonoBehaviour
         if (MainMenu.active) {
             startMenu.SetActive(true);
             MainMenu.SetActive(false);
+            es.SetSelectedGameObject(null);
             es.SetSelectedGameObject(startButton);
             return;
         }
         if (OptionsMenu.active) {
             MainMenu.SetActive(true);
             OptionsMenu.SetActive(false);
+            es.SetSelectedGameObject(null);
             es.SetSelectedGameObject(firstMainButton);
             return;
         }
         if (Credits.active) {
             MainMenu.SetActive(true);
             Credits.SetActive(false);
+            es.SetSelectedGameObject(null);
             es.SetSelectedGameObject(firstMainButton);
         }
 
