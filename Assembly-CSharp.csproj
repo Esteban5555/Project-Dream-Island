@@ -66,6 +66,8 @@
   <ItemGroup>
     <Compile Include="Assets\Assets\BeachBegining\Script\BushScript.cs" />
     <Compile Include="Assets\Assets\BeachBegining\Script\CharacterManagerScript.cs" />
+    <Compile Include="Assets\Assets\Enemies\BettyBat.cs" />
+    <Compile Include="Assets\Assets\Enemies\BettyBatAI.cs" />
     <Compile Include="Assets\Assets\Enemies\BushCrab\BushCrabAI.cs" />
     <Compile Include="Assets\Assets\Enemies\BushCrab\BushCrabMain.cs" />
     <Compile Include="Assets\Assets\Enemies\BushCrab\HidingSpotCollider.cs" />
