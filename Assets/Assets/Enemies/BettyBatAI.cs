@@ -32,6 +32,8 @@ public class BettyBatAI : MonoBehaviour
 
     Vector3 roamPosition;
 
+    bool facingRight = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +68,20 @@ public class BettyBatAI : MonoBehaviour
                     break;
             }
 
+        }
+
+        if (rb.velocity.x < 0 && facingRight)
+        {
+            Flip();
+            facingRight = false;
+        }
+        else
+        {
+            if (!facingRight && rb.velocity.x >= 0)
+            {
+                Flip();
+                facingRight = true;
+            }
         }
     }
 
@@ -126,5 +142,12 @@ public class BettyBatAI : MonoBehaviour
         {
             currentWaypoint++;
         }
+    }
+
+    public void Flip()
+    {
+        facingRight = !facingRight;
+
+        transform.Rotate(0f, 180f, 0);
     }
 }
