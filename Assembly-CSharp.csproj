@@ -73,6 +73,7 @@
     <Compile Include="Assets\Assets\Enemies\BushCrab\HidingSpotCollider.cs" />
     <Compile Include="Assets\Assets\Enemies\EnemieMouth\AIEnemyMouth.cs" />
     <Compile Include="Assets\Assets\Enemies\EnemieMouth\MouthEnemyMainScript.cs" />
+    <Compile Include="Assets\Assets\Enemies\FireBall.cs" />
     <Compile Include="Assets\Assets\Enemies\FlipScript.cs" />
     <Compile Include="Assets\Assets\Enemies\SnakeAI.cs" />
     <Compile Include="Assets\Assets\GeneralScripts\Astar.cs" />

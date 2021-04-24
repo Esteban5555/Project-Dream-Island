@@ -440,6 +440,11 @@ PrefabInstance:
       propertyPath: ItemsAvailable.Array.data[2]
       value: 
       objectReference: {fileID: 2033612757}
+    - target: {fileID: 7796016273309378546, guid: e6a7c1a32b1360841bc5d98fe510597e,
+        type: 3}
+      propertyPath: hitForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7796016273309378550, guid: e6a7c1a32b1360841bc5d98fe510597e,
         type: 3}
       propertyPath: m_LocalPosition.x

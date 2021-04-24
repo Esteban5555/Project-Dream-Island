@@ -280,4 +280,9 @@ public class CharacterManagerScript : MonoBehaviour
 
         SaveSystem.SaveChestsInScene(SceneManager.GetActiveScene().buildIndex, openes);
     }
+
+    public bool GetPlayerPirateKey()
+    {
+        return mainCharacterScript.GetPirateKey();
+    }
 }

@@ -17,16 +17,24 @@ public class SnakeAI : MonoBehaviour
     int Health = 1;
     int MaxHealth = 1;
 
+    public float fireInterval = 2f;
+
     Animator anim;
 
     public GameObject fireBallPrefab;
     private GameObject Player;
+    public Transform fireBallSpawn;
+    private GameObject Manager;
+
+    bool firing = false;
 
     // Start is called before the first frame update
     void Start()
     {
         Player = GameObject.Find("MainCharacter");
+        Manager = GameObject.Find("SceneManager");
         anim = GetComponent<Animator>();
+        InvokeRepeating("fireFireBall", fireInterval, fireInterval);
     }
 
     private void Update()
@@ -34,10 +42,12 @@ public class SnakeAI : MonoBehaviour
         switch (state) {
             case snakeStates.firing:
                 //
+                firing = true;
                 anim.SetBool("firing", true);
                 break;
             case snakeStates.resting:
                 //
+                firing = false;
                 anim.SetBool("firing", false);
                 break;
         }
@@ -55,6 +65,29 @@ public class SnakeAI : MonoBehaviour
         else {
             //resting
             state = snakeStates.resting;
+        }
+    }
+
+    private void fireFireBall() {
+        if (firing)
+        {
+            firing = true;
+            GameObject fireBall = Instantiate(fireBallPrefab, fireBallSpawn);
+            fireBall.transform.position = fireBallSpawn.position;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "SwordAtacks")
+        {
+            if (Health <= 0)
+            {
+                Destroy(this.gameObject);
+            }
+            else {
+                Health = Health - Manager.GetComponent<CharacterManagerScript>().GetSwordAttackDamage();
+            }
         }
     }
 }
