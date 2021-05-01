@@ -1,0 +1,656 @@
+fileFormatVersion: 2
+guid: 206f016e49f44a044ab23283097bc756
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5454333232099381882
+    second: SerpentOfTheDeepSpriteSheet_0
+  - first:
+      213: 772049462344445023
+    second: SerpentOfTheDeepSpriteSheet_1
+  - first:
+      213: -5883374045222072625
+    second: SerpentOfTheDeepSpriteSheet_2
+  - first:
+      213: -5107163893368190425
+    second: SerpentOfTheDeepSpriteSheet_3
+  - first:
+      213: -5818711100041722821
+    second: SerpentOfTheDeepSpriteSheet_4
+  - first:
+      213: -4318084550410548425
+    second: SerpentOfTheDeepSpriteSheet_5
+  - first:
+      213: 9188114615744428534
+    second: SerpentOfTheDeepSpriteSheet_6
+  - first:
+      213: -8972074566892792851
+    second: SerpentOfTheDeepSpriteSheet_7
+  - first:
+      213: 1221638737904229659
+    second: SerpentOfTheDeepSpriteSheet_8
+  - first:
+      213: 5205631291392440414
+    second: SerpentOfTheDeepSpriteSheet_9
+  - first:
+      213: -2670834663928343516
+    second: SerpentOfTheDeepSpriteSheet_10
+  - first:
+      213: -6535515731229747029
+    second: SerpentOfTheDeepSpriteSheet_11
+  - first:
+      213: -524762262305067907
+    second: SerpentOfTheDeepSpriteSheet_12
+  - first:
+      213: -7283534397659036992
+    second: SerpentOfTheDeepSpriteSheet_13
+  - first:
+      213: 2513977239961179403
+    second: SerpentOfTheDeepSpriteSheet_14
+  - first:
+      213: -1111585164536582380
+    second: SerpentOfTheDeepSpriteSheet_15
+  - first:
+      213: 3198576480156723218
+    second: SerpentOfTheDeepSpriteSheet_16
+  - first:
+      213: 2572022816272375928
+    second: SerpentOfTheDeepSpriteSheet_17
+  - first:
+      213: -5179386231645453132
+    second: SerpentOfTheDeepSpriteSheet_18
+  - first:
+      213: 1875256071269357572
+    second: SerpentOfTheDeepSpriteSheet_19
+  - first:
+      213: 6352121495238535151
+    second: SerpentOfTheDeepSpriteSheet_20
+  - first:
+      213: 4561747879385888564
+    second: SerpentOfTheDeepSpriteSheet_21
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SerpentOfTheDeepSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 181
+        width: 26
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7254e12d2fa1bb40800000000000000
+      internalID: 5454333232099381882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SerpentOfTheDeepSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 179
+        width: 25
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5c621045eed6ba00800000000000000
+      internalID: 772049462344445023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SerpentOfTheDeepSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 181
+        width: 25
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fce09c13a7e0a5ea0800000000000000
+      internalID: -5883374045222072625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SerpentOfTheDeepSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 182
+        width: 26
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72a86167f75bf19b0800000000000000
+      internalID: -5107163893368190425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SerpentOfTheDeepSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 182
+        width: 25
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3404675519cf3fa0800000000000000
+      internalID: -5818711100041722821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SerpentOfTheDeepSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 183
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b4da6caf41314c0800000000000000
+      internalID: -4318084550410548425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SerpentOfTheDeepSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 162
+        width: 27
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f97503ff8db28f70800000000000000
+      internalID: 9188114615744428534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SerpentOfTheDeepSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 159
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de3d90ea7b9cc7380800000000000000
+      internalID: -8972074566892792851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SerpentOfTheDeepSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 155
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1d53a8a5f124f010800000000000000
+      internalID: 1221638737904229659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SerpentOfTheDeepSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 149
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e58ba13341e1e3840800000000000000
+      internalID: 5205631291392440414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SerpentOfTheDeepSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 151
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42450ca160a4fead0800000000000000
+      internalID: -2670834663928343516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SerpentOfTheDeepSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 156
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba8d210b11f2d45a0800000000000000
+      internalID: -6535515731229747029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SerpentOfTheDeepSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 128
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7ca6c3b08ba7b8f0800000000000000
+      internalID: -524762262305067907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SerpentOfTheDeepSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 129
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c2c13e1e00bbea90800000000000000
+      internalID: -7283534397659036992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SerpentOfTheDeepSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 128
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b059d49eaf073e220800000000000000
+      internalID: 2513977239961179403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SerpentOfTheDeepSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 127
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41fe33aae2bd290f0800000000000000
+      internalID: -1111585164536582380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SerpentOfTheDeepSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 91
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21829a6ac50a36c20800000000000000
+      internalID: 3198576480156723218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SerpentOfTheDeepSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 91
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8706d1ecf19a1b320800000000000000
+      internalID: 2572022816272375928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SerpentOfTheDeepSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 91
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b44934f9af1f18b0800000000000000
+      internalID: -5179386231645453132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SerpentOfTheDeepSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 91
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40897e6167f360a10800000000000000
+      internalID: 1875256071269357572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SerpentOfTheDeepSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 90
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe7e0dd48d4472850800000000000000
+      internalID: 6352121495238535151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SerpentOfTheDeepSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 90
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 437ffa1f6859e4f30800000000000000
+      internalID: 4561747879385888564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
