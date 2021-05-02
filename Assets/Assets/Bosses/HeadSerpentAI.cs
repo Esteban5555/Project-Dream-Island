@@ -12,6 +12,14 @@ public class HeadSerpentAI : MonoBehaviour
         Transition02
     }
 
+    int FiringCount = 4;
+
+    public GameObject fireBallPrefab;
+    private GameObject Player;
+    public Transform fireBallSpawn;
+
+    bool CR_Transition, CR_OutWater, CR_Firing, CR_Water = false;
+
     Animator anim;
 
     HeadOfSerpentStates ActualState;
@@ -20,31 +28,35 @@ public class HeadSerpentAI : MonoBehaviour
     {
         ActualState = HeadOfSerpentStates.UnderWater;
         anim = GetComponent<Animator>();
+        Player = GameObject.Find("MainCharacter");
+
+        InvokeRepeating("Fire", 1f, 1f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (FiringCount < 0) ActualState = HeadOfSerpentStates.Transition02;
 
         switch (ActualState) {
             case HeadOfSerpentStates.UnderWater:
                 //Wait Til Animation Finishes
-                StartCoroutine(ChangeToTransition());
+                if(!CR_Transition) StartCoroutine(ChangeToTransition());
                 break;
             case HeadOfSerpentStates.Transition:
                 //Wait Til Animation Finishes
                 anim.SetBool("ChangeToTransition", true);
-                StartCoroutine(ChangeToOutOfWater());
+                if (!CR_OutWater) StartCoroutine(ChangeToOutOfWater());
                 break;
             case HeadOfSerpentStates.OutOfWater:
                 //Wait Till Fire
                 anim.SetBool("ChangeToOutWater", true);
-                StartCoroutine(ChangeToFiring());
+                if (!CR_Firing) StartCoroutine(ChangeToFiring());
                 break;
             case HeadOfSerpentStates.Firing:
                 //Invocar FireBalls
                 anim.SetBool("ChangeToFiring", true);
-                StartCoroutine(ChangeToWater());
+                if (!CR_Water) StartCoroutine(ChangeToWater());
                 break;
             case HeadOfSerpentStates.Transition02:
                 //Invocar FireBalls
@@ -54,41 +66,52 @@ public class HeadSerpentAI : MonoBehaviour
     }
 
     IEnumerator ChangeToTransition() {
-        Debug.Log(ActualState);
-        yield return new WaitForSeconds(2f);
+        CR_Transition = true;
+        yield return new WaitForSeconds(4f);
         ActualState = HeadOfSerpentStates.Transition;
+        CR_Transition = false;
         yield return null;
     }
 
     IEnumerator ChangeToOutOfWater(){
-        Debug.Log(ActualState);
-        yield return new WaitForSeconds(0.5f);
+        CR_OutWater = true;
+        yield return new WaitForSeconds(0.7f);
         ActualState = HeadOfSerpentStates.OutOfWater;
+        CR_OutWater = false;
         yield return null;
     }
 
     IEnumerator ChangeToFiring()
     {
-        Debug.Log(ActualState);
+        CR_Firing = true;
         yield return new WaitForSeconds(4f);
         ActualState = HeadOfSerpentStates.Firing;
+        FiringCount--;
+        CR_Firing = false;
         yield return null;
     }
 
     IEnumerator ChangeToWater()
     {
-        Debug.Log(ActualState);
+        CR_Water = true;
         yield return new WaitForSeconds(5f);
         ActualState = HeadOfSerpentStates.OutOfWater;
         anim.SetBool("ChangeToFiring", false);
+        CR_Water = false;
         yield return null;
     }
 
     IEnumerator OutoDestruct()
     {
-        Debug.Log(ActualState);
         yield return new WaitForSeconds(5f);
         GameObject.Destroy(this.gameObject);
         yield return null;
+    }
+
+    private void Fire() {
+        if (HeadOfSerpentStates.Firing == ActualState) {
+            GameObject fireBall = Instantiate(fireBallPrefab, fireBallSpawn);
+            fireBall.transform.position = fireBallSpawn.position;
+        }
     }
 }
