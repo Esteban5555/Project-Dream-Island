@@ -9,13 +9,11 @@ public class TailSerpentAI : MonoBehaviour
         UnderWater,
         Transition,
         OutOfWater,
+        Transition02
     }
 
-    int FiringCount = 4;
-
-    public GameObject fireBallPrefab;
-    private GameObject Player;
-    public Transform fireBallSpawn;
+    public int countHits = 0;
+        
 
     bool CR_Transition, CR_OutWater = false;
 
@@ -27,7 +25,6 @@ public class TailSerpentAI : MonoBehaviour
     {
         ActualState = TailOfSerpentStates.UnderWater;
         anim = GetComponent<Animator>();
-        Player = GameObject.Find("MainCharacter");
     }
 
     // Update is called once per frame
@@ -48,6 +45,10 @@ public class TailSerpentAI : MonoBehaviour
             case TailOfSerpentStates.OutOfWater:
                 //Wait Till Fire
                 anim.SetBool("Out", true);
+                break;
+            case TailOfSerpentStates.Transition02:
+                //Invocar FireBalls
+                StartCoroutine(OutoDestruct());
                 break;
 
         }
@@ -77,8 +78,14 @@ public class TailSerpentAI : MonoBehaviour
     {
         if (collision.tag == "SwordAtacks")
         {
-
+            countHits++;
         }
     }
 
+    IEnumerator OutoDestruct()
+    {
+        yield return new WaitForSeconds(5f);
+        GameObject.Destroy(this.gameObject);
+        yield return null;
+    }
 }

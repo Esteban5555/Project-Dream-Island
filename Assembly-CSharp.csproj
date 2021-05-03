@@ -67,6 +67,7 @@
     <Compile Include="Assets\Assets\BeachBegining\Script\BushScript.cs" />
     <Compile Include="Assets\Assets\BeachBegining\Script\CharacterManagerScript.cs" />
     <Compile Include="Assets\Assets\Bosses\HeadSerpentAI.cs" />
+    <Compile Include="Assets\Assets\Bosses\SerpentBossAI.cs" />
     <Compile Include="Assets\Assets\Bosses\TailSerpentAI.cs" />
     <Compile Include="Assets\Assets\Enemies\BettyBat.cs" />
     <Compile Include="Assets\Assets\Enemies\BettyBatAI.cs" />
