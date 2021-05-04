@@ -12,8 +12,6 @@ public class HeadSerpentAI : MonoBehaviour
         Transition02
     }
 
-    int FiringCount = 4;
-
     public GameObject fireBallPrefab;
     private GameObject Player;
     public Transform fireBallSpawn;
@@ -36,7 +34,6 @@ public class HeadSerpentAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (FiringCount < 0) ActualState = HeadOfSerpentStates.Transition02;
 
         switch (ActualState) {
             case HeadOfSerpentStates.UnderWater:
@@ -86,7 +83,6 @@ public class HeadSerpentAI : MonoBehaviour
         CR_Firing = true;
         yield return new WaitForSeconds(4f);
         ActualState = HeadOfSerpentStates.Firing;
-        FiringCount--;
         CR_Firing = false;
         yield return null;
     }
