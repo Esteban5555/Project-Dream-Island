@@ -21,9 +21,13 @@ public class CharacterManagerScript : MonoBehaviour
     public bool PirateHouseInScene = false;
     public GameObject Door;
 
-    private int defaultValue = -1;
+    public int defaultValue = -1;
 
-    int currentSpawnPoint;
+    public int currentSpawnPoint;
+
+    public bool intro = false;
+
+    GameObject director;
 
     //PlayerData
 
@@ -46,6 +50,12 @@ public class CharacterManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        if (intro) {
+            director = GameObject.Find("Director");
+            director.SetActive(false);
+        }
+
         mainCharacterScript = Player.GetComponent<MainCharacter>();
         //Previous Scene
         currentSpawnPoint = PlayerPrefs.GetInt("SpawnPosition", defaultValue);
@@ -173,7 +183,10 @@ public class CharacterManagerScript : MonoBehaviour
 
         if (currentSpawnPoint == defaultValue)
         {
+            director.SetActive(true);
             Player.transform.position = CharaterSpawnPoins[0].position;
+            currentSpawnPoint = 0;
+            PlayerPrefs.SetInt("SpawnPosition", 0);
             mainCharacterScript = Player.GetComponent<MainCharacter>();
             mainCharacterScript.SetCurrentHealth(4);
             mainCharacterScript.SetCurrentMaxHealth(4);
@@ -183,6 +196,7 @@ public class CharacterManagerScript : MonoBehaviour
             mainCharacterScript.SetLamp(false);
             mainCharacterScript.SetRubberRing(false);
             mainCharacterScript.SetPirateKey(false);
+            currentSpawnPoint = 0;
 
         }
         else {

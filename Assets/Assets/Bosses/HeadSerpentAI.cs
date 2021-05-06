@@ -81,7 +81,7 @@ public class HeadSerpentAI : MonoBehaviour
     IEnumerator ChangeToFiring()
     {
         CR_Firing = true;
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
         ActualState = HeadOfSerpentStates.Firing;
         CR_Firing = false;
         yield return null;
@@ -108,6 +108,7 @@ public class HeadSerpentAI : MonoBehaviour
         if (HeadOfSerpentStates.Firing == ActualState) {
             GameObject fireBall = Instantiate(fireBallPrefab, fireBallSpawn);
             fireBall.transform.position = fireBallSpawn.position;
+            fireBall.transform.parent = this.transform.parent;
         }
     }
 }
