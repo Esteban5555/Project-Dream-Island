@@ -70,6 +70,7 @@
     <Compile Include="Assets\Assets\Bosses\HeadSerpentAI.cs" />
     <Compile Include="Assets\Assets\Bosses\SerpentBossAI.cs" />
     <Compile Include="Assets\Assets\Bosses\TailSerpentAI.cs" />
+    <Compile Include="Assets\Assets\Bosses\TriggerEncountrL.cs" />
     <Compile Include="Assets\Assets\Bosses\VcamsScript.cs" />
     <Compile Include="Assets\Assets\Cutscenes\BeachBeginningScript.cs" />
     <Compile Include="Assets\Assets\Enemies\BettyBat.cs" />
