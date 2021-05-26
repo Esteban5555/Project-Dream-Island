@@ -67,6 +67,8 @@
     <Compile Include="Assets\Assets\BeachBegining\Script\BushScript.cs" />
     <Compile Include="Assets\Assets\BeachBegining\Script\CharacterManagerScript.cs" />
     <Compile Include="Assets\Assets\Bosses\CameraTransition.cs" />
+    <Compile Include="Assets\Assets\Bosses\DoorManager.cs" />
+    <Compile Include="Assets\Assets\Bosses\Doors\LeverScript.cs" />
     <Compile Include="Assets\Assets\Bosses\HeadSerpentAI.cs" />
     <Compile Include="Assets\Assets\Bosses\SerpentBossAI.cs" />
     <Compile Include="Assets\Assets\Bosses\TailSerpentAI.cs" />
