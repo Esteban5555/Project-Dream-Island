@@ -74,6 +74,7 @@
     <Compile Include="Assets\Assets\Bosses\TailSerpentAI.cs" />
     <Compile Include="Assets\Assets\Bosses\TriggerEncountrL.cs" />
     <Compile Include="Assets\Assets\Bosses\VcamsScript.cs" />
+    <Compile Include="Assets\Assets\Credits\creditsManager.cs" />
     <Compile Include="Assets\Assets\Cutscenes\BeachBeginningScript.cs" />
     <Compile Include="Assets\Assets\Enemies\BettyBat.cs" />
     <Compile Include="Assets\Assets\Enemies\BettyBatAI.cs" />
@@ -92,6 +93,8 @@
     <Compile Include="Assets\Assets\GeneralScripts\KeyScript.cs" />
     <Compile Include="Assets\Assets\GeneralScripts\ListMinichest.cs" />
     <Compile Include="Assets\Assets\GeneralScripts\TransitionBetweedScenes.cs" />
+    <Compile Include="Assets\Assets\Intro\FocusMovement.cs" />
+    <Compile Include="Assets\Assets\Intro\IntroManager.cs" />
     <Compile Include="Assets\Assets\MainCharacter\Scripts\CandleLightFluctuation.cs" />
     <Compile Include="Assets\Assets\MainCharacter\Scripts\CharacterMovement.cs" />
     <Compile Include="Assets\Assets\MainCharacter\Scripts\CharacterSwordAttack.cs" />

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SerpentBossAI : MonoBehaviour
 {
@@ -53,6 +54,7 @@ public class SerpentBossAI : MonoBehaviour
 
         if (Health <= 0) {
             //Serpent Defeated
+            StartCoroutine("Ending");
             
         }
     }
@@ -136,5 +138,10 @@ public class SerpentBossAI : MonoBehaviour
             GameObject.Destroy(currentHeads[i]); 
         }
         currentHeads = new List<GameObject>();
+    }
+
+    IEnumerator Ending() {
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("Credits");
     }
 }

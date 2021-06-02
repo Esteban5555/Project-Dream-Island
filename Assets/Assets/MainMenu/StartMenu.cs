@@ -84,4 +84,8 @@ public class StartMenu : MonoBehaviour
         PlayerPrefs.DeleteAll();
         SceneManager.LoadScene("BeachBeginning");
     }
+
+    public void CreditsButton() { 
+        SceneManager.LoadScene("Credits");
+    }
 }
