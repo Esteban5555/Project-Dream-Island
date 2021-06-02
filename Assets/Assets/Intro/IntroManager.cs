@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class IntroManager : MonoBehaviour
@@ -10,6 +11,8 @@ public class IntroManager : MonoBehaviour
 
     private List<string> sentences = new List<string>();
     int index = 0;
+
+    bool fade = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +26,10 @@ public class IntroManager : MonoBehaviour
     {
         dialoguetext.text = sentences[index];
 
+        if (fade) {
+            FadeBackgroundEffect();
+        }
+
     }
 
     private void AddingSentences() {
@@ -35,10 +42,9 @@ public class IntroManager : MonoBehaviour
         sentences.Add("A great light will make shadows appear.");// 6
         sentences.Add("And so Testudo Isle ended up shrouded in darkness");// 7
         sentences.Add("Little by little the light that once bathe the isle dwindle");// 8
-        sentences.Add("And the civilization that once existed crubled");// 9
+        sentences.Add("And the civilization that once existed crumbled");// 9
         sentences.Add("But like two sides of the same coin");// 10
         sentences.Add("Darkness canot exist without light...");// 11
-        sentences.Add("");// 11
     }
 
     IEnumerator sentenceSwap() {
@@ -47,9 +53,9 @@ public class IntroManager : MonoBehaviour
     }
 
     private void ChangeSentences() {
-        if (index >= sentences.Count)
+        if (index >= sentences.Count -1)
         {
-            FadeBackgroundEffect();
+            fade = true;
         }
         else {
             index++;
@@ -57,7 +63,24 @@ public class IntroManager : MonoBehaviour
         }
     }
 
-    private void FadeBackgroundEffect() { 
-        
+    private void FadeBackgroundEffect() {
+
+        if (FadeBackground.GetComponent<Image>().color.a >= 1f) {
+            StartGame();
+        }
+
+        Color c = FadeBackground.GetComponent<Image>().color;
+
+        c.a = c.a + 0.5f * Time.deltaTime;
+
+        FadeBackground.GetComponent<Image>().color = c;
+    }
+
+    private void StartGame() {
+        SaveSystem.ResetPlayerSystem();
+        SaveSystem.ResetChestsInGame();
+        PlayerData playerData = SaveSystem.LoadPlayerSystem();
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("BeachBeginning");
     }
 }

@@ -78,11 +78,7 @@ public class StartMenu : MonoBehaviour
     }
 
     public void NewGameButtonPressed() {
-        SaveSystem.ResetPlayerSystem();
-        SaveSystem.ResetChestsInGame();
-        PlayerData playerData = SaveSystem.LoadPlayerSystem();
-        PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene("BeachBeginning");
+        SceneManager.LoadScene("Intro");
     }
 
     public void CreditsButton() { 
