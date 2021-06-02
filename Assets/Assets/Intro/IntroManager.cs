@@ -35,13 +35,13 @@ public class IntroManager : MonoBehaviour
     private void AddingSentences() {
         sentences.Add("");// 0
         sentences.Add("In Times of legend, ages ago...");// 1
-        sentences.Add("Existed an Isle where civilization blossom");// 2
-        sentences.Add("People enjoy a simple life growing the land and it's culture");// 3
+        sentences.Add("It existed an Isle where civilization blossomed");// 2
+        sentences.Add("People enjoyed a simple life growing the land and it's culture");// 3
         sentences.Add("All this was possible thanks to the protection of the DIVINE TURTLE");// 4
         sentences.Add("However as it is written in nature...");// 5
         sentences.Add("A great light will make shadows appear.");// 6
         sentences.Add("And so Testudo Isle ended up shrouded in darkness");// 7
-        sentences.Add("Little by little the light that once bathe the isle dwindle");// 8
+        sentences.Add("Little by little the light that once batheed the isle dwindled");// 8
         sentences.Add("And the civilization that once existed crumbled");// 9
         sentences.Add("But like two sides of the same coin");// 10
         sentences.Add("Darkness canot exist without light...");// 11
