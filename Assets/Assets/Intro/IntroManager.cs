@@ -19,6 +19,7 @@ public class IntroManager : MonoBehaviour
     {
         AddingSentences();
         StartCoroutine("sentenceSwap");
+        FindObjectOfType<AudioManager>().Play("Intro");
     }
 
     // Update is called once per frame
@@ -41,7 +42,7 @@ public class IntroManager : MonoBehaviour
         sentences.Add("However as it is written in nature...");// 5
         sentences.Add("A great light will make shadows appear.");// 6
         sentences.Add("And so Testudo Isle ended up shrouded in darkness");// 7
-        sentences.Add("Little by little the light that once batheed the isle dwindled");// 8
+        sentences.Add("Little by little the light that once bathed the isle dwindled");// 8
         sentences.Add("And the civilization that once existed crumbled");// 9
         sentences.Add("But like two sides of the same coin");// 10
         sentences.Add("Darkness canot exist without light...");// 11
@@ -77,6 +78,7 @@ public class IntroManager : MonoBehaviour
     }
 
     private void StartGame() {
+        FindObjectOfType<AudioManager>().PauseAll();
         SaveSystem.ResetPlayerSystem();
         SaveSystem.ResetChestsInGame();
         PlayerData playerData = SaveSystem.LoadPlayerSystem();

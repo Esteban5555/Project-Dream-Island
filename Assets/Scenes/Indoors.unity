@@ -1010,6 +1010,9 @@ MonoBehaviour:
   WaterInScene: 0
   PirateHouseInScene: 0
   Door: {fileID: 0}
+  defaultValue: -1
+  currentSpawnPoint: 0
+  intro: 0
   CharaterSpawnPoins:
   - {fileID: 459720266}
   - {fileID: 1436582986}
@@ -10365,6 +10368,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 976454169, guid: 0aee4a78afa2b204fa49063f896958c1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.6999512
+      objectReference: {fileID: 0}
     - target: {fileID: 1699623254, guid: 0aee4a78afa2b204fa49063f896958c1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -10488,21 +10495,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1242107887}
-    - target: {fileID: 4816931274985589431, guid: 0aee4a78afa2b204fa49063f896958c1,
-        type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5854984693441149328, guid: 0aee4a78afa2b204fa49063f896958c1,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1242107887}
-    - target: {fileID: 5854984693441149328, guid: 0aee4a78afa2b204fa49063f896958c1,
-        type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0aee4a78afa2b204fa49063f896958c1, type: 3}
 --- !u!114 &2033612757 stripped

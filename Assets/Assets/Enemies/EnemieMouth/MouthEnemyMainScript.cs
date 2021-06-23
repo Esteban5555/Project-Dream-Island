@@ -64,6 +64,7 @@ public class MouthEnemyMainScript : MonoBehaviour
     {
         if (collision.tag == "SwordAtacks" && inmunityTime >= maxInmunityTime)
         {
+            FindObjectOfType<AudioManager>().Play("Monster_Damged");
             Vector2 force = (rb.transform.position - AIEnemyMouthScript.target.position).normalized * swordForce;
             rb.AddForce(force);
             Health = Health - Manager.GetComponent<CharacterManagerScript>().GetSwordAttackDamage();

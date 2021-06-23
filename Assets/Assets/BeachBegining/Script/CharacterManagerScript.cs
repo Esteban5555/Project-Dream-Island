@@ -50,7 +50,7 @@ public class CharacterManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        FindObjectOfType<AudioManager>().PauseAll();
         if (intro) {
             director = GameObject.Find("Director");
             director.SetActive(false);
@@ -73,10 +73,38 @@ public class CharacterManagerScript : MonoBehaviour
 
         UpdateMiniChests();
 
+        SelectTrack(SceneManager.GetActiveScene().name);
+
         Time.timeScale = 1f;
         spawnPlayer();
 
 
+    }
+
+    public void SelectTrack(string currentScene) {
+        FindObjectOfType<AudioManager>().PauseAll();
+        switch (currentScene) {
+            case "BeachBeginning":
+                FindObjectOfType<AudioManager>().Play("OceanSound");
+                Debug.Log("OceanPlaying");
+                break;
+
+            case "MainBeach":
+                Debug.Log("OceanPlaying");
+                FindObjectOfType<AudioManager>().Play("OceanSound");
+                break;
+            case "Temple":
+                FindObjectOfType<AudioManager>().Play("Temple_ost");
+                break;
+            case "Town":
+                FindObjectOfType<AudioManager>().Play("Town_ost");
+                break;
+            case "Dungeon":
+                FindObjectOfType<AudioManager>().Play("Dungeon_ost");
+                break;
+            default:
+                break;
+        }   
     }
 
     public void SaveChestStates() {

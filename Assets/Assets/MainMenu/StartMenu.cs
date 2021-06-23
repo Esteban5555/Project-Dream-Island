@@ -35,7 +35,7 @@ public class StartMenu : MonoBehaviour
         startMenu.SetActive(false);
         MainMenu.SetActive(true);
         es.SetSelectedGameObject(null);
-        es.SetSelectedGameObject(firstMainButton);
+        //es.SetSelectedGameObject(firstMainButton);
     }
 
     public void EscapeButtonPressed() {
@@ -43,27 +43,28 @@ public class StartMenu : MonoBehaviour
         {
             //ExitGame
             Debug.Log("Exiting Game");
+            
             return;
         }
         if (MainMenu.active) {
             startMenu.SetActive(true);
             MainMenu.SetActive(false);
             es.SetSelectedGameObject(null);
-            es.SetSelectedGameObject(startButton);
+            //es.SetSelectedGameObject(startButton);
             return;
         }
         if (OptionsMenu.active) {
             MainMenu.SetActive(true);
             OptionsMenu.SetActive(false);
             es.SetSelectedGameObject(null);
-            es.SetSelectedGameObject(firstMainButton);
+            //es.SetSelectedGameObject(firstMainButton);
             return;
         }
         if (Credits.active) {
             MainMenu.SetActive(true);
             Credits.SetActive(false);
             es.SetSelectedGameObject(null);
-            es.SetSelectedGameObject(firstMainButton);
+            //es.SetSelectedGameObject(firstMainButton);
         }
 
     }

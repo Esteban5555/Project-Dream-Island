@@ -30,6 +30,10 @@ public class BettyBat : MonoBehaviour
         splatSpawn = transform.Find("SplatSpawn");
     }
 
+    public void Screaching() {
+        FindObjectOfType<AudioManager>().Play("BatSceaching");
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -50,6 +54,7 @@ public class BettyBat : MonoBehaviour
     {
         if (collision.tag == "SwordAtacks" && inmunityTime >= maxInmunityTime)
         {
+            FindObjectOfType<AudioManager>().Play("Monster_Damged");
             Vector2 force = (rb.transform.position - BettyBatAIscript.target.position).normalized * swordForce;
             rb.AddForce(force);
             Health = Health - Manager.GetComponent<CharacterManagerScript>().GetSwordAttackDamage();

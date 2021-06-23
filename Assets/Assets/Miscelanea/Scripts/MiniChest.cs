@@ -28,6 +28,7 @@ public class MiniChest : MonoBehaviour
         }
         if (PlayerInRange && Input.GetButtonDown("Submit") && !opened)
         {
+            FindObjectOfType<AudioManager>().Play("Chest_Sound");
             Manager.GetComponent<CharacterManagerScript>().SetPlayerState(1);
             Manager.GetComponent<CharacterManagerScript>().setMiniChest(true);
             opened = true;

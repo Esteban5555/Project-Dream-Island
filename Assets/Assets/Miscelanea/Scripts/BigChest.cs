@@ -38,6 +38,7 @@ public class BigChest : MonoBehaviour
         }
         if (PlayerInRange && Input.GetButtonDown("Submit") && !opened)
         {
+            FindObjectOfType<AudioManager>().Play("Chest_Sound");
             Manager.GetComponent<CharacterManagerScript>().SetPlayerState(1);
             Manager.GetComponent<CharacterManagerScript>().setBigChest(true);
             Manager.GetComponent<CharacterManagerScript>().setItemInBigChest((int)item);

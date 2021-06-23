@@ -100,6 +100,7 @@ public class BettyBatAI : MonoBehaviour
 
         if (Vector3.Distance(transform.position, target.position) < AwarnessRange)
         {
+            FindObjectOfType<AudioManager>().Play("BatSceaching");
             anim.SetBool("Pursuing", true);
             state = enemyBettyBatStates.Follow;
         }

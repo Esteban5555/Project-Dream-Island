@@ -80,6 +80,7 @@ public class SnakeAI : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "SwordAtacks")
+            FindObjectOfType<AudioManager>().Play("Monster_Damged");
         {
             if (Health <= 0)
             {

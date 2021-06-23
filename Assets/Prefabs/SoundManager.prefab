@@ -51,7 +51,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Item_Pick_Up
-    clip: {fileID: 8300000, guid: 95d222e32c2e76b41830883a843d7a60, type: 3}
+    clip: {fileID: 8300000, guid: dddeb8e485ee20243affe3211c3955fc, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
@@ -61,4 +61,76 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     loop: 0
+    source: {fileID: 0}
+  - name: Intro
+    clip: {fileID: 8300000, guid: 8ae0031ad8690bf44a09c012b5acf1a8, type: 3}
+    volume: 0.25
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Chest_Sound
+    clip: {fileID: 8300000, guid: ef6254336a8504c4e899aef779944435, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Exploration
+    clip: {fileID: 8300000, guid: db08d565ed714fc4292fe7d1cf2a1a36, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Monster_Damged
+    clip: {fileID: 8300000, guid: d004ff3a3c7bd0442bcf02aab22f2a21, type: 3}
+    volume: 0.15
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BatSceaching
+    clip: {fileID: 8300000, guid: edd6adb69c117dd4da367573a25ec38c, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: OceanSound
+    clip: {fileID: 8300000, guid: 21d2e664ecee7ab45baa51ee486d47cd, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Temple_ost
+    clip: {fileID: 8300000, guid: 1c91a1fb29742e847aafaf912b747de8, type: 3}
+    volume: 0.244
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Town_ost
+    clip: {fileID: 8300000, guid: db08d565ed714fc4292fe7d1cf2a1a36, type: 3}
+    volume: 0.244
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Lever
+    clip: {fileID: 8300000, guid: eda1334e7d858794b8b72a221b3ed603, type: 3}
+    volume: 0.244
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Door
+    clip: {fileID: 8300000, guid: bd75abd58a2e8da40b20fae1c15d2297, type: 3}
+    volume: 0.244
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Snake
+    clip: {fileID: 8300000, guid: f19ec9a5ff82d8341a6acfef6ad2cf3b, type: 3}
+    volume: 0.244
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Dungeon_ost
+    clip: {fileID: 8300000, guid: 8561f12ab435eba4db7f8d7d0756416d, type: 3}
+    volume: 0.244
+    pitch: 1
+    loop: 1
     source: {fileID: 0}
