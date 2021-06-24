@@ -40,6 +40,7 @@ public class TriggerEncountrL : MonoBehaviour
         if (collision.name == "MainCharacter" && !encounter)
         {
             StartEncounter();
+            FindObjectOfType<AudioManager>().Play("Door");
         }
     }
 

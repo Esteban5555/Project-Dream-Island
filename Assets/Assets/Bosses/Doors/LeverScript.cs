@@ -19,6 +19,7 @@ public class LeverScript : MonoBehaviour
     void Update()
     {
         if (playerInRange && Input.GetButtonDown("Submit")) {
+            FindObjectOfType<AudioManager>().Play("Lever");
             manager.setLever();
             anim.SetBool("pressed", true);
         }

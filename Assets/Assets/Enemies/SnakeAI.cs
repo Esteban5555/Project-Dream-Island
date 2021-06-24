@@ -71,6 +71,7 @@ public class SnakeAI : MonoBehaviour
     private void fireFireBall() {
         if (firing)
         {
+            FindObjectOfType<AudioManager>().Play("Snake");
             firing = true;
             GameObject fireBall = Instantiate(fireBallPrefab, fireBallSpawn);
             fireBall.transform.position = fireBallSpawn.position;
@@ -80,7 +81,6 @@ public class SnakeAI : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "SwordAtacks")
-            FindObjectOfType<AudioManager>().Play("Monster_Damged");
         {
             if (Health <= 0)
             {

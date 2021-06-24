@@ -49,7 +49,7 @@ public class IntroManager : MonoBehaviour
     }
 
     IEnumerator sentenceSwap() {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(8f);
         ChangeSentences();
     }
 

@@ -114,19 +114,19 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: eda1334e7d858794b8b72a221b3ed603, type: 3}
     volume: 0.244
     pitch: 1
-    loop: 1
+    loop: 0
     source: {fileID: 0}
   - name: Door
     clip: {fileID: 8300000, guid: bd75abd58a2e8da40b20fae1c15d2297, type: 3}
     volume: 0.244
     pitch: 1
-    loop: 1
+    loop: 0
     source: {fileID: 0}
   - name: Snake
     clip: {fileID: 8300000, guid: f19ec9a5ff82d8341a6acfef6ad2cf3b, type: 3}
-    volume: 0.244
+    volume: 1
     pitch: 1
-    loop: 1
+    loop: 0
     source: {fileID: 0}
   - name: Dungeon_ost
     clip: {fileID: 8300000, guid: 8561f12ab435eba4db7f8d7d0756416d, type: 3}
