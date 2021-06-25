@@ -12,6 +12,10 @@ public class TailSerpentAI : MonoBehaviour
         Transition02
     }
 
+    bool Attack = true;
+
+    SerpentBossAI serpentScript;
+
     public int countHits = 0;
         
 
@@ -25,6 +29,7 @@ public class TailSerpentAI : MonoBehaviour
     {
         ActualState = TailOfSerpentStates.UnderWater;
         anim = GetComponent<Animator>();
+        serpentScript = GameObject.Find("SerpentOfTheDeep").GetComponent<SerpentBossAI>();
     }
 
     // Update is called once per frame
@@ -76,9 +81,13 @@ public class TailSerpentAI : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "SwordAtacks")
+        if (collision.tag == "SwordAtacks" & Attack)
         {
             countHits++;
+            serpentScript.HitTaken();
+            Attack = false;
+            StartCoroutine(InmunityTime());
+            FindObjectOfType<AudioManager>().Play("Monster_Damged");
         }
     }
 
@@ -86,6 +95,13 @@ public class TailSerpentAI : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         GameObject.Destroy(this.gameObject);
+        yield return null;
+    }
+
+    IEnumerator InmunityTime()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Attack = true;
         yield return null;
     }
 }

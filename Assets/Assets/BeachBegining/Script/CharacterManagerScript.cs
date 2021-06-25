@@ -102,6 +102,9 @@ public class CharacterManagerScript : MonoBehaviour
             case "Dungeon":
                 FindObjectOfType<AudioManager>().Play("Dungeon_ost");
                 break;
+            case "BossFight":
+                FindObjectOfType<AudioManager>().Play("Temple_ost");
+                break;
             default:
                 break;
         }   

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class SerpentBossAI : MonoBehaviour
@@ -10,12 +11,15 @@ public class SerpentBossAI : MonoBehaviour
 
     private CharacterManagerScript manager;
 
-    enum Fase { 
+    public enum Fase { 
         first,
         second
     }
 
-    Fase fase = Fase.first;
+    public List<Image> Hearts;
+    public GameObject HertsGameObject;
+
+    public Fase fase = Fase.first;
 
     List<GameObject> currentHeads = new List<GameObject>();
     GameObject currentTail;
@@ -23,12 +27,17 @@ public class SerpentBossAI : MonoBehaviour
     public List<Transform> spawnPoints;
 
     //Stats
-    float Health = 20;
+    int Health = 10;
     // Start is called before the first frame update
     void Start()
     {
         manager = GameObject.Find("SceneManager").GetComponent<CharacterManagerScript>();
         StartCoroutine(WaitTilNextRound());
+
+        HertsGameObject.SetActive(true);
+
+        FindObjectOfType<AudioManager>().Play("BossFight_ost");
+        FindObjectOfType<AudioManager>().Pause("Temple_ost");
     }
 
     // Update is called once per frame
@@ -37,14 +46,12 @@ public class SerpentBossAI : MonoBehaviour
 
         Debug.Log(Health);
 
-        if (currentTail != null && currentTail.GetComponent<TailSerpentAI>().countHits > 2) {
+        if (currentTail != null && currentTail.GetComponent<TailSerpentAI>().countHits >= 2) {
             DestroyCurrentHeadsTails();
             StartCoroutine(WaitTilNextRound());
-
-            Health = Health - (manager.GetSwordAttackDamage() * 2f);
         }
 
-        if (Health <= 10)
+        if (Health <= 5)
         {
             //Second Fase
             fase = Fase.second;
@@ -57,6 +64,21 @@ public class SerpentBossAI : MonoBehaviour
             StartCoroutine("Ending");
             
         }
+
+        UpdateHearts();
+
+
+    }
+
+    public void UpdateHearts() {
+
+        for (int i = 0; i < Hearts.Count; i++) {
+            if (Health <= i)
+            {
+                Hearts[i].transform.gameObject.SetActive(false);
+            }
+
+        }
     }
 
     IEnumerator WaitTilNextRound()
@@ -67,6 +89,7 @@ public class SerpentBossAI : MonoBehaviour
         int tailSpawnIndex, headSpawnIndex, heaadSpawnIndex2;
 
         GameObject currentHead;
+        if (Health <= 0) yield return null;
 
         //Spawn Serpent
         switch (fase) {
@@ -116,6 +139,7 @@ public class SerpentBossAI : MonoBehaviour
                 currentTail = Instantiate(TailOfSerpentPrefab);
                 currentTail.transform.position = spawnPoints[tailSpawnIndex].transform.position;
 
+
                 currentHead = Instantiate(HeadSerpentPrefab);
                 currentHead.transform.position = spawnPoints[headSpawnIndex].transform.position;
 
@@ -143,5 +167,10 @@ public class SerpentBossAI : MonoBehaviour
     IEnumerator Ending() {
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene("Credits");
+    }
+
+    public void HitTaken() {
+        Debug.Log("Damage dealt: " + manager.GetSwordAttackDamage());
+        Health = Health - (manager.GetSwordAttackDamage());
     }
 }
