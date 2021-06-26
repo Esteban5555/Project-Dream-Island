@@ -67,7 +67,7 @@ public class MainCharacter : MonoBehaviour
     public bool actionButton;
 
     //Inmunity After Hit
-    public float maxInmunityTime = 0.5f;
+    public float maxInmunityTime = 0.1f;
     public float inmunityTime = 0f;
 
     public float hitForce = 100f;

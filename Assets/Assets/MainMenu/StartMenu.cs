@@ -43,7 +43,7 @@ public class StartMenu : MonoBehaviour
         {
             //ExitGame
             Debug.Log("Exiting Game");
-            
+            Application.Quit();
             return;
         }
         if (MainMenu.active) {
